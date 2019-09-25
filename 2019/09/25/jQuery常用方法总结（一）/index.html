@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | Mu的博客</title>
+  <title>&#39;jQuery常用方法总结（一）&#39; | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="天津师范大学20级应届毕业生，对于前端所必须的各项技能均有一定的了解">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mu的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="jQuery常用方法(一)1.1. $符冲突的解决途径 $.noConflict() 当jQuery中的$标识符与其他框架冲突时可以通过如下方法释放标识符使用jQuery 或 接收该方法的返回值 重新定义标识符    1234567891011121314//释放$.noConflict();jQuery(document).ready(function()&amp;#123;  jQuery(&quot;butt">
+<meta name="keywords" content="jQuery javaScript框架 教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;jQuery常用方法总结（一）&#39;">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/jQuery常用方法总结（一）/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="天津师范大学20级应届毕业生，对于前端所必须的各项技能均有一定的了解">
+<meta property="og:description" content="jQuery常用方法(一)1.1. $符冲突的解决途径 $.noConflict() 当jQuery中的$标识符与其他框架冲突时可以通过如下方法释放标识符使用jQuery 或 接收该方法的返回值 重新定义标识符    1234567891011121314//释放$.noConflict();jQuery(document).ready(function()&amp;#123;  jQuery(&quot;butt">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-25T16:00:16.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mu的博客">
-<meta name="twitter:description" content="天津师范大学20级应届毕业生，对于前端所必须的各项技能均有一定的了解">
+<meta name="twitter:title" content="&#39;jQuery常用方法总结（一）&#39;">
+<meta name="twitter:description" content="jQuery常用方法(一)1.1. $符冲突的解决途径 $.noConflict() 当jQuery中的$标识符与其他框架冲突时可以通过如下方法释放标识符使用jQuery 或 接收该方法的返回值 重新定义标识符    1234567891011121314//释放$.noConflict();jQuery(document).ready(function()&amp;#123;  jQuery(&quot;butt">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -151,36 +153,108 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jQuery常用方法总结（一）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/25/jQuery常用方法总结（一）/" class="archive-article-date">
-  	<time datetime="2019-09-25T15:42:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/25/jQuery常用方法总结（一）/">&#39;jQuery常用方法总结（一）&#39;</a>
+    <h1 class="article-title" itemprop="name">
+      &#39;jQuery常用方法总结（一）&#39;
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/09/25/jQuery常用方法总结（一）/" class="archive-article-date">
+  	<time datetime="2019-09-25T15:42:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jQuery常用方法-一"><a href="#jQuery常用方法-一" class="headerlink" title="jQuery常用方法(一)"></a>jQuery常用方法(一)</h1><h2 id="1-1-符冲突的解决途径"><a href="#1-1-符冲突的解决途径" class="headerlink" title="1.1. $符冲突的解决途径"></a>1.1. $符冲突的解决途径</h2><ul>
+<li><code>$.noConflict()</code><ul>
+<li>当jQuery中的$标识符与其他框架冲突时可以通过如下方法释放标识符使用jQuery 或 接收该方法的返回值 重新定义标识符</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//释放</span></span><br><span class="line">$.noConflict();</span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  jQuery(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jQuery(<span class="string">"p"</span>).text(<span class="string">"jQuery 仍然在工作!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//重定义</span></span><br><span class="line"><span class="keyword">var</span> jq = $.noConflict();</span><br><span class="line">jq(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  jq(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jq(<span class="string">"p"</span>).text(<span class="string">"jQuery 仍然在工作!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-jQuery核心函数-的用法"><a href="#1-2-jQuery核心函数-的用法" class="headerlink" title="1.2.jQuery核心函数$()的用法"></a>1.2.jQuery核心函数<code>$()</code>的用法</h2><ul>
+<li>接收一个字符串选择器 返回一个jQuery 对象 对象中保存找到的DOM元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $box1 = $(<span class="string">".box1"</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接收一个字符串 返回一个jQuery对象 对象中保存创建的DOM元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $p = $(<span class="string">"&lt;p&gt;我是段落&lt;/p&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接收一个DOM元素 会将其包装成一个jQuery对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $p = $(<span class="built_in">document</span>.getElementsById(<span class="string">'box1'</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-jQuery对象的实质"><a href="#1-3-jQuery对象的实质" class="headerlink" title="1.3.jQuery对象的实质"></a>1.3.jQuery对象的实质</h2><ul>
+<li><p>jQuery对象实际上是一个伪数组</p>
+</li>
+<li><p>伪数组：拥有0到length-1个连续属性 并拥有length属性</p>
+</li>
+</ul>
+<h2 id="1-4-jQuery常用遍历方法"><a href="#1-4-jQuery常用遍历方法" class="headerlink" title="1.4.jQuery常用遍历方法"></a>1.4.jQuery常用遍历方法</h2><ul>
+<li>each方法：与JavaScript的forEach()方法类似，区别是可以遍历伪数组 第一个参数是遍历的索引 第二个参数是值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.each(obj, <span class="function"><span class="keyword">function</span> (<span class="params">index, value</span>) </span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(index, value);</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>map方法: 除返回值与each不同外基本一致</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*each静态方法默认的返回值是, 遍历谁就返回谁 返回值不可更改</span></span><br><span class="line"><span class="comment">map静态方法默认的返回值是一个空数组 返回值可以进一步处理return什么返回的就是什么组成的数组*/</span></span><br><span class="line"> <span class="keyword">var</span> res = $.map(obj, <span class="function"><span class="keyword">function</span> (<span class="params">value, index</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(index, value);</span><br><span class="line">            <span class="keyword">return</span> value + index;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="1-5-字符串操作"><a href="#1-5-字符串操作" class="headerlink" title="1.5.字符串操作"></a>1.5.字符串操作</h2><ul>
+<li>$.trim() 去除字符串首尾空格</li>
+</ul>
+<h2 id="1-6-测试操作"><a href="#1-6-测试操作" class="headerlink" title="1.6.测试操作"></a>1.6.测试操作</h2><ul>
+<li>$.isArray() 判断是否是真数组</li>
+<li>$.isWindow()判断是否是window对象</li>
+<li>$.isFunciton()判断是否是一个函数</li>
+</ul>
+<h2 id="1-7-事件相关"><a href="#1-7-事件相关" class="headerlink" title="1.7.事件相关"></a>1.7.事件相关</h2><h3 id="1-7-1-事件绑定"><a href="#1-7-1-事件绑定" class="headerlink" title="1.7.1 事件绑定"></a>1.7.1 事件绑定</h3><ul>
+<li>事件绑定on()方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个参数方法名  第二个参数回调函数</span></span><br><span class="line">$(<span class="string">"button"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"hello click1"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//可新增一个参数完成事件委派 将li的事件委派给ul 达到即使li增加 也会携带事件的效果</span></span><br><span class="line">$(<span class="string">"ul"</span>).on(<span class="string">'click'</span>,<span class="string">'li'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'委派成功'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7-2-事件移除"><a href="#1-7-2-事件移除" class="headerlink" title="1.7.2 事件移除"></a>1.7.2 事件移除</h3><ul>
+<li>移除事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// off方法如果不传递参数, 会移除所有的事件</span></span><br><span class="line">$(<span class="string">"button"</span>).off();</span><br><span class="line"><span class="comment">// off方法如果传递一个参数, 会移除所有指定类型的事件</span></span><br><span class="line">$(<span class="string">"button"</span>).off(<span class="string">"click"</span>);</span><br><span class="line"><span class="comment">// off方法如果传递两个参数, 会移除所有指定类型的指定事件 text1 为click事件中的回调函数名</span></span><br><span class="line">$(<span class="string">"button"</span>).off(<span class="string">"click"</span>, test1);</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7-3-阻止默认行为"><a href="#1-7-3-阻止默认行为" class="headerlink" title="1.7.3. 阻止默认行为"></a>1.7.3. 阻止默认行为</h3><ul>
+<li>使用return false 可组织事件冒泡和事件默认行为</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用 event.preventDefault();阻止事件默认行为</span></span><br><span class="line"><span class="comment">//使用 event.stopPropagation(); 阻止事件冒泡</span></span><br><span class="line">$(<span class="string">"a"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"弹出注册框"</span>);</span><br><span class="line">                <span class="comment">// return false;</span></span><br><span class="line">                event.preventDefault(); <span class="comment">//阻止之后页面的跳转</span></span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>trigger 事件自动触发不阻止默认行为  triggerHandler 事件自动触发阻止默认行为 </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> $(<span class="string">"span"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"a"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//阻止</span></span><br><span class="line">$(<span class="string">"a"</span>).triggerHandler(<span class="string">"click"</span>);</span><br><span class="line"><span class="comment">//不阻止</span></span><br><span class="line">$(<span class="string">"span"</span>).trigger(<span class="string">"click"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7-4-自定义事件"><a href="#1-7-4-自定义事件" class="headerlink" title="1.7.4 自定义事件"></a>1.7.4 自定义事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">      想要自定义事件, 必须满足两个条件</span></span><br><span class="line"><span class="comment">      1.事件必须是通过on绑定的</span></span><br><span class="line"><span class="comment">      2.事件必须通过trigger来触发</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      $(<span class="string">".son"</span>).on(<span class="string">"myClick"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          alert(<span class="string">"son"</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">".son"</span>).triggerHandler(<span class="string">"myClick"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-7-5事件命名空间"><a href="#1-7-5事件命名空间" class="headerlink" title="1.7.5事件命名空间"></a>1.7.5事件命名空间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">           想要事件的命名空间有效,必须满足两个条件</span></span><br><span class="line"><span class="comment">           1.事件是通过on来绑定的</span></span><br><span class="line"><span class="comment">           2.通过trigger触发事件</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">           $(<span class="string">".son"</span>).on(<span class="string">"click.zs"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               alert(<span class="string">"click1"</span>);</span><br><span class="line">           &#125;);</span><br><span class="line">           $(<span class="string">".son"</span>).on(<span class="string">"click.ls"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               alert(<span class="string">"click2"</span>);</span><br><span class="line">           &#125;);</span><br><span class="line">           <span class="comment">// $(".son").trigger("click.zs");</span></span><br><span class="line">           $(<span class="string">".son"</span>).trigger(<span class="string">"click.ls"</span>);</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -192,19 +266,109 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/25/jQuery常用方法总结（一）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery常用方法-一"><span class="toc-number">1.</span> <span class="toc-text">jQuery常用方法(一)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-符冲突的解决途径"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. $符冲突的解决途径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-jQuery核心函数-的用法"><span class="toc-number">1.2.</span> <span class="toc-text">1.2.jQuery核心函数$()的用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-jQuery对象的实质"><span class="toc-number">1.3.</span> <span class="toc-text">1.3.jQuery对象的实质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-jQuery常用遍历方法"><span class="toc-number">1.4.</span> <span class="toc-text">1.4.jQuery常用遍历方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-字符串操作"><span class="toc-number">1.5.</span> <span class="toc-text">1.5.字符串操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-测试操作"><span class="toc-number">1.6.</span> <span class="toc-text">1.6.测试操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-事件相关"><span class="toc-number">1.7.</span> <span class="toc-text">1.7.事件相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-事件绑定"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.7.1 事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-2-事件移除"><span class="toc-number">1.7.2.</span> <span class="toc-text">1.7.2 事件移除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-3-阻止默认行为"><span class="toc-number">1.7.3.</span> <span class="toc-text">1.7.3. 阻止默认行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-4-自定义事件"><span class="toc-number">1.7.4.</span> <span class="toc-text">1.7.4 自定义事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-5事件命名空间"><span class="toc-number">1.7.5.</span> <span class="toc-text">1.7.5事件命名空间</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -227,8 +391,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
