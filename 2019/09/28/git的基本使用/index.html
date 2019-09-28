@@ -6,22 +6,34 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>jQuery常用方法总结（二） | Mu的博客</title>
+  <title>&#39;git的基本使用&#39; | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery常用方法(二)2.1.属性相关方法2.1.1. attr attr() 获取指定属性 填入一个参数代表读取属性，填入两个参数代表设置属性 removeAttr() 删除指定属性  1$(&quot;span&quot;).attr(&quot;class&quot;, &quot;box&quot;);  ###2.1.2. prop  prop()   removeProp() 效果基本与attr() removeAttr()相同  但这两个">
-<meta name="keywords" content="jQuery javaScript框架 教程">
+  <meta name="description" content="git 常见命令的理解与使用1.1github的简介（文末还有部分介绍）参考网站：https://www.liaoxuefeng.com/wiki/896043488029600/896827951938304  在项目主页地址后面输入/compare可查看不同的分支，进行对比  code 代码主页  Issues 问题讨论区  pull requests 其余人员对代码进行fork后优化 提交通">
+<meta name="keywords" content="git github">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery常用方法总结（二）">
-<meta property="og:url" content="http://yoursite.com/2019/09/27/jQuery常用方法总结（二）/index.html">
+<meta property="og:title" content="&#39;git的基本使用&#39;">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/git的基本使用/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="jQuery常用方法(二)2.1.属性相关方法2.1.1. attr attr() 获取指定属性 填入一个参数代表读取属性，填入两个参数代表设置属性 removeAttr() 删除指定属性  1$(&quot;span&quot;).attr(&quot;class&quot;, &quot;box&quot;);  ###2.1.2. prop  prop()   removeProp() 效果基本与attr() removeAttr()相同  但这两个">
+<meta property="og:description" content="git 常见命令的理解与使用1.1github的简介（文末还有部分介绍）参考网站：https://www.liaoxuefeng.com/wiki/896043488029600/896827951938304  在项目主页地址后面输入/compare可查看不同的分支，进行对比  code 代码主页  Issues 问题讨论区  pull requests 其余人员对代码进行fork后优化 提交通">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C1564685464809.png">
-<meta property="og:updated_time" content="2019-09-27T00:55:50.224Z">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit01.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit02.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit03.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit05.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit06.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit07.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit08.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit09.png">
+<meta property="og:image" content="g:/笔记/img/git10.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit11.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit12.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit13.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit14.png">
+<meta property="og:updated_time" content="2019-09-28T13:01:14.190Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery常用方法总结（二）">
-<meta name="twitter:description" content="jQuery常用方法(二)2.1.属性相关方法2.1.1. attr attr() 获取指定属性 填入一个参数代表读取属性，填入两个参数代表设置属性 removeAttr() 删除指定属性  1$(&quot;span&quot;).attr(&quot;class&quot;, &quot;box&quot;);  ###2.1.2. prop  prop()   removeProp() 效果基本与attr() removeAttr()相同  但这两个">
-<meta name="twitter:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C1564685464809.png">
+<meta name="twitter:title" content="&#39;git的基本使用&#39;">
+<meta name="twitter:description" content="git 常见命令的理解与使用1.1github的简介（文末还有部分介绍）参考网站：https://www.liaoxuefeng.com/wiki/896043488029600/896827951938304  在项目主页地址后面输入/compare可查看不同的分支，进行对比  code 代码主页  Issues 问题讨论区  pull requests 其余人员对代码进行fork后优化 提交通">
+<meta name="twitter:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit01.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -155,97 +167,242 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-jQuery常用方法总结（二）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git的基本使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery常用方法总结（二）
+      &#39;git的基本使用&#39;
     </h1>
   
 
         
-        <a href="/2019/09/27/jQuery常用方法总结（二）/" class="archive-article-date">
-  	<time datetime="2019-09-27T00:45:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-27</time>
+        <a href="/2019/09/28/git的基本使用/" class="archive-article-date">
+  	<time datetime="2019-09-28T12:45:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jQuery常用方法-二"><a href="#jQuery常用方法-二" class="headerlink" title="jQuery常用方法(二)"></a>jQuery常用方法(二)</h1><h2 id="2-1-属性相关方法"><a href="#2-1-属性相关方法" class="headerlink" title="2.1.属性相关方法"></a>2.1.属性相关方法</h2><h3 id="2-1-1-attr"><a href="#2-1-1-attr" class="headerlink" title="2.1.1. attr"></a>2.1.1. attr</h3><ul>
-<li>attr() 获取指定属性 填入一个参数代表读取属性，填入两个参数代表设置属性</li>
-<li>removeAttr() 删除指定属性</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"span"</span>).attr(<span class="string">"class"</span>, <span class="string">"box"</span>);</span><br></pre></td></tr></table></figure>
-
-<p>###2.1.2. prop</p>
+        <h1 id="git-常见命令的理解与使用"><a href="#git-常见命令的理解与使用" class="headerlink" title="git 常见命令的理解与使用"></a>git 常见命令的理解与使用</h1><h2 id="1-1github的简介（文末还有部分介绍）"><a href="#1-1github的简介（文末还有部分介绍）" class="headerlink" title="1.1github的简介（文末还有部分介绍）"></a>1.1github的简介（文末还有部分介绍）</h2><p>参考网站：<a href="https://www.liaoxuefeng.com/wiki/896043488029600/896827951938304" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/896827951938304</a></p>
 <ul>
-<li>prop()   removeProp()</li>
-<li>效果基本与attr() removeAttr()相同 </li>
-<li>但这两个能够操作 <code>selected</code> <code>checked</code> <code>disabled</code> 等拥有true false两个属性的节点 ，所以操作其他属性用attr() 操作这几个属性用prop()<ul>
-<li><code>selected</code> 表单专用 预先选定下拉菜单</li>
-<li><code>checked</code>  表单专用 预先选定单选复选框</li>
-<li><code>disabled</code> 禁用表单元素</li>
-</ul>
+<li><p>在项目主页地址后面输入/compare可查看不同的分支，进行对比</p>
+<ul>
+<li><p>code 代码主页</p>
 </li>
-</ul>
-<h2 id="2-2-类操作"><a href="#2-2-类操作" class="headerlink" title="2.2. 类操作"></a>2.2. 类操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">            1.addClass(class|fn)</span></span><br><span class="line"><span class="comment">            作用: 添加一个类</span></span><br><span class="line"><span class="comment">            如果要添加多个, 多个类名之间用空格隔开即可</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            2.removeClass([class|fn])</span></span><br><span class="line"><span class="comment">            作用: 删除一个类</span></span><br><span class="line"><span class="comment">            如果想删除多个, 多个类名之间用空格隔开即可</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            3.toggleClass(class|fn[,sw])</span></span><br><span class="line"><span class="comment">            作用: 切换类</span></span><br><span class="line"><span class="comment">            有就删除, 没有就添加</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"div"</span>).addClass(<span class="string">"class1 class2"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).removeClass(<span class="string">"class2 class1"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).toggleClass(<span class="string">"class2 class1"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-文本操作"><a href="#2-3-文本操作" class="headerlink" title="2.3. 文本操作"></a>2.3. 文本操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">            1.html([val|fn])</span></span><br><span class="line"><span class="comment">            和原生JS中的innerHTML一模一样 写入网页时能读取html标签 取用时带标签</span></span><br><span class="line"><span class="comment">            2.text([val|fn])</span></span><br><span class="line"><span class="comment">            和原生JS中的innerText一模一样 不能读html标签 取用时带标签</span></span><br><span class="line"><span class="comment">            3.val([val|fn|arr]) 用于设置表单内部值 与</span></span><br><span class="line"><span class="comment">            补充:表单中value属性 直接设置表单值 需要删除才没</span></span><br><span class="line"><span class="comment">            palceholder属性设置虚化的值 一点就没</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">$(<span class="string">"div"</span>).html(<span class="string">"&lt;p&gt;我是段落&lt;span&gt;我是span&lt;/span&gt;&lt;/p&gt;"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).text(<span class="string">"&lt;p&gt;我是段落&lt;span&gt;我是span&lt;/span&gt;&lt;/p&gt;"</span>);</span><br><span class="line">$(<span class="string">"input"</span>).val(<span class="string">"请输入内容"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4-样式设置"><a href="#2-4-样式设置" class="headerlink" title="2.4. 样式设置"></a>2.4. 样式设置</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单个</span></span><br><span class="line">$(<span class="string">"div"</span>).css(<span class="string">"width"</span>, <span class="string">"100px"</span>);</span><br><span class="line"><span class="comment">//多个</span></span><br><span class="line"> $(<span class="string">"div"</span>).css(&#123;</span><br><span class="line">                width: <span class="string">"100px"</span>,</span><br><span class="line">                height: <span class="string">"100px"</span>,</span><br><span class="line">                background: <span class="string">"red"</span></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//获取样式 带单位</span></span><br><span class="line">$(<span class="string">"div"</span>).css(<span class="string">"background"</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-位置尺寸"><a href="#2-5-位置尺寸" class="headerlink" title="2.5. 位置尺寸"></a>2.5. 位置尺寸</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取宽 ，高 不带单位</span></span><br><span class="line">$(<span class="string">".father"</span>).width()</span><br><span class="line">$(<span class="string">".father"</span>).width()</span><br><span class="line"><span class="comment">//也可以用于设置宽高</span></span><br><span class="line">$(<span class="string">".father"</span>).width(<span class="string">"500px"</span>)</span><br><span class="line"><span class="comment">//获取元素距离当前视口的偏移 可选left 或 top </span></span><br><span class="line"><span class="comment">//offset().left offset().top</span></span><br><span class="line">$(<span class="string">".son"</span>).offset().left</span><br><span class="line"><span class="comment">//可以设置</span></span><br><span class="line">$(<span class="string">".son"</span>).offset(&#123; <span class="attr">top</span>: <span class="number">10</span>, <span class="attr">left</span>: <span class="number">30</span> &#125;);</span><br><span class="line"><span class="comment">//获取匹配元素相对于父元素的偏移 可选left 或 top </span></span><br><span class="line"><span class="comment">//只可获取 不可设置</span></span><br><span class="line">$(<span class="string">".son"</span>).position().left</span><br><span class="line"><span class="comment">//获取匹配元素相当于滚动条的偏移 可选scrollTop scrollLeft</span></span><br><span class="line"><span class="comment">//可设置</span></span><br><span class="line"><span class="comment">// 注意点: 为了保证浏览器的兼容, 获取网页滚动的偏移位需要按照如下写法</span></span><br><span class="line">$(<span class="string">"body"</span>).scrollTop()+$(<span class="string">"html"</span>).scrollTop()</span><br><span class="line">$(<span class="string">"html,body"</span>).scrollTop(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-6-动画"><a href="#2-6-动画" class="headerlink" title="2.6. 动画"></a>2.6. 动画</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//显示隐藏切换动画</span><br><span class="line">//显示</span><br><span class="line">$(&quot;div&quot;).show(1000, function () &#123;</span><br><span class="line">                    // 作用: 动画执行完毕之后调用</span><br><span class="line">                    alert(&quot;显示动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//隐藏</span><br><span class="line">$(&quot;div&quot;).hide(1000, function () &#123;</span><br><span class="line">                    alert(&quot;隐藏动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//切换</span><br><span class="line">$(&quot;div&quot;).toggle(1000, function () &#123;</span><br><span class="line">                    alert(&quot;切换动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//展开动画</span><br><span class="line">//补充 默认由上向下滑动</span><br><span class="line">//如果 对元素使用positon:absolute;bottom:0; 则变为由下向上动</span><br><span class="line">$(&quot;div&quot;).slideDown(1000, function () &#123;</span><br><span class="line">                alert(&quot;展开完毕&quot;);</span><br><span class="line">            &#125;);</span><br><span class="line">//收起动画</span><br><span class="line"> $(&quot;div&quot;).slideUp(1000, function () &#123;</span><br><span class="line">                alert(&quot;收起完毕&quot;);</span><br><span class="line">            &#125;);</span><br><span class="line">//淡入动画</span><br><span class="line">$(&quot;div&quot;).fadeIn(1000, function () &#123;</span><br><span class="line">                    alert(&quot;淡入完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//淡出动画</span><br><span class="line">$(&quot;div&quot;).fadeOut(1000, function () &#123;</span><br><span class="line">                    alert(&quot;淡出完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//自定义动画</span><br><span class="line"> $(&quot;.one&quot;).animate(&#123;</span><br><span class="line">                    marginLeft: 500</span><br><span class="line">                &#125;, 5000, function () &#123;</span><br><span class="line">                    // alert(&quot;自定义动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line"> /*</span><br><span class="line">                第一个参数: 接收一个对象, 可以在对象中修改属性</span><br><span class="line">                第二个参数: 指定动画时长</span><br><span class="line">                第三个参数: 指定动画节奏, 默认就是swing</span><br><span class="line">                第四个参数: 动画执行完毕之后的回调函数</span><br><span class="line">  */</span><br><span class="line"> //停止动画</span><br><span class="line"> 				// 立即停止当前动画, 继续执行后续的动画</span><br><span class="line">                $(&quot;div&quot;).stop();</span><br><span class="line">                $(&quot;div&quot;).stop(false);</span><br><span class="line">                $(&quot;div&quot;).stop(false, false);</span><br><span class="line"></span><br><span class="line">                // 立即停止当前和后续所有的动画</span><br><span class="line">                $(&quot;div&quot;).stop(true);</span><br><span class="line">                $(&quot;div&quot;).stop(true, false);</span><br><span class="line"></span><br><span class="line">                // 立即完成当前的, 继续执行后续动画</span><br><span class="line">                $(&quot;div&quot;).stop(false, true);</span><br><span class="line"></span><br><span class="line">                // 立即完成当前的, 并且停止后续所有的</span><br><span class="line">                $(&quot;div&quot;).stop(true, true);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-7-元素操作"><a href="#2-7-元素操作" class="headerlink" title="2.7. 元素操作"></a>2.7. 元素操作</h2><ul>
-<li><code>siblings()</code>相对于当前元素的其他同类兄弟元素</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">           内部插入       插</span></span><br><span class="line"><span class="comment">           被插.append(content|fn)</span></span><br><span class="line"><span class="comment">           会将元素添加到指定元素内部的最后</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           prepend(content|fn)</span></span><br><span class="line"><span class="comment">           会将元素添加到指定元素内部的最前面</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           外部插入</span></span><br><span class="line"><span class="comment">           after(content|fn)</span></span><br><span class="line"><span class="comment">           在每个匹配的元素之后插入内容。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           before(content|fn)</span></span><br><span class="line"><span class="comment">           在每个匹配的元素之前插入内容。</span></span><br><span class="line"><span class="comment">           */</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除</li>
-<li>remove() 方法删除被选元素及其子元素。</li>
-<li>empty() 方法删除被选元素的子元素。</li>
-<li>remove() 方法也可接受一个参数，允许您对被删元素进行过滤。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#div1"</span>).remove();</span><br><span class="line">$(<span class="string">"#div1"</span>).empty();</span><br><span class="line">$(<span class="string">"p"</span>).remove(<span class="string">".italic"</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>替换 将所有匹配的元素替换成指定的HTML或DOM元素。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>cruel<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).replaceWith(<span class="string">"&lt;b&gt;Paragraph. &lt;/b&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>Paragraph. <span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Paragraph. <span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Paragraph. <span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>复制 </li>
-<li>clone()不传参是浅克隆 传参是深克隆比浅多复制了事件</li>
-</ul>
-<h2 id="2-8-异步更新-ajax"><a href="#2-8-异步更新-ajax" class="headerlink" title="2.8. 异步更新 ajax"></a>2.8. 异步更新 <code>ajax</code></h2><ul>
-<li><p><code>ajax</code></p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">           url: <span class="string">"地址"</span>,</span><br><span class="line">    	   type:<span class="string">'get'</span>,  <span class="comment">//请求方式</span></span><br><span class="line">    	   data:<span class="string">'发送到服务器的数据'</span>,</span><br><span class="line">           dataType: <span class="string">"json"</span>, <span class="comment">//数据类型</span></span><br><span class="line">           success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;<span class="comment">//相应数据</span></span><br><span class="line">              <span class="built_in">console</span>.log(data)</span><br><span class="line">           &#125;,</span><br><span class="line">           error: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(e);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
+<li><p>Issues 问题讨论区</p>
+</li>
+<li><p>pull requests 其余人员对代码进行fork后优化 提交通过</p>
+<p>后在这里显示</p>
+<p>projects 可以在这里编写项目规划</p>
+</li>
+<li><p>wiki 维基百科 可以写一些项目相关资源</p>
+</li>
+<li><p>Insights 存放一些统计信息</p>
+</li>
+<li><p>settings 部署网站相关设置操作</p>
 </li>
 </ul>
 </li>
-<li><p>serialize() 方法通过序列化表单值，创建 URL 编码文本字符串。</p>
-</li>
-<li><p>序列化的值可在生成 AJAX 请求时用于 URL 查询字符串中。</p>
+<li><p><code>Branch</code> 查看其他分支（branch旁边还有一个按钮tag中查看过往版本）</p>
 </li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/jquery/jquery.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    $(<span class="string">"div"</span>).text($(<span class="string">"form"</span>).serialize());</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"FirstName"</span> <span class="attr">value</span>=<span class="string">"Bill"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"LastName"</span> <span class="attr">value</span>=<span class="string">"Gates"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>序列化表单值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>控制台输入 git clone 地址 可以下载指定项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">链接后面可以加上--depth=1,下载最近的一次分支，提高下载速度 todomvc-vue新建一个包含项目的文件夹</span></span><br><span class="line">git clone https://github.com/tastejs/todomvc-app-template.git todomvc-vue --depth=1</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在本地远程服务器查看指定分支 和下文描述相同 在控制台输入</span></span><br><span class="line">git checkeout 分支名</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h2 id="1-2-git常用命令的含义"><a href="#1-2-git常用命令的含义" class="headerlink" title="1.2 git常用命令的含义"></a>1.2 git常用命令的含义</h2><table>
+<thead>
+<tr>
+<th>git常用命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git –version</td>
+<td>查看版本</td>
+</tr>
+<tr>
+<td>git init</td>
+<td>初始化本地git仓库</td>
+</tr>
+<tr>
+<td>git add</td>
+<td>添加文件</td>
+</tr>
+<tr>
+<td>git status</td>
+<td>查看状态</td>
+</tr>
+<tr>
+<td>git commit</td>
+<td>提交</td>
+</tr>
+<tr>
+<td>git push</td>
+<td>推送到仓库</td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>从远程仓库拉取数据（远程最新版本到本地 会自动合并）</td>
+</tr>
+<tr>
+<td>git fetch</td>
+<td>从远程仓库拉取数据（远程最新版本到本地 不会自动合并）</td>
+</tr>
+<tr>
+<td>git clone</td>
+<td>从远程仓库拷贝数据</td>
+</tr>
+<tr>
+<td>git config</td>
+<td>配置信息</td>
+</tr>
+<tr>
+<td>git rm –cached</td>
+<td>删除缓存文件</td>
+</tr>
+<tr>
+<td>git rm –f</td>
+<td>删除本地和缓存</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>创建分支</td>
+</tr>
+<tr>
+<td>git remote</td>
+<td>查看当前目录是否有对应远程地址</td>
+</tr>
+</tbody></table>
+<h2 id="1-3git创建本地仓库流程演示"><a href="#1-3git创建本地仓库流程演示" class="headerlink" title="1.3git创建本地仓库流程演示"></a>1.3git创建本地仓库流程演示</h2><ul>
+<li><p>新建git目录  取名git-test 将文件夹拖到cmd窗口 得到指定目录</p>
+</li>
+<li><p>在cmd中通过命令新建index.html app.js</p>
+</li>
+<li><p>接着在目录下输入 <code>git init</code> （所有的git目录创建后都有一个.git的隐藏文件夹）</p>
+</li>
+<li><p>配置用户名 及 邮箱   需要更改重新打一次这两条命令即可 （全局配置一次配置好了，下次没需要不用改）</p>
 <ul>
-<li>结果</li>
+<li><code>git config --global user.name &#39;xujiamu&#39;</code></li>
+<li><code>git config --global user.email &#39;252099457@qq.com&#39;</code></li>
 </ul>
-<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C1564685464809.png" alt="1564685464809"></p>
+<p>可以在<code>C:\Users\25209</code>目录下<code>.gitconfig</code>文件中看到配置信息</p>
+</li>
+<li><p>添加文件 </p>
+<ul>
+<li><code>git add 文件名.后缀</code>     （添加单个）  <code>git add *.后缀</code> （添加一类文件） <code>git add *</code>或<code>git add .</code>添加全部文件</li>
+</ul>
+</li>
+<li><p>删除文件</p>
+</li>
+<li><p><code>git rm --cached 文件名.后缀</code>   （删除单个缓存不删除本地）  <code>git rm --cached  *.后缀</code>（删除一类文件缓存）  <code>git rm --f 文件名.后缀</code> （既删除缓存又删除本地）</p>
+</li>
+<li><p>通过git status 查看添加状态   绿色已添加 红色未添加    </p>
+</li>
+</ul>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit01.png" alt="git01"></p>
+<p>如果添加后的文件有修改，可以通过 git status 观察到  有修改需要重新添加</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit02.png" alt="git02"></p>
+<p><code>git commit</code>进行提交 在提交页面可以写备注信息 比如：first commit  之后 点击esc 输入 <code>:wq</code>回车退出</p>
+<p>如果提交之后文件有变化 则使用 <code>git add</code> 重新提交 使用 <code>git commit -m &quot;changed 变化的文件名&quot;</code></p>
+<p>来更新  ！！！<code>引号内的说明 必须使用双引号包裹 否则会报错</code></p>
+<ul>
+<li>忽略提交指定文件 新建<code>.gitignore</code>  将要忽略的文件名 写在里面，再次查看 就会发现  指定文件被忽略</li>
+</ul>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit03.png" alt="git03"></p>
+<ul>
+<li>创建分支<ul>
+<li><code>git branch 分支名</code> </li>
+<li>使用<code>git status查看可以看到默认在master主线</code></li>
+<li><code>git checkout 分支名</code> 切换到相应分支 此时进行的操作，都是分支中的操作 如果你在分支当中提交修改了内容 之后通过<code>git checkout master</code> 切回主线 通过查看文件夹 会发现之前提交修改的内容没有显示</li>
+</ul>
+</li>
+<li>将分支合并到主线<ul>
+<li><code>git merge 要合并的分支名</code> 注意：合并时，需要处于master 主分支中</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="1-4与github远程仓库的对接"><a href="#1-4与github远程仓库的对接" class="headerlink" title="1.4与github远程仓库的对接"></a>1.4与github远程仓库的对接</h2><ul>
+<li><p>登录github 后 点开右侧+号 new repository 新建仓库 import repository 导入仓库 </p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit05.png" alt="git05"></p>
+</li>
+<li><p>点击头像 查看个人信息 下拉菜单中点击 your repositories 查看个人仓库 </p>
+</li>
+</ul>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit06.png" alt="git06"></p>
+<p>进入指定仓库后 在setting页可以选择修改删除仓库</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit07.png" alt="git07"></p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit08.png" alt="git08"></p>
+<ul>
+<li><p>新建仓库过程</p>
+<ul>
+<li>repository name 给仓库命名  命名时使用 <code>xujiamu.github.io</code> 可以创建一个服务器（特殊的仓库）</li>
+<li>description 仓库描述</li>
+<li>plublic private 设置公有私有 私有收费</li>
+<li>Initialize this repository with a README 初始化创建一个README.md自述文件</li>
+<li>add .gitigone 添加忽略文件 add a license 添加许可</li>
+</ul>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit09.png" alt="git09"></p>
+</li>
+<li><p>关于上传</p>
+<ul>
+<li><p>快速设置-如果你以前做过这种事情</p>
+</li>
+<li><p>Quick setup— if you’ve done this kind of thing before </p>
+</li>
+<li><p>首先创建一个新文件或上载一个现有文件。我们建议每个存储库都包含README、LICENSE和.gitignore。</p>
+<p>Get started by <a href="https://github.com/xujiamu/git-test/new/master" target="_blank" rel="noopener">creating a new file</a> or <a href="https://github.com/xujiamu/git-test/upload" target="_blank" rel="noopener">uploading an existing file</a>. We recommend every repository include a <a href="https://github.com/xujiamu/git-test/new/master?readme=1" target="_blank" rel="noopener">README</a>, <a href="https://github.com/xujiamu/git-test/new/master?filename=LICENSE.md" target="_blank" rel="noopener">LICENSE</a>, and <a href="https://github.com/xujiamu/git-test/new/master?filename=.gitignore" target="_blank" rel="noopener">.gitignore</a>.</p>
+<p>或者在命令行上创建一个新的存储库</p>
+<p>or create a new repository on the command line</p>
+<p>或者从命令行推送现有存储库</p>
+<p>or push an existing repository from the command line</p>
+<p>或者从另一个存储库导入代码</p>
+<p>or import code from another repository</p>
+</li>
+</ul>
+</li>
+<li><img src="G:\笔记\img\git10.png" alt="git10">
+
+</li>
+</ul>
+<p><code>git remote</code> 查看是否有对应地址 没反应证明没有</p>
+<p>如果没有 使用上图所示命令进行添加 添加后在查看 就会发现 返回origin </p>
+<p>这时就可以对本地仓库进行上传</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit11.png" alt="git11"></p>
+<p>之后在github中刷新页面 可以发现之前的快速设置页面被替换，仓库已经显示出来</p>
+<p>如果之后又新增文件 则需要重复上述步骤 ，比如这里我新增了一个自述文件 ，步骤如下</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit12.png" alt="git12"></p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit13.png" alt="git13"></p>
+<h2 id="1-5-github使用流程图"><a href="#1-5-github使用流程图" class="headerlink" title="1.5 github使用流程图"></a>1.5 <strong>github使用流程图</strong></h2><p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cimg%5Cgit14.png" alt="git14"></p>
+<h2 id="1-6-github-客户端-及服务器"><a href="#1-6-github-客户端-及服务器" class="headerlink" title="1.6 github 客户端 及服务器"></a>1.6 <strong>github 客户端 及服务器</strong></h2><h3 id="服务器仓库的设置"><a href="#服务器仓库的设置" class="headerlink" title="服务器仓库的设置"></a>服务器仓库的设置</h3><ul>
+<li>新建一个服务器仓库 名称 xujiamu.github.io （特点：可以访问）</li>
+</ul>
+<h3 id="github客户端的使用"><a href="#github客户端的使用" class="headerlink" title="github客户端的使用"></a>github客户端的使用</h3><ul>
+<li>下载并打开github客户端</li>
+<li>登录账户<ul>
+<li>点击菜单栏 ，点击preferences 登录账号</li>
+<li>点击clone 可以克隆项目到本地 </li>
+<li>右键仓库 open in findler 可以打开项目文件 可以直接将项目网页拖到这里</li>
+<li>每次更新需要在左下角输入信息 然后点击 commit to master 提交更新</li>
+<li>之后点击右上角 publish 之后再点 sync 即可成功上传</li>
+<li>如果想发布多个项目 可以在这个服务器里放多个文件夹 每个文件夹代表不同项目， 访问不同项目，在服务器地址后面加上   <code>/想访问项目的目录名</code> 即可</li>
+</ul>
+</li>
+<li>页面左上角 compare 比较过去上传项目的异同</li>
+</ul>
+<h3 id="域名设置"><a href="#域名设置" class="headerlink" title="域名设置"></a>域名设置</h3><ul>
+<li>可以通过阿里云 购买域名 </li>
+<li>之后再个人中心里点击域名与网站 域名  跳转到域名列表</li>
+<li>选择域名点击解析   添加解析  </li>
+<li>记录类型 输入 CNAME    主机记录添加两次 一个是@ 一个是www 线路默认 记录值填 xujiamu.github.io 之后保存即可</li>
+<li>可以用谷歌隐身窗口测试</li>
+<li>最后一步 创建CNAME文件  在里面保存域名  <a href="http://www.xxx.xx" target="_blank" rel="noopener">www.xxx.xx</a> 之后，将这个文件上传到github上即可</li>
+</ul>
 
       
 
@@ -259,7 +416,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">jQuery javaScript框架 教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git github</a>
         		</li>
       		
 		</ul>
@@ -315,7 +472,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/27/jQuery常用方法总结（二）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/28/git的基本使用/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -329,18 +486,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/09/28/git的基本使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          &#39;git的基本使用&#39;
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/25/jQuery常用方法总结（一）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">&#39;jQuery常用方法总结（一）&#39;</div>
+    <a href="/2019/09/27/jQuery常用方法总结（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQuery常用方法总结（二）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -367,7 +515,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#jQuery常用方法-二"><span class="toc-number">1.</span> <span class="toc-text">jQuery常用方法(二)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-属性相关方法"><span class="toc-number">1.1.</span> <span class="toc-text">2.1.属性相关方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-attr"><span class="toc-number">1.1.1.</span> <span class="toc-text">2.1.1. attr</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-类操作"><span class="toc-number">1.2.</span> <span class="toc-text">2.2. 类操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-文本操作"><span class="toc-number">1.3.</span> <span class="toc-text">2.3. 文本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-样式设置"><span class="toc-number">1.4.</span> <span class="toc-text">2.4. 样式设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-位置尺寸"><span class="toc-number">1.5.</span> <span class="toc-text">2.5. 位置尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-动画"><span class="toc-number">1.6.</span> <span class="toc-text">2.6. 动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-元素操作"><span class="toc-number">1.7.</span> <span class="toc-text">2.7. 元素操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-异步更新-ajax"><span class="toc-number">1.8.</span> <span class="toc-text">2.8. 异步更新 ajax</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#git-常见命令的理解与使用"><span class="toc-number">1.</span> <span class="toc-text">git 常见命令的理解与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1github的简介（文末还有部分介绍）"><span class="toc-number">1.1.</span> <span class="toc-text">1.1github的简介（文末还有部分介绍）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-git常用命令的含义"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 git常用命令的含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3git创建本地仓库流程演示"><span class="toc-number">1.3.</span> <span class="toc-text">1.3git创建本地仓库流程演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4与github远程仓库的对接"><span class="toc-number">1.4.</span> <span class="toc-text">1.4与github远程仓库的对接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-github使用流程图"><span class="toc-number">1.5.</span> <span class="toc-text">1.5 github使用流程图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-github-客户端-及服务器"><span class="toc-number">1.6.</span> <span class="toc-text">1.6 github 客户端 及服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器仓库的设置"><span class="toc-number">1.6.1.</span> <span class="toc-text">服务器仓库的设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#github客户端的使用"><span class="toc-number">1.6.2.</span> <span class="toc-text">github客户端的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#域名设置"><span class="toc-number">1.6.3.</span> <span class="toc-text">域名设置</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
