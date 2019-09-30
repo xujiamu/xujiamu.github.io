@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Mu的博客">
 <meta property="og:description" content="jQuery常用方法(一)1.1. $符冲突的解决途径 $.noConflict() 当jQuery中的$标识符与其他框架冲突时可以通过如下方法释放标识符使用jQuery 或 接收该方法的返回值 重新定义标识符    1234567891011121314//释放$.noConflict();jQuery(document).ready(function()&amp;#123;  jQuery(&quot;butt">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-25T16:06:27.052Z">
+<meta property="og:updated_time" content="2019-09-30T16:10:34.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;jQuery常用方法总结（一）&#39;">
 <meta name="twitter:description" content="jQuery常用方法(一)1.1. $符冲突的解决途径 $.noConflict() 当jQuery中的$标识符与其他框架冲突时可以通过如下方法释放标识符使用jQuery 或 接收该方法的返回值 重新定义标识符    1234567891011121314//释放$.noConflict();jQuery(document).ready(function()&amp;#123;  jQuery(&quot;butt">
@@ -180,6 +180,8 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//释放</span></span><br><span class="line">$.noConflict();</span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  jQuery(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jQuery(<span class="string">"p"</span>).text(<span class="string">"jQuery 仍然在工作!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//重定义</span></span><br><span class="line"><span class="keyword">var</span> jq = $.noConflict();</span><br><span class="line">jq(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  jq(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jq(<span class="string">"p"</span>).text(<span class="string">"jQuery 仍然在工作!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h2 id="1-2-jQuery核心函数-的用法"><a href="#1-2-jQuery核心函数-的用法" class="headerlink" title="1.2.jQuery核心函数$()的用法"></a>1.2.jQuery核心函数<code>$()</code>的用法</h2><ul>
 <li>接收一个字符串选择器 返回一个jQuery 对象 对象中保存找到的DOM元素</li>
@@ -480,15 +482,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
             
             <div class="clearfix"></div>

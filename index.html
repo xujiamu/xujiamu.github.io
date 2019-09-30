@@ -188,69 +188,9 @@ var _hmt = _hmt || [];
 
 </li>
 </ul>
-<h3 id="2-0-1在webpack中对vue进行组件化-，创建后缀为-vue的组件"><a href="#2-0-1在webpack中对vue进行组件化-，创建后缀为-vue的组件" class="headerlink" title="2.0.1在webpack中对vue进行组件化 ，创建后缀为.vue的组件"></a>2.0.1在webpack中对vue进行组件化 ，创建后缀为.vue的组件</h3><h4 id="2-0-1-1webpack本身不支持-vue后缀的文件，可以通过以下方式装载-loader-并编译vue-compiler"><a href="#2-0-1-1webpack本身不支持-vue后缀的文件，可以通过以下方式装载-loader-并编译vue-compiler" class="headerlink" title="2.0.1.1webpack本身不支持.vue后缀的文件，可以通过以下方式装载(loader)并编译vue(compiler)"></a>2.0.1.1webpack本身不支持.vue后缀的文件，可以通过以下方式装载(loader)并编译vue(compiler)</h4><p><code>npm install vue-loader vue-template-compiler --save-dev</code></p>
-<h4 id="2-0-1-2-补充-：如果指定npm-下载包的版本-使用-npm-包-版本号-如果已经下载的包想要更改版本-在package文件中找到对应依赖，改变他的值-想要改的大版本-0-0之后使用npm-install即可"><a href="#2-0-1-2-补充-：如果指定npm-下载包的版本-使用-npm-包-版本号-如果已经下载的包想要更改版本-在package文件中找到对应依赖，改变他的值-想要改的大版本-0-0之后使用npm-install即可" class="headerlink" title="2.0.1.2 补充 ：如果指定npm 下载包的版本 使用 npm 包@版本号  如果已经下载的包想要更改版本 在package文件中找到对应依赖，改变他的值^想要改的大版本.0.0之后使用npm install即可"></a>2.0.1.2 补充 ：如果指定npm 下载包的版本 使用 <code>npm 包@版本号</code>  如果已经下载的包想要更改版本 在<code>package</code>文件中找到对应依赖，改变他的值<code>^想要改的大版本.0.0</code>之后使用<code>npm install</code>即可</h4><h4 id="2-0-1-3-安装以上loader跟-compiler后-在webpack-config-js中配置"><a href="#2-0-1-3-安装以上loader跟-compiler后-在webpack-config-js中配置" class="headerlink" title="2.0.1.3 安装以上loader跟 compiler后 在webpack.config.js中配置"></a>2.0.1.3 安装以上loader跟 compiler后 在webpack.config.js中配置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置下列数据完毕后 即可 使用webpack run build执行程序</span></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        use: [<span class="string">'vue-loader'</span>]</span><br><span class="line">      &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>!!! 注意以上写法 要求 vue-loader版本不超过<code>^v14.0.0</code></li>
-<li>如果使用<code>v15</code>及以上版本需要额外配置 (此部分暂时跳过)</li>
-</ul>
-<h3 id="2-0-2-webpack中的插件-plugin"><a href="#2-0-2-webpack中的插件-plugin" class="headerlink" title="2.0.2 webpack中的插件 plugin"></a>2.0.2 webpack中的插件 plugin</h3><p><code>webpack</code>的插件主要用来实现一些扩展功能</p>
-<h4 id="2-0-2-1-BannerPlugin-在dist压缩的文件上，加入横幅版权说明"><a href="#2-0-2-1-BannerPlugin-在dist压缩的文件上，加入横幅版权说明" class="headerlink" title="2.0.2.1 BannerPlugin 在dist压缩的文件上，加入横幅版权说明"></a>2.0.2.1 BannerPlugin 在dist压缩的文件上，加入横幅版权说明</h4><ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在webpack.config.js 中 require webpack 之后在module.exports中加入新的属性plugins</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    plugin: [<span class="keyword">new</span> webpack.BannerPlugin(<span class="string">'版权归属于xu'</span>)]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-0-2-2-html-webpack-plugin"><a href="#2-0-2-2-html-webpack-plugin" class="headerlink" title="2.0.2.2 html-webpack-plugin"></a>2.0.2.2 html-webpack-plugin</h4><ul>
-<li><p>前面的步骤中 <code>index.html</code>一直是在dist目录外的 ,为了保证将其移到dist中 ，我们需要下载一个插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-webpack-plugin</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>之后就可以在<code>webpack.config.js</code>中引入这个插件 ，然后做如下配置</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//index.html是配置的模板 （即原来未压缩的主页文件）</span></span><br><span class="line"><span class="comment">//原本的index.html需要去掉当中的script引入</span></span><br><span class="line"><span class="comment">//新的index.html会自动引入script 所以原本的去掉</span></span><br><span class="line"><span class="comment">//上文（1.3.4）中的publicPath属性可以去除，由于index已经移入了所以不需要它了</span></span><br><span class="line"><span class="keyword">const</span> htmlPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">    plugins:[ <span class="keyword">new</span> htmlPlugin(&#123;</span><br><span class="line">        template:<span class="string">'index.html'</span></span><br><span class="line">    &#125;) ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-0-2-3-uglifyjs-webpack-plugin"><a href="#2-0-2-3-uglifyjs-webpack-plugin" class="headerlink" title="2.0.2.3 uglifyjs-webpack-plugin"></a>2.0.2.3 uglifyjs-webpack-plugin</h4><ul>
-<li><p>用于压缩整合后的js文件 </p>
-</li>
-<li><p>安装<code>npm i uglifyjs-webpack-plugin -d</code>  (注意:使用它压缩也会去掉前面banner插件生成的内容)  </p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里安装的是 1点几的版本因为再高的版本就是 vuecli3的配置，也就是 webpack4 以上的兼容了 ，这里为了兼容 webpack3.x 只能用1的版本</span></span><br><span class="line"><span class="comment">//npm i uglifyjs@1.1.1-webpack-plugin -d` </span></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">const</span> uglifyjs = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>)</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//..</span></span><br><span class="line">    plugins:[ <span class="keyword">new</span> uglifyjs() ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="2-0-3webpack-dev-server"><a href="#2-0-3webpack-dev-server" class="headerlink" title="2.0.3webpack-dev-server"></a>2.0.3webpack-dev-server</h3><h4 id="2-0-3-1应用范围-：webpack-dev-server-提供一个运行在本地的开发服务器，基于node-内部使用了express框架，能够实现浏览器的自动刷新，他不同于npm-run-build他将开发中的项目运行在内存中，不需要每次都打包到本地，这样速度更快，也便于调试，等到项目完成后，最后再执行npm-run-build"><a href="#2-0-3-1应用范围-：webpack-dev-server-提供一个运行在本地的开发服务器，基于node-内部使用了express框架，能够实现浏览器的自动刷新，他不同于npm-run-build他将开发中的项目运行在内存中，不需要每次都打包到本地，这样速度更快，也便于调试，等到项目完成后，最后再执行npm-run-build" class="headerlink" title="2.0.3.1应用范围 ：webpack-dev-server 提供一个运行在本地的开发服务器，基于node,内部使用了express框架，能够实现浏览器的自动刷新，他不同于npm run build他将开发中的项目运行在内存中，不需要每次都打包到本地，这样速度更快，也便于调试，等到项目完成后，最后再执行npm run build"></a>2.0.3.1应用范围 ：webpack-dev-server 提供一个运行在本地的开发服务器，基于node,内部使用了express框架，能够实现浏览器的自动刷新，他不同于<code>npm run build</code>他将开发中的项目运行在内存中，不需要每次都打包到本地，这样速度更快，也便于调试，等到项目完成后，最后再执行<code>npm run build</code></h4><h4 id="2-0-3-2-配置过程"><a href="#2-0-3-2-配置过程" class="headerlink" title="2.0.3.2 配置过程"></a>2.0.3.2 配置过程</h4><ul>
-<li><p><code>npm install webpack-dev-server@2.9.1 -D</code> 这个版本对应了vuecli2</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpakc.config.js 中的配置</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"><span class="comment">//..</span></span><br><span class="line">    devServer:&#123;</span><br><span class="line">        <span class="comment">//运行基于哪个目录</span></span><br><span class="line">        contentBase:<span class="string">'./dist'</span>，</span><br><span class="line">        <span class="comment">//实时更新</span></span><br><span class="line">        inline:<span class="literal">true</span>,</span><br><span class="line">        <span class="comment">//端口号</span></span><br><span class="line">        port:<span class="number">8888</span>，</span><br><span class="line">        <span class="comment">//（暂时跳过）</span></span><br><span class="line">        historyApiFallBack:</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//package中的配置</span></span><br><span class="line"><span class="comment">//在scripts中加上   open（是否自动打开浏览器）</span></span><br><span class="line"><span class="string">"dev"</span>:<span class="string">"webpack-dev-server  --open"</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="2-0-4-webpack配置分离"><a href="#2-0-4-webpack配置分离" class="headerlink" title="2.0.4. webpack配置分离"></a>2.0.4. webpack配置分离</h3><h4 id="2-0-4-1-因为生产环境与打包上线后的环境有一些配置上的不同，比如果在生产时，我们希望代码是未压缩的，这样有利于查看，所以我们建议将配置文件拆分，从而让npm-run-build和-npm-run-dev执行不同的配置文件"><a href="#2-0-4-1-因为生产环境与打包上线后的环境有一些配置上的不同，比如果在生产时，我们希望代码是未压缩的，这样有利于查看，所以我们建议将配置文件拆分，从而让npm-run-build和-npm-run-dev执行不同的配置文件" class="headerlink" title="2.0.4.1 因为生产环境与打包上线后的环境有一些配置上的不同，比如果在生产时，我们希望代码是未压缩的，这样有利于查看，所以我们建议将配置文件拆分，从而让npm run build和 npm run dev执行不同的配置文件"></a>2.0.4.1 因为生产环境与打包上线后的环境有一些配置上的不同，比如果在生产时，我们希望代码是未压缩的，这样有利于查看，所以我们建议将配置文件拆分，从而让<code>npm run build</code>和 <code>npm run dev</code>执行不同的配置文件</h4><p><strong>步骤</strong>：</p>
-<ul>
-<li><p>下载合并包<code>npm  install webpack-merge</code></p>
-</li>
-<li><p>根目录下创建新的文件夹 build 并新建<code>base.config.js(基本配置)   pro.config.js（打包配置）   dev.config.js（生产配置）</code>将原有<code>webpack.config.js</code>拆分为三个 </p>
-</li>
-<li><p>在<code>pro.config.js   dev.config.js</code>中 引入 <code>webpack-merge</code>引入基础文件</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dev.config.js</span></span><br><span class="line"><span class="keyword">const</span> base = <span class="built_in">require</span>(<span class="string">'./base.config'</span>)</span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = merge(base,&#123;</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: <span class="string">'./dist'</span>,</span><br><span class="line">    inline: <span class="literal">true</span>,</span><br><span class="line">    port: <span class="number">8888</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//pro.config.js </span></span><br><span class="line"><span class="keyword">const</span> base = <span class="built_in">require</span>(<span class="string">'./base.config.js'</span>)</span><br><span class="line"><span class="keyword">const</span> merge = <span class="built_in">require</span>(<span class="string">'webpack-merge'</span>)</span><br><span class="line"><span class="keyword">const</span> uglifyjs = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = merge(base,&#123;</span><br><span class="line">  plugins:[</span><br><span class="line">    <span class="keyword">new</span> uglifyjs()</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在package文件中加入如下配置</p>
-</li>
-<li><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//--config后面就是新配置</span><br><span class="line">"scripts": &#123;</span><br><span class="line">    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</span><br><span class="line">    "build": "webpack --config ./build/pro.config.js",</span><br><span class="line">    "dev": "webpack-dev-server --open --config ./build/dev.config.js"</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>因为配置文件位置发生变化，所以基本配置文件中，output.path也发生变化</p>
-</li>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">output: &#123;</span><br><span class="line">    <span class="comment">//这里../dist是变化的位置 ，原来为dist</span></span><br><span class="line">   path: path.resolve(__dirname, <span class="string">'../dist'</span>),</span><br><span class="line">   filename: <span class="string">'bundle.js'</span>,</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="2-0-5-一些问题备注"><a href="#2-0-5-一些问题备注" class="headerlink" title="2.0.5. 一些问题备注"></a>2.0.5. 一些问题备注</h3><ul>
-<li>在以上配置中我们没有进行省略后缀的配置，所以在引入，js 和 vue组件时，需要都加上后缀·</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/09/30/webpack详解（二）/#more">more >></a>
+        
       
 
       
@@ -325,14 +265,12 @@ var _hmt = _hmt || [];
       
         <h1 id="webpack-详解（一）"><a href="#webpack-详解（一）" class="headerlink" title="webpack 详解（一）"></a>webpack 详解（一）</h1><h2 id="1-1-一个静态的模块化打包工具"><a href="#1-1-一个静态的模块化打包工具" class="headerlink" title="1.1. 一个静态的模块化打包工具"></a>1.1. 一个静态的模块化打包工具</h2><ul>
 <li><p>为什么前端需要模块化 :</p>
-<ul>
-<li>为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug</li>
-</ul>
+</li>
+<li><p>为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug</p>
 </li>
 <li><p>模块化的一些方案  :</p>
-<ul>
-<li>AMD ,CMD ,CommonJS ,ES6</li>
-</ul>
+</li>
+<li><p>AMD ,CMD ,CommonJS ,ES6</p>
 </li>
 <li><p>在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各种模块化开发，并会帮助我们处理依赖关系</p>
 </li>
@@ -340,68 +278,9 @@ var _hmt = _hmt || [];
 <p>​       以上就是webpack中模块化的概念</p>
 </li>
 </ul>
-<h3 id="1-1-1-打包的理解："><a href="#1-1-1-打包的理解：" class="headerlink" title="1.1.1. 打包的理解："></a>1.1.1. 打包的理解：</h3><ul>
-<li>对于各种资源模块进行压缩和处理 ，比如将 es6 转为es5将 scss转为css 将typescript 转为 javascript 。压缩图片，整合资源，最终转为浏览器能解析的方式</li>
-</ul>
-<h3 id="1-1-2-webpack与grunt-gulp等打包工具最大的区别："><a href="#1-1-2-webpack与grunt-gulp等打包工具最大的区别：" class="headerlink" title="1.1.2. webpack与grunt /gulp等打包工具最大的区别："></a>1.1.2. webpack与grunt /gulp等打包工具最大的区别：</h3><ul>
-<li>后者常用于小型项目，依赖非常简单，且根本不需要用到模块化开发，它强调前端流程的自动化，前者模块化开发是核心，文件压缩，预处理 只是附带功能</li>
-</ul>
-<h2 id="1-2-webpack-与-其他名词间的关系"><a href="#1-2-webpack-与-其他名词间的关系" class="headerlink" title="1.2. webpack 与 其他名词间的关系"></a>1.2. webpack 与 其他名词间的关系</h2><h3 id="1-2-1-webpack与node"><a href="#1-2-1-webpack与node" class="headerlink" title="1.2.1. webpack与node :"></a>1.2.1. webpack与node :</h3><ul>
-<li>webpack是基于node环境建立的，为了正常运行 必须安装node</li>
-</ul>
-<h3 id="1-2-2-node-与-npm"><a href="#1-2-2-node-与-npm" class="headerlink" title="1.2.2. node 与 npm :"></a>1.2.2. node 与 npm :</h3><ul>
-<li>node为了正常执行很多代码，需要很多外部的包 ，npm <code>node package manage</code>就是一个node包管理工具，它一般在安装node时一同安装，可专门用于下载各种js包</li>
-</ul>
-<h2 id="1-3-webpack-起步"><a href="#1-3-webpack-起步" class="headerlink" title="1.3. webpack 起步"></a>1.3. webpack 起步</h2><h3 id="1-3-1-webpack-分为全局安装和自定义局部安装"><a href="#1-3-1-webpack-分为全局安装和自定义局部安装" class="headerlink" title="1.3.1. webpack 分为全局安装和自定义局部安装"></a>1.3.1. webpack 分为全局安装和自定义局部安装</h3><ul>
-<li>执行webpack命令时 程序会自动一层一层目录进行查找 如果中途目录中有局部安装，就根据局部安装执行命令 如果没有 最终会执行全局的webpack</li>
-</ul>
-<h3 id="1-3-2-webpack-3-x版本的打包-（vue-cli-用的就是webpack-3-x版本）"><a href="#1-3-2-webpack-3-x版本的打包-（vue-cli-用的就是webpack-3-x版本）" class="headerlink" title="1.3.2. webpack 3.x版本的打包 （vue cli 用的就是webpack 3.x版本）"></a>1.3.2. webpack 3.x版本的打包 （vue cli 用的就是webpack 3.x版本）</h3><ul>
-<li><p>全局安装webpakc3.6.0</p>
-</li>
-<li><p>在测试文件夹中建立 dist 和 src 文件夹 在src文件夹中创建main.js 并创建其他功能模块 ,所有模块化方式均可使用 如 <code>CommonJs  ES6模块化</code>  （注：不同的模块化导出方式不能共用于同一个文件）</p>
-</li>
-<li><p>测试文件夹中建立 <code>index.js</code> 打开测试文件夹目录所在的控制台，输入<code>webpack ./src/main.js ./src/dist/bundle.js</code> webpack就能够自动查找main.js 所需的各种依赖项，处理他们之间的依赖关系，最终生成一个bundele.js文件 将这个文件通过<code>script</code>标签引入 <code>index.html</code>即可实现项目的运行</p>
-</li>
-</ul>
-<h3 id="1-3-3-webpack3-x-版本-配置输入webpack-自动查找打包main-js生成-打包文件bundle-js的方法"><a href="#1-3-3-webpack3-x-版本-配置输入webpack-自动查找打包main-js生成-打包文件bundle-js的方法" class="headerlink" title="1.3.3. webpack3.x 版本 配置输入webpack 自动查找打包main.js生成 打包文件bundle.js的方法"></a>1.3.3. webpack3.x 版本 配置输入<code>webpack</code> 自动查找打包<code>main.js</code>生成 打包文件<code>bundle.js</code>的方法</h3><h4 id="1-3-3-1-补充："><a href="#1-3-3-1-补充：" class="headerlink" title="1.3.3.1. 补充："></a>1.3.3.1. 补充：</h4><ul>
-<li>运行时需要的包，即运行时依赖<code>npm 包名 --save</code>简写（npm 包名 -s）  </li>
-<li>运行时不在需要的包,即开发时依赖<code>npm 包名 --save-dev</code> 简写（npm 包名 -D）</li>
-<li>webpack是开发时依赖</li>
-</ul>
-<h4 id="1-3-3-2-新建一个-webpack-config-js-在里面编写"><a href="#1-3-3-2-新建一个-webpack-config-js-在里面编写" class="headerlink" title="1.3.3.2. 新建一个 webpack.config.js 在里面编写"></a>1.3.3.2. 新建一个 <code>webpack.config.js</code> 在里面编写</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">      <span class="comment">//resolve用于拼接路径 自动去除多余的符号 </span></span><br><span class="line">      <span class="comment">//__dirname 获取当前文件目录（不包括文件自身）</span></span><br><span class="line">      <span class="comment">//__filename 获取当前文件目录（包括文件自身）</span></span><br><span class="line">    path:path.resolve(__dirname,<span class="string">'dist'</span>),</span><br><span class="line">    filename:<span class="string">'bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在webpack3.x版本中 不会自动用局部安装的webpack（4.x）可以 如果想要3.x版本也支持就近使用 ，可以通过配置package.json文件之后执行`npm run build` 使用</span></span><br><span class="line"><span class="comment">//在package.json 的 scripts中 加入 如下即可</span></span><br><span class="line"><span class="comment">//之后npm run build 即可完成打包 webpack也不用再全局安装</span></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>:<span class="string">"webpack"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-4-webpack-的loader"><a href="#1-3-4-webpack-的loader" class="headerlink" title="1.3.4. webpack 的loader"></a>1.3.4. webpack 的loader</h3><ul>
-<li>webpack 自身 不能直接打包 css ，json，less,sass等文件 ，如果想要打包它们 需要添加额外的loader 在webpack中文网可以获取 </li>
-<li>例如 打包css 就需要 css-loader(打包css文件) 与 style-loader  （读取打包的css样式）<ul>
-<li>先将他们从npm上安装</li>
-<li>之后在前面建立的 webpack.config.js文件中进行配置（如果自身没有这个文件，新建一个即可）</li>
-<li>配置信息中可以发现 是先写style-loader 后使用 css-loader 这是因为webpack读取时 是从后向前读取的</li>
-</ul>
-</li>
-<li>打包less步骤与css类似</li>
-<li>打包图片<ul>
-<li>npm <code>url-loader</code> 并配置</li>
-<li>设置<code>limit</code>小于limit的图片直接压缩加载</li>
-<li>npm <code>file-loader</code> 不用配置 ，大于limit的图片通过它压缩加载</li>
-<li>在output 中添加<code>publicPath:&#39;./dist/&#39;</code>设置公共目录，解决图片404 问题</li>
-<li>limit属性之后，添加name属性<code>name:img/[name].[hash:8].[ext]</code>设置压缩后图片的名称与存放目录</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-3-5-webpack的babel-默认不会转换es6语法"><a href="#1-3-5-webpack的babel-默认不会转换es6语法" class="headerlink" title="1.3.5.  webpack的babel 默认不会转换es6语法"></a>1.3.5.  webpack的babel 默认不会转换es6语法</h3><ul>
-<li><p>可以通过下载babel解决问题</p>
-</li>
-<li><p><code>npm install babel-loader@7 babel-core babel-preset-es2015 --save-dev</code> 这里使用的babel-loader版本是@7用来匹配3.x的webpack</p>
-</li>
-<li><p>babel-loader 运行必须的装载器，balel-core 实现babel的核心文件  babel-preset-es2015 转换预设的是es6语法</p>
-</li>
-<li><p>官网给出的安装方式</p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//env是一个配置文件 可以具体配置转换哪些内容 </span></span><br><span class="line"><span class="comment">//而我上述的写法 直接配置了只转换es6</span></span><br><span class="line">npm install babel-loader babel-core babel-preset-env webpack</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//允许的文件类型</span></span><br><span class="line">      test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">        <span class="comment">//不包括的文件夹</span></span><br><span class="line">      exclude: <span class="regexp">/(node_modules|bower_components)/</span>,</span><br><span class="line">      use: &#123;</span><br><span class="line">          <span class="comment">//装载的loader</span></span><br><span class="line">        loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">            <span class="comment">//访问配置的env文件</span></span><br><span class="line">          presets: [<span class="string">'@babel/preset-env'</span>]</span><br><span class="line">            <span class="comment">//如果按我上述的写法此处直接这样写即可</span></span><br><span class="line">        <span class="comment">// presets: ['es2015']</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/09/29/webpack详解（一）/#more">more >></a>
+        
       
 
       
@@ -497,212 +376,9 @@ var _hmt = _hmt || [];
 <li><p><code>Branch</code> 查看其他分支（branch旁边还有一个按钮tag中查看过往版本）</p>
 </li>
 </ul>
-<p>控制台输入 git clone 地址 可以下载指定项目</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">链接后面可以加上--depth=1,下载最近的一次分支，提高下载速度 todomvc-vue新建一个包含项目的文件夹</span></span><br><span class="line">git clone https://github.com/tastejs/todomvc-app-template.git todomvc-vue --depth=1</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在本地远程服务器查看指定分支 和下文描述相同 在控制台输入</span></span><br><span class="line">git checkeout 分支名</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="1-2-git常用命令的含义"><a href="#1-2-git常用命令的含义" class="headerlink" title="1.2 git常用命令的含义"></a>1.2 git常用命令的含义</h2><table>
-<thead>
-<tr>
-<th>git常用命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>git –version</td>
-<td>查看版本</td>
-</tr>
-<tr>
-<td>git init</td>
-<td>初始化本地git仓库</td>
-</tr>
-<tr>
-<td>git add</td>
-<td>添加文件</td>
-</tr>
-<tr>
-<td>git status</td>
-<td>查看状态</td>
-</tr>
-<tr>
-<td>git commit</td>
-<td>提交</td>
-</tr>
-<tr>
-<td>git push</td>
-<td>推送到仓库</td>
-</tr>
-<tr>
-<td>git pull</td>
-<td>从远程仓库拉取数据（远程最新版本到本地 会自动合并）</td>
-</tr>
-<tr>
-<td>git fetch</td>
-<td>从远程仓库拉取数据（远程最新版本到本地 不会自动合并）</td>
-</tr>
-<tr>
-<td>git clone</td>
-<td>从远程仓库拷贝数据</td>
-</tr>
-<tr>
-<td>git config</td>
-<td>配置信息</td>
-</tr>
-<tr>
-<td>git rm –cached</td>
-<td>删除缓存文件</td>
-</tr>
-<tr>
-<td>git rm –f</td>
-<td>删除本地和缓存</td>
-</tr>
-<tr>
-<td>git branch</td>
-<td>创建分支</td>
-</tr>
-<tr>
-<td>git remote</td>
-<td>查看当前目录是否有对应远程地址</td>
-</tr>
-</tbody></table>
-<h2 id="1-3git创建本地仓库流程演示"><a href="#1-3git创建本地仓库流程演示" class="headerlink" title="1.3git创建本地仓库流程演示"></a>1.3git创建本地仓库流程演示</h2><ul>
-<li><p>新建git目录  取名git-test 将文件夹拖到cmd窗口 得到指定目录</p>
-</li>
-<li><p>在cmd中通过命令新建index.html app.js</p>
-</li>
-<li><p>接着在目录下输入 <code>git init</code> （所有的git目录创建后都有一个.git的隐藏文件夹）</p>
-</li>
-<li><p>配置用户名 及 邮箱   需要更改重新打一次这两条命令即可 （全局配置一次配置好了，下次没需要不用改）</p>
-<ul>
-<li><code>git config --global user.name &#39;xujiamu&#39;</code></li>
-<li><code>git config --global user.email &#39;252099457@qq.com&#39;</code></li>
-</ul>
-<p>可以在<code>C:\Users\25209</code>目录下<code>.gitconfig</code>文件中看到配置信息</p>
-</li>
-<li><p>添加文件 </p>
-<ul>
-<li><code>git add 文件名.后缀</code>     （添加单个）  <code>git add *.后缀</code> （添加一类文件） <code>git add *</code>或<code>git add .</code>添加全部文件</li>
-</ul>
-</li>
-<li><p>删除文件</p>
-</li>
-<li><p><code>git rm --cached 文件名.后缀</code>   （删除单个缓存不删除本地）  <code>git rm --cached  *.后缀</code>（删除一类文件缓存）  <code>git rm --f 文件名.后缀</code> （既删除缓存又删除本地）</p>
-</li>
-<li><p>通过git status 查看添加状态   绿色已添加 红色未添加    </p>
-</li>
-</ul>
-<img src="/2019/09/28/git的基本使用/git01.png">
-
-<p>如果添加后的文件有修改，可以通过 git status 观察到  有修改需要重新添加</p>
-<img src="/2019/09/28/git的基本使用/git02.png">
-
-<p><code>git commit</code>进行提交 在提交页面可以写备注信息 比如：first commit  之后 点击esc 输入 <code>:wq</code>回车退出</p>
-<p>如果提交之后文件有变化 则使用 <code>git add</code> 重新提交 使用 <code>git commit -m &quot;changed 变化的文件名&quot;</code></p>
-<p>来更新  ！！！<code>引号内的说明 必须使用双引号包裹 否则会报错</code></p>
-<ul>
-<li>忽略提交指定文件 新建<code>.gitignore</code>  将要忽略的文件名 写在里面，再次查看 就会发现  指定文件被忽略</li>
-</ul>
-<img src="/2019/09/28/git的基本使用/git03.png">
-
-<ul>
-<li>创建分支<ul>
-<li><code>git branch 分支名</code> </li>
-<li>使用<code>git status查看可以看到默认在master主线</code></li>
-<li><code>git checkout 分支名</code> 切换到相应分支 此时进行的操作，都是分支中的操作 如果你在分支当中提交修改了内容 之后通过<code>git checkout master</code> 切回主线 通过查看文件夹 会发现之前提交修改的内容没有显示</li>
-</ul>
-</li>
-<li>将分支合并到主线<ul>
-<li><code>git merge 要合并的分支名</code> 注意：合并时，需要处于master 主分支中</li>
-</ul>
-</li>
-</ul>
-<img src="/2019/09/28/git的基本使用/git04.png">
-
-<hr>
-<h2 id="1-4与github远程仓库的对接"><a href="#1-4与github远程仓库的对接" class="headerlink" title="1.4与github远程仓库的对接"></a>1.4与github远程仓库的对接</h2><ul>
-<li><p>登录github 后 点开右侧+号 new repository 新建仓库 import repository 导入仓库 </p>
-<img src="/2019/09/28/git的基本使用/git05.png">
-</li>
-<li><p>点击头像 查看个人信息 下拉菜单中点击 your repositories 查看个人仓库 </p>
-</li>
-</ul>
-<img src="/2019/09/28/git的基本使用/git06.png">
-
-<p>进入指定仓库后 在setting页可以选择修改删除仓库</p>
-<img src="/2019/09/28/git的基本使用/git07.png">
-
-<img src="/2019/09/28/git的基本使用/git08.png">
-
-<ul>
-<li><p>新建仓库过程</p>
-<ul>
-<li>repository name 给仓库命名  命名时使用 <code>xujiamu.github.io</code> 可以创建一个服务器（特殊的仓库）</li>
-<li>description 仓库描述</li>
-<li>plublic private 设置公有私有 私有收费</li>
-<li>Initialize this repository with a README 初始化创建一个README.md自述文件</li>
-<li>add .gitigone 添加忽略文件 add a license 添加许可</li>
-</ul>
-<img src="/2019/09/28/git的基本使用/git09.png">
-</li>
-<li><p>关于上传</p>
-<ul>
-<li><p>快速设置-如果你以前做过这种事情</p>
-</li>
-<li><p>Quick setup— if you’ve done this kind of thing before </p>
-</li>
-<li><p>首先创建一个新文件或上载一个现有文件。我们建议每个存储库都包含README、LICENSE和.gitignore。</p>
-<p>Get started by <a href="https://github.com/xujiamu/git-test/new/master" target="_blank" rel="noopener">creating a new file</a> or <a href="https://github.com/xujiamu/git-test/upload" target="_blank" rel="noopener">uploading an existing file</a>. We recommend every repository include a <a href="https://github.com/xujiamu/git-test/new/master?readme=1" target="_blank" rel="noopener">README</a>, <a href="https://github.com/xujiamu/git-test/new/master?filename=LICENSE.md" target="_blank" rel="noopener">LICENSE</a>, and <a href="https://github.com/xujiamu/git-test/new/master?filename=.gitignore" target="_blank" rel="noopener">.gitignore</a>.</p>
-<p>或者在命令行上创建一个新的存储库</p>
-<p>or create a new repository on the command line</p>
-<p>或者从命令行推送现有存储库</p>
-<p>or push an existing repository from the command line</p>
-<p>或者从另一个存储库导入代码</p>
-<p>or import code from another repository</p>
-</li>
-</ul>
-</li>
-<li><img src="/2019/09/28/git的基本使用/git10.png">
-
-</li>
-</ul>
-<p><code>git remote</code> 查看是否有对应地址 没反应证明没有</p>
-<p>如果没有 使用上图所示命令进行添加 添加后在查看 就会发现 返回origin </p>
-<p>这时就可以对本地仓库进行上传</p>
-<img src="/2019/09/28/git的基本使用/git11.png">
-
-<p>之后在github中刷新页面 可以发现之前的快速设置页面被替换，仓库已经显示出来</p>
-<p>如果之后又新增文件 则需要重复上述步骤 ，比如这里我新增了一个自述文件 ，步骤如下</p>
-<img src="/2019/09/28/git的基本使用/git12.png">
-
-<img src="/2019/09/28/git的基本使用/git13.png">
-
-<h2 id="1-5-github使用流程图"><a href="#1-5-github使用流程图" class="headerlink" title="1.5 github使用流程图"></a>1.5 <strong>github使用流程图</strong></h2><img src="/2019/09/28/git的基本使用/git14.png">
-
-<h2 id="1-6-github-客户端-及服务器"><a href="#1-6-github-客户端-及服务器" class="headerlink" title="1.6 github 客户端 及服务器"></a>1.6 <strong>github 客户端 及服务器</strong></h2><h3 id="服务器仓库的设置"><a href="#服务器仓库的设置" class="headerlink" title="服务器仓库的设置"></a>服务器仓库的设置</h3><ul>
-<li>新建一个服务器仓库 名称 xujiamu.github.io （特点：可以访问）</li>
-</ul>
-<h3 id="github客户端的使用"><a href="#github客户端的使用" class="headerlink" title="github客户端的使用"></a>github客户端的使用</h3><ul>
-<li>下载并打开github客户端</li>
-<li>登录账户<ul>
-<li>点击菜单栏 ，点击preferences 登录账号</li>
-<li>点击clone 可以克隆项目到本地 </li>
-<li>右键仓库 open in findler 可以打开项目文件 可以直接将项目网页拖到这里</li>
-<li>每次更新需要在左下角输入信息 然后点击 commit to master 提交更新</li>
-<li>之后点击右上角 publish 之后再点 sync 即可成功上传</li>
-<li>如果想发布多个项目 可以在这个服务器里放多个文件夹 每个文件夹代表不同项目， 访问不同项目，在服务器地址后面加上   <code>/想访问项目的目录名</code> 即可</li>
-</ul>
-</li>
-<li>页面左上角 compare 比较过去上传项目的异同</li>
-</ul>
-<h3 id="域名设置"><a href="#域名设置" class="headerlink" title="域名设置"></a>域名设置</h3><ul>
-<li>可以通过阿里云 购买域名 </li>
-<li>之后再个人中心里点击域名与网站 域名  跳转到域名列表</li>
-<li>选择域名点击解析   添加解析  </li>
-<li>记录类型 输入 CNAME    主机记录添加两次 一个是@ 一个是www 线路默认 记录值填 xujiamu.github.io 之后保存即可</li>
-<li>可以用谷歌隐身窗口测试</li>
-<li>最后一步 创建CNAME文件  在里面保存域名  <a href="http://www.xxx.xx" target="_blank" rel="noopener">www.xxx.xx</a> 之后，将这个文件上传到github上即可</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2019/09/28/git的基本使用/#more">more >></a>
+        
       
 
       
@@ -780,72 +456,9 @@ var _hmt = _hmt || [];
 <li>removeAttr() 删除指定属性</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"span"</span>).attr(<span class="string">"class"</span>, <span class="string">"box"</span>);</span><br></pre></td></tr></table></figure>
-
-<p>###2.1.2. prop</p>
-<ul>
-<li>prop()   removeProp()</li>
-<li>效果基本与attr() removeAttr()相同 </li>
-<li>但这两个能够操作 <code>selected</code> <code>checked</code> <code>disabled</code> 等拥有true false两个属性的节点 ，所以操作其他属性用attr() 操作这几个属性用prop()<ul>
-<li><code>selected</code> 表单专用 预先选定下拉菜单</li>
-<li><code>checked</code>  表单专用 预先选定单选复选框</li>
-<li><code>disabled</code> 禁用表单元素</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-2-类操作"><a href="#2-2-类操作" class="headerlink" title="2.2. 类操作"></a>2.2. 类操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">            1.addClass(class|fn)</span></span><br><span class="line"><span class="comment">            作用: 添加一个类</span></span><br><span class="line"><span class="comment">            如果要添加多个, 多个类名之间用空格隔开即可</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            2.removeClass([class|fn])</span></span><br><span class="line"><span class="comment">            作用: 删除一个类</span></span><br><span class="line"><span class="comment">            如果想删除多个, 多个类名之间用空格隔开即可</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            3.toggleClass(class|fn[,sw])</span></span><br><span class="line"><span class="comment">            作用: 切换类</span></span><br><span class="line"><span class="comment">            有就删除, 没有就添加</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">"div"</span>).addClass(<span class="string">"class1 class2"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).removeClass(<span class="string">"class2 class1"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).toggleClass(<span class="string">"class2 class1"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-文本操作"><a href="#2-3-文本操作" class="headerlink" title="2.3. 文本操作"></a>2.3. 文本操作</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">            1.html([val|fn])</span></span><br><span class="line"><span class="comment">            和原生JS中的innerHTML一模一样 写入网页时能读取html标签 取用时带标签</span></span><br><span class="line"><span class="comment">            2.text([val|fn])</span></span><br><span class="line"><span class="comment">            和原生JS中的innerText一模一样 不能读html标签 取用时带标签</span></span><br><span class="line"><span class="comment">            3.val([val|fn|arr]) 用于设置表单内部值 与</span></span><br><span class="line"><span class="comment">            补充:表单中value属性 直接设置表单值 需要删除才没</span></span><br><span class="line"><span class="comment">            palceholder属性设置虚化的值 一点就没</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">$(<span class="string">"div"</span>).html(<span class="string">"&lt;p&gt;我是段落&lt;span&gt;我是span&lt;/span&gt;&lt;/p&gt;"</span>);</span><br><span class="line">$(<span class="string">"div"</span>).text(<span class="string">"&lt;p&gt;我是段落&lt;span&gt;我是span&lt;/span&gt;&lt;/p&gt;"</span>);</span><br><span class="line">$(<span class="string">"input"</span>).val(<span class="string">"请输入内容"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4-样式设置"><a href="#2-4-样式设置" class="headerlink" title="2.4. 样式设置"></a>2.4. 样式设置</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单个</span></span><br><span class="line">$(<span class="string">"div"</span>).css(<span class="string">"width"</span>, <span class="string">"100px"</span>);</span><br><span class="line"><span class="comment">//多个</span></span><br><span class="line"> $(<span class="string">"div"</span>).css(&#123;</span><br><span class="line">                width: <span class="string">"100px"</span>,</span><br><span class="line">                height: <span class="string">"100px"</span>,</span><br><span class="line">                background: <span class="string">"red"</span></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//获取样式 带单位</span></span><br><span class="line">$(<span class="string">"div"</span>).css(<span class="string">"background"</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-位置尺寸"><a href="#2-5-位置尺寸" class="headerlink" title="2.5. 位置尺寸"></a>2.5. 位置尺寸</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取宽 ，高 不带单位</span></span><br><span class="line">$(<span class="string">".father"</span>).width()</span><br><span class="line">$(<span class="string">".father"</span>).width()</span><br><span class="line"><span class="comment">//也可以用于设置宽高</span></span><br><span class="line">$(<span class="string">".father"</span>).width(<span class="string">"500px"</span>)</span><br><span class="line"><span class="comment">//获取元素距离当前视口的偏移 可选left 或 top </span></span><br><span class="line"><span class="comment">//offset().left offset().top</span></span><br><span class="line">$(<span class="string">".son"</span>).offset().left</span><br><span class="line"><span class="comment">//可以设置</span></span><br><span class="line">$(<span class="string">".son"</span>).offset(&#123; <span class="attr">top</span>: <span class="number">10</span>, <span class="attr">left</span>: <span class="number">30</span> &#125;);</span><br><span class="line"><span class="comment">//获取匹配元素相对于父元素的偏移 可选left 或 top </span></span><br><span class="line"><span class="comment">//只可获取 不可设置</span></span><br><span class="line">$(<span class="string">".son"</span>).position().left</span><br><span class="line"><span class="comment">//获取匹配元素相当于滚动条的偏移 可选scrollTop scrollLeft</span></span><br><span class="line"><span class="comment">//可设置</span></span><br><span class="line"><span class="comment">// 注意点: 为了保证浏览器的兼容, 获取网页滚动的偏移位需要按照如下写法</span></span><br><span class="line">$(<span class="string">"body"</span>).scrollTop()+$(<span class="string">"html"</span>).scrollTop()</span><br><span class="line">$(<span class="string">"html,body"</span>).scrollTop(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-6-动画"><a href="#2-6-动画" class="headerlink" title="2.6. 动画"></a>2.6. 动画</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//显示隐藏切换动画</span><br><span class="line">//显示</span><br><span class="line">$(&quot;div&quot;).show(1000, function () &#123;</span><br><span class="line">                    // 作用: 动画执行完毕之后调用</span><br><span class="line">                    alert(&quot;显示动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//隐藏</span><br><span class="line">$(&quot;div&quot;).hide(1000, function () &#123;</span><br><span class="line">                    alert(&quot;隐藏动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//切换</span><br><span class="line">$(&quot;div&quot;).toggle(1000, function () &#123;</span><br><span class="line">                    alert(&quot;切换动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//展开动画</span><br><span class="line">//补充 默认由上向下滑动</span><br><span class="line">//如果 对元素使用positon:absolute;bottom:0; 则变为由下向上动</span><br><span class="line">$(&quot;div&quot;).slideDown(1000, function () &#123;</span><br><span class="line">                alert(&quot;展开完毕&quot;);</span><br><span class="line">            &#125;);</span><br><span class="line">//收起动画</span><br><span class="line"> $(&quot;div&quot;).slideUp(1000, function () &#123;</span><br><span class="line">                alert(&quot;收起完毕&quot;);</span><br><span class="line">            &#125;);</span><br><span class="line">//淡入动画</span><br><span class="line">$(&quot;div&quot;).fadeIn(1000, function () &#123;</span><br><span class="line">                    alert(&quot;淡入完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//淡出动画</span><br><span class="line">$(&quot;div&quot;).fadeOut(1000, function () &#123;</span><br><span class="line">                    alert(&quot;淡出完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line">//自定义动画</span><br><span class="line"> $(&quot;.one&quot;).animate(&#123;</span><br><span class="line">                    marginLeft: 500</span><br><span class="line">                &#125;, 5000, function () &#123;</span><br><span class="line">                    // alert(&quot;自定义动画执行完毕&quot;);</span><br><span class="line">                &#125;);</span><br><span class="line"> /*</span><br><span class="line">                第一个参数: 接收一个对象, 可以在对象中修改属性</span><br><span class="line">                第二个参数: 指定动画时长</span><br><span class="line">                第三个参数: 指定动画节奏, 默认就是swing</span><br><span class="line">                第四个参数: 动画执行完毕之后的回调函数</span><br><span class="line">  */</span><br><span class="line"> //停止动画</span><br><span class="line"> 				// 立即停止当前动画, 继续执行后续的动画</span><br><span class="line">                $(&quot;div&quot;).stop();</span><br><span class="line">                $(&quot;div&quot;).stop(false);</span><br><span class="line">                $(&quot;div&quot;).stop(false, false);</span><br><span class="line"></span><br><span class="line">                // 立即停止当前和后续所有的动画</span><br><span class="line">                $(&quot;div&quot;).stop(true);</span><br><span class="line">                $(&quot;div&quot;).stop(true, false);</span><br><span class="line"></span><br><span class="line">                // 立即完成当前的, 继续执行后续动画</span><br><span class="line">                $(&quot;div&quot;).stop(false, true);</span><br><span class="line"></span><br><span class="line">                // 立即完成当前的, 并且停止后续所有的</span><br><span class="line">                $(&quot;div&quot;).stop(true, true);</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-7-元素操作"><a href="#2-7-元素操作" class="headerlink" title="2.7. 元素操作"></a>2.7. 元素操作</h2><ul>
-<li><code>siblings()</code>相对于当前元素的其他同类兄弟元素</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">           内部插入       插</span></span><br><span class="line"><span class="comment">           被插.append(content|fn)</span></span><br><span class="line"><span class="comment">           会将元素添加到指定元素内部的最后</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           prepend(content|fn)</span></span><br><span class="line"><span class="comment">           会将元素添加到指定元素内部的最前面</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           外部插入</span></span><br><span class="line"><span class="comment">           after(content|fn)</span></span><br><span class="line"><span class="comment">           在每个匹配的元素之后插入内容。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">           before(content|fn)</span></span><br><span class="line"><span class="comment">           在每个匹配的元素之前插入内容。</span></span><br><span class="line"><span class="comment">           */</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除</li>
-<li>remove() 方法删除被选元素及其子元素。</li>
-<li>empty() 方法删除被选元素的子元素。</li>
-<li>remove() 方法也可接受一个参数，允许您对被删元素进行过滤。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#div1"</span>).remove();</span><br><span class="line">$(<span class="string">"#div1"</span>).empty();</span><br><span class="line">$(<span class="string">"p"</span>).remove(<span class="string">".italic"</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>替换 将所有匹配的元素替换成指定的HTML或DOM元素。</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>cruel<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>World<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"p"</span>).replaceWith(<span class="string">"&lt;b&gt;Paragraph. &lt;/b&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>Paragraph. <span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Paragraph. <span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>Paragraph. <span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>复制 </li>
-<li>clone()不传参是浅克隆 传参是深克隆比浅多复制了事件</li>
-</ul>
-<h2 id="2-8-异步更新-ajax"><a href="#2-8-异步更新-ajax" class="headerlink" title="2.8. 异步更新 ajax"></a>2.8. 异步更新 <code>ajax</code></h2><ul>
-<li><p><code>ajax</code></p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">           url: <span class="string">"地址"</span>,</span><br><span class="line">    	   type:<span class="string">'get'</span>,  <span class="comment">//请求方式</span></span><br><span class="line">    	   data:<span class="string">'发送到服务器的数据'</span>,</span><br><span class="line">           dataType: <span class="string">"json"</span>, <span class="comment">//数据类型</span></span><br><span class="line">           success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;<span class="comment">//相应数据</span></span><br><span class="line">              <span class="built_in">console</span>.log(data)</span><br><span class="line">           &#125;,</span><br><span class="line">           error: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(e);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>serialize() 方法通过序列化表单值，创建 URL 编码文本字符串。</p>
-</li>
-<li><p>序列化的值可在生成 AJAX 请求时用于 URL 查询字符串中。</p>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"/jquery/jquery.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">  $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">    $(<span class="string">"div"</span>).text($(<span class="string">"form"</span>).serialize());</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"FirstName"</span> <span class="attr">value</span>=<span class="string">"Bill"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"LastName"</span> <span class="attr">value</span>=<span class="string">"Gates"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>序列化表单值<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>结果</li>
-</ul>
-<img src="/2019/09/27/jQuery常用方法总结（二）/1564685464809.png">
+        
+          <a class="article-more-a" href="/2019/09/27/jQuery常用方法总结（二）/#more">more >></a>
+        
       
 
       
@@ -925,74 +538,9 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//释放</span></span><br><span class="line">$.noConflict();</span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  jQuery(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jQuery(<span class="string">"p"</span>).text(<span class="string">"jQuery 仍然在工作!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//重定义</span></span><br><span class="line"><span class="keyword">var</span> jq = $.noConflict();</span><br><span class="line">jq(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  jq(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    jq(<span class="string">"p"</span>).text(<span class="string">"jQuery 仍然在工作!"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-2-jQuery核心函数-的用法"><a href="#1-2-jQuery核心函数-的用法" class="headerlink" title="1.2.jQuery核心函数$()的用法"></a>1.2.jQuery核心函数<code>$()</code>的用法</h2><ul>
-<li>接收一个字符串选择器 返回一个jQuery 对象 对象中保存找到的DOM元素</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $box1 = $(<span class="string">".box1"</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>接收一个字符串 返回一个jQuery对象 对象中保存创建的DOM元素</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $p = $(<span class="string">"&lt;p&gt;我是段落&lt;/p&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>接收一个DOM元素 会将其包装成一个jQuery对象</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $p = $(<span class="built_in">document</span>.getElementsById(<span class="string">'box1'</span>))</span><br></pre></td></tr></table></figure>
-
-<h2 id="1-3-jQuery对象的实质"><a href="#1-3-jQuery对象的实质" class="headerlink" title="1.3.jQuery对象的实质"></a>1.3.jQuery对象的实质</h2><ul>
-<li><p>jQuery对象实际上是一个伪数组</p>
-</li>
-<li><p>伪数组：拥有0到length-1个连续属性 并拥有length属性</p>
-</li>
-</ul>
-<h2 id="1-4-jQuery常用遍历方法"><a href="#1-4-jQuery常用遍历方法" class="headerlink" title="1.4.jQuery常用遍历方法"></a>1.4.jQuery常用遍历方法</h2><ul>
-<li>each方法：与JavaScript的forEach()方法类似，区别是可以遍历伪数组 第一个参数是遍历的索引 第二个参数是值</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.each(obj, <span class="function"><span class="keyword">function</span> (<span class="params">index, value</span>) </span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(index, value);</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>map方法: 除返回值与each不同外基本一致</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*each静态方法默认的返回值是, 遍历谁就返回谁 返回值不可更改</span></span><br><span class="line"><span class="comment">map静态方法默认的返回值是一个空数组 返回值可以进一步处理return什么返回的就是什么组成的数组*/</span></span><br><span class="line"> <span class="keyword">var</span> res = $.map(obj, <span class="function"><span class="keyword">function</span> (<span class="params">value, index</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(index, value);</span><br><span class="line">            <span class="keyword">return</span> value + index;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="1-5-字符串操作"><a href="#1-5-字符串操作" class="headerlink" title="1.5.字符串操作"></a>1.5.字符串操作</h2><ul>
-<li>$.trim() 去除字符串首尾空格</li>
-</ul>
-<h2 id="1-6-测试操作"><a href="#1-6-测试操作" class="headerlink" title="1.6.测试操作"></a>1.6.测试操作</h2><ul>
-<li>$.isArray() 判断是否是真数组</li>
-<li>$.isWindow()判断是否是window对象</li>
-<li>$.isFunciton()判断是否是一个函数</li>
-</ul>
-<h2 id="1-7-事件相关"><a href="#1-7-事件相关" class="headerlink" title="1.7.事件相关"></a>1.7.事件相关</h2><h3 id="1-7-1-事件绑定"><a href="#1-7-1-事件绑定" class="headerlink" title="1.7.1 事件绑定"></a>1.7.1 事件绑定</h3><ul>
-<li>事件绑定on()方法</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一个参数方法名  第二个参数回调函数</span></span><br><span class="line">$(<span class="string">"button"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"hello click1"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//可新增一个参数完成事件委派 将li的事件委派给ul 达到即使li增加 也会携带事件的效果</span></span><br><span class="line">$(<span class="string">"ul"</span>).on(<span class="string">'click'</span>,<span class="string">'li'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'委派成功'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-2-事件移除"><a href="#1-7-2-事件移除" class="headerlink" title="1.7.2 事件移除"></a>1.7.2 事件移除</h3><ul>
-<li>移除事件</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// off方法如果不传递参数, 会移除所有的事件</span></span><br><span class="line">$(<span class="string">"button"</span>).off();</span><br><span class="line"><span class="comment">// off方法如果传递一个参数, 会移除所有指定类型的事件</span></span><br><span class="line">$(<span class="string">"button"</span>).off(<span class="string">"click"</span>);</span><br><span class="line"><span class="comment">// off方法如果传递两个参数, 会移除所有指定类型的指定事件 text1 为click事件中的回调函数名</span></span><br><span class="line">$(<span class="string">"button"</span>).off(<span class="string">"click"</span>, test1);</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-3-阻止默认行为"><a href="#1-7-3-阻止默认行为" class="headerlink" title="1.7.3. 阻止默认行为"></a>1.7.3. 阻止默认行为</h3><ul>
-<li>使用return false 可组织事件冒泡和事件默认行为</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用 event.preventDefault();阻止事件默认行为</span></span><br><span class="line"><span class="comment">//使用 event.stopPropagation(); 阻止事件冒泡</span></span><br><span class="line">$(<span class="string">"a"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"弹出注册框"</span>);</span><br><span class="line">                <span class="comment">// return false;</span></span><br><span class="line">                event.preventDefault(); <span class="comment">//阻止之后页面的跳转</span></span><br><span class="line">            &#125;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>trigger 事件自动触发不阻止默认行为  triggerHandler 事件自动触发阻止默认行为 </li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>注册<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> $(<span class="string">"span"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"a"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//阻止</span></span><br><span class="line">$(<span class="string">"a"</span>).triggerHandler(<span class="string">"click"</span>);</span><br><span class="line"><span class="comment">//不阻止</span></span><br><span class="line">$(<span class="string">"span"</span>).trigger(<span class="string">"click"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-4-自定义事件"><a href="#1-7-4-自定义事件" class="headerlink" title="1.7.4 自定义事件"></a>1.7.4 自定义事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">      想要自定义事件, 必须满足两个条件</span></span><br><span class="line"><span class="comment">      1.事件必须是通过on绑定的</span></span><br><span class="line"><span class="comment">      2.事件必须通过trigger来触发</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      $(<span class="string">".son"</span>).on(<span class="string">"myClick"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          alert(<span class="string">"son"</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">".son"</span>).triggerHandler(<span class="string">"myClick"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-7-5事件命名空间"><a href="#1-7-5事件命名空间" class="headerlink" title="1.7.5事件命名空间"></a>1.7.5事件命名空间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">           想要事件的命名空间有效,必须满足两个条件</span></span><br><span class="line"><span class="comment">           1.事件是通过on来绑定的</span></span><br><span class="line"><span class="comment">           2.通过trigger触发事件</span></span><br><span class="line"><span class="comment">           */</span></span><br><span class="line">           $(<span class="string">".son"</span>).on(<span class="string">"click.zs"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               alert(<span class="string">"click1"</span>);</span><br><span class="line">           &#125;);</span><br><span class="line">           $(<span class="string">".son"</span>).on(<span class="string">"click.ls"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">               alert(<span class="string">"click2"</span>);</span><br><span class="line">           &#125;);</span><br><span class="line">           <span class="comment">// $(".son").trigger("click.zs");</span></span><br><span class="line">           $(<span class="string">".son"</span>).trigger(<span class="string">"click.ls"</span>);</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2019/09/25/jQuery常用方法总结（一）/#more">more >></a>
+        
       
 
       
@@ -1068,56 +616,9 @@ var _hmt = _hmt || [];
         <h1 id="一-Hexo博客的搭建过程"><a href="#一-Hexo博客的搭建过程" class="headerlink" title="一 :Hexo博客的搭建过程"></a>一 :Hexo博客的搭建过程</h1><h2 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1.安装"></a>1.1.安装</h2><p><code>npm install hexo-cli -g</code></p>
 <h2 id="1-2-新建一个目录命名为blog"><a href="#1-2-新建一个目录命名为blog" class="headerlink" title="1.2.新建一个目录命名为blog"></a>1.2.新建一个目录命名为blog</h2><h2 id="1-3-初始化一个hexo目录"><a href="#1-3-初始化一个hexo目录" class="headerlink" title="1.3.初始化一个hexo目录"></a>1.3.初始化一个hexo目录</h2><p><code>hexo init</code></p>
 <h2 id="1-4-运行hexo本地服务器"><a href="#1-4-运行hexo本地服务器" class="headerlink" title="1.4.运行hexo本地服务器"></a>1.4.运行hexo本地服务器</h2><p><code>hexo server</code> 简写<code>hexo s</code></p>
-<h2 id="1-5-新建文章"><a href="#1-5-新建文章" class="headerlink" title="1.5.新建文章"></a>1.5.新建文章</h2><p><code>hexo new &#39;我的第一篇博客&#39;</code>简写<code>hexo n &#39;我的第一篇博客&#39;</code></p>
-<ul>
-<li>新建的md文件会出现在<code>blog/source/_posts/我的第一篇博客</code></li>
-</ul>
-<h2 id="1-6-清理缓存"><a href="#1-6-清理缓存" class="headerlink" title="1.6.清理缓存"></a>1.6.清理缓存</h2><ul>
-<li><code>hexo clean</code> 一般在更新博客更改主题之后，都可以执行这条命令一次</li>
-</ul>
-<h2 id="1-7-部署到本地"><a href="#1-7-部署到本地" class="headerlink" title="1.7.部署到本地"></a>1.7.部署到本地</h2><p><code>hexo generate</code>简写 <code>hexo g</code></p>
-<h3 id="1-7-1-部署到本地和远端"><a href="#1-7-1-部署到本地和远端" class="headerlink" title="1.7.1.部署到本地和远端"></a>1.7.1.部署到本地和远端</h3><p><code>hexo generate --deploy</code> 或 <code>$ hexo deploy --generate</code></p>
-<p>简写<code>hexo g -d</code> 或 <code>hexo d -g</code></p>
-<h2 id="1-8-hexo删除文章"><a href="#1-8-hexo删除文章" class="headerlink" title="1.8.hexo删除文章"></a>1.8.hexo删除文章</h2><p>直接删除对应文件夹的文件后，执行一次<code>hexo clean</code>即可 注意<code>_posts</code>不能为空，必须至少有一个文件</p>
-<h2 id="1-9-部署博客到github"><a href="#1-9-部署博客到github" class="headerlink" title="1.9.部署博客到github"></a>1.9.部署博客到github</h2><ul>
-<li><p>首先需要在blog目录下载一个插件</p>
-</li>
-<li><p>命令为<code>npm install --save hexo-deployer-git</code></p>
-</li>
-<li><p>配置blog 目录下<code>_config.yml</code></p>
-<ul>
-<li><p>在文件最后 deploy中开始配置</p>
-</li>
-<li><p>type repo branch 都是新添加的属性</p>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/xujiamu/xujiamu.github.io.git</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>之后即可执行<code>hexo deploy</code> 简写<code>hexo d</code>部署到远端</li>
-</ul>
-<h2 id="1-10-关于更换主题"><a href="#1-10-关于更换主题" class="headerlink" title="1.10.关于更换主题"></a>1.10.关于更换主题</h2><p>推荐的主题</p>
-<p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a></p>
-<p>使用：</p>
-<p>第一步安装主题到blog目录</p>
-<p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
-<p>配置：<code>_config.yml</code>文件下的<code>theme: yilia</code></p>
-<p>之后执行 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g </span><br><span class="line">hexo s <span class="comment">//本地查看</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上述无问题后即可推到远端</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>注: <code>yilia</code>相关配置参考</p>
-<p><a href="https://github.com/litten/BlogBackup/blob/master/_config.yml" target="_blank" rel="noopener">https://github.com/litten/BlogBackup/blob/master/_config.yml</a></p>
-<p><a href="https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml" target="_blank" rel="noopener">https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml</a></p>
-<h2 id="1-11-通过相对路径引入图片及其他资源"><a href="#1-11-通过相对路径引入图片及其他资源" class="headerlink" title="1.11 通过相对路径引入图片及其他资源"></a>1.11 通过相对路径引入图片及其他资源</h2><p>打开 <code>_config.yml</code>文件中的 如下选项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-
-<p>打开该选项后，在<code>_post</code>文件夹下会出现一个文章同名文件夹，在这个文件夹里面存放图片等资源</p>
-<p>之后在文章中按如下写法引入资源即可</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//asset_img 是固定写法 example.jpg是图片名 再后面的是图片描述</span></span><br><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2019/09/25/Hexo博客搭建/#more">more >></a>
+        
       
 
       
@@ -1263,15 +764,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
             
             <div class="clearfix"></div>

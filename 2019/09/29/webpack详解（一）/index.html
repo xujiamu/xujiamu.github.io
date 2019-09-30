@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>webpack详解（一） | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="webpack 详解（一）1.1. 一个静态的模块化打包工具 为什么前端需要模块化 :  为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug   模块化的一些方案  :  AMD ,CMD ,CommonJS ,ES6   在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各">
+  <meta name="description" content="webpack 详解（一）1.1. 一个静态的模块化打包工具 为什么前端需要模块化 :  为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug  模块化的一些方案  :  AMD ,CMD ,CommonJS ,ES6  在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各种模">
 <meta name="keywords" content="webpack 打包工具 模块化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack详解（一）">
 <meta property="og:url" content="http://yoursite.com/2019/09/29/webpack详解（一）/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="webpack 详解（一）1.1. 一个静态的模块化打包工具 为什么前端需要模块化 :  为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug   模块化的一些方案  :  AMD ,CMD ,CommonJS ,ES6   在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各">
+<meta property="og:description" content="webpack 详解（一）1.1. 一个静态的模块化打包工具 为什么前端需要模块化 :  为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug  模块化的一些方案  :  AMD ,CMD ,CommonJS ,ES6  在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各种模">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-29T12:08:32.066Z">
+<meta property="og:updated_time" content="2019-09-30T16:10:57.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack详解（一）">
-<meta name="twitter:description" content="webpack 详解（一）1.1. 一个静态的模块化打包工具 为什么前端需要模块化 :  为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug   模块化的一些方案  :  AMD ,CMD ,CommonJS ,ES6   在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各">
+<meta name="twitter:description" content="webpack 详解（一）1.1. 一个静态的模块化打包工具 为什么前端需要模块化 :  为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug  模块化的一些方案  :  AMD ,CMD ,CommonJS ,ES6  在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各种模">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -175,14 +175,12 @@ var _hmt = _hmt || [];
       
         <h1 id="webpack-详解（一）"><a href="#webpack-详解（一）" class="headerlink" title="webpack 详解（一）"></a>webpack 详解（一）</h1><h2 id="1-1-一个静态的模块化打包工具"><a href="#1-1-一个静态的模块化打包工具" class="headerlink" title="1.1. 一个静态的模块化打包工具"></a>1.1. 一个静态的模块化打包工具</h2><ul>
 <li><p>为什么前端需要模块化 :</p>
-<ul>
-<li>为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug</li>
-</ul>
+</li>
+<li><p>为了方便管理 使页面跟功能更好的分离,并避免一些变量冲突，局部功能，运行在全局作用域的问题，方便维护，降低代码bug</p>
 </li>
 <li><p>模块化的一些方案  :</p>
-<ul>
-<li>AMD ,CMD ,CommonJS ,ES6</li>
-</ul>
+</li>
+<li><p>AMD ,CMD ,CommonJS ,ES6</p>
 </li>
 <li><p>在es6之前 各模块化运行都需要借助其他工具 并且模块化后还需要处理他们的依赖关系，webpack 能够支持各种模块化开发，并会帮助我们处理依赖关系</p>
 </li>
@@ -190,6 +188,8 @@ var _hmt = _hmt || [];
 <p>​       以上就是webpack中模块化的概念</p>
 </li>
 </ul>
+<a id="more"></a>
+
 <h3 id="1-1-1-打包的理解："><a href="#1-1-1-打包的理解：" class="headerlink" title="1.1.1. 打包的理解："></a>1.1.1. 打包的理解：</h3><ul>
 <li>对于各种资源模块进行压缩和处理 ，比如将 es6 转为es5将 scss转为css 将typescript 转为 javascript 。压缩图片，整合资源，最终转为浏览器能解析的方式</li>
 </ul>
@@ -484,15 +484,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
             
             <div class="clearfix"></div>

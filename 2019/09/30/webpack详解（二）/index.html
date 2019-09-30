@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Mu的博客">
 <meta property="og:description" content="webpack 详解（二）2.0.webpack中 部署 vue环境 npm i vue   在main.js 中引入 并创建实例  在index.js中 创建被管理的div 如果此时写入一个模板会导致报错  错误原因是此时运行的版本是runtime-only他不包含编译器，一般来说当使用vue-loader或vueify时会将模板编译为JavaScript，因为这里我没使用上述两个插件，所以没有">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-30T15:59:18.552Z">
+<meta property="og:updated_time" content="2019-09-30T16:10:50.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack详解（二）">
 <meta name="twitter:description" content="webpack 详解（二）2.0.webpack中 部署 vue环境 npm i vue   在main.js 中引入 并创建实例  在index.js中 创建被管理的div 如果此时写入一个模板会导致报错  错误原因是此时运行的版本是runtime-only他不包含编译器，一般来说当使用vue-loader或vueify时会将模板编译为JavaScript，因为这里我没使用上述两个插件，所以没有">
@@ -188,6 +188,8 @@ var _hmt = _hmt || [];
 
 </li>
 </ul>
+<a id="more"></a>
+
 <h3 id="2-0-1在webpack中对vue进行组件化-，创建后缀为-vue的组件"><a href="#2-0-1在webpack中对vue进行组件化-，创建后缀为-vue的组件" class="headerlink" title="2.0.1在webpack中对vue进行组件化 ，创建后缀为.vue的组件"></a>2.0.1在webpack中对vue进行组件化 ，创建后缀为.vue的组件</h3><h4 id="2-0-1-1webpack本身不支持-vue后缀的文件，可以通过以下方式装载-loader-并编译vue-compiler"><a href="#2-0-1-1webpack本身不支持-vue后缀的文件，可以通过以下方式装载-loader-并编译vue-compiler" class="headerlink" title="2.0.1.1webpack本身不支持.vue后缀的文件，可以通过以下方式装载(loader)并编译vue(compiler)"></a>2.0.1.1webpack本身不支持.vue后缀的文件，可以通过以下方式装载(loader)并编译vue(compiler)</h4><p><code>npm install vue-loader vue-template-compiler --save-dev</code></p>
 <h4 id="2-0-1-2-补充-：如果指定npm-下载包的版本-使用-npm-包-版本号-如果已经下载的包想要更改版本-在package文件中找到对应依赖，改变他的值-想要改的大版本-0-0之后使用npm-install即可"><a href="#2-0-1-2-补充-：如果指定npm-下载包的版本-使用-npm-包-版本号-如果已经下载的包想要更改版本-在package文件中找到对应依赖，改变他的值-想要改的大版本-0-0之后使用npm-install即可" class="headerlink" title="2.0.1.2 补充 ：如果指定npm 下载包的版本 使用 npm 包@版本号  如果已经下载的包想要更改版本 在package文件中找到对应依赖，改变他的值^想要改的大版本.0.0之后使用npm install即可"></a>2.0.1.2 补充 ：如果指定npm 下载包的版本 使用 <code>npm 包@版本号</code>  如果已经下载的包想要更改版本 在<code>package</code>文件中找到对应依赖，改变他的值<code>^想要改的大版本.0.0</code>之后使用<code>npm install</code>即可</h4><h4 id="2-0-1-3-安装以上loader跟-compiler后-在webpack-config-js中配置"><a href="#2-0-1-3-安装以上loader跟-compiler后-在webpack-config-js中配置" class="headerlink" title="2.0.1.3 安装以上loader跟 compiler后 在webpack.config.js中配置"></a>2.0.1.3 安装以上loader跟 compiler后 在webpack.config.js中配置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置下列数据完毕后 即可 使用webpack run build执行程序</span></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.vue$/</span>,</span><br><span class="line">        use: [<span class="string">'vue-loader'</span>]</span><br><span class="line">      &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -474,15 +476,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
             
             <div class="clearfix"></div>

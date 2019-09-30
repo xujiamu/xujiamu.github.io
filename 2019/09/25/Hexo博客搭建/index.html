@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>&#39;Hexo博客搭建&#39; | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s 1.5.新建文章hexo new &amp;#39;我的第一篇博客&amp;#39;简写hexo n &amp;#39;我的第一篇博客&amp;#39;  新建的md文件会出现在blog/">
+  <meta name="description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
 <meta name="keywords" content="博客 个人博客 搭建过程 教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&#39;Hexo博客搭建&#39;">
 <meta property="og:url" content="http://yoursite.com/2019/09/25/Hexo博客搭建/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s 1.5.新建文章hexo new &amp;#39;我的第一篇博客&amp;#39;简写hexo n &amp;#39;我的第一篇博客&amp;#39;  新建的md文件会出现在blog/">
+<meta property="og:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-28T13:24:44.992Z">
+<meta property="og:updated_time" content="2019-09-30T16:09:35.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;Hexo博客搭建&#39;">
-<meta name="twitter:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s 1.5.新建文章hexo new &amp;#39;我的第一篇博客&amp;#39;简写hexo n &amp;#39;我的第一篇博客&amp;#39;  新建的md文件会出现在blog/">
+<meta name="twitter:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -176,6 +176,8 @@ var _hmt = _hmt || [];
         <h1 id="一-Hexo博客的搭建过程"><a href="#一-Hexo博客的搭建过程" class="headerlink" title="一 :Hexo博客的搭建过程"></a>一 :Hexo博客的搭建过程</h1><h2 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1.安装"></a>1.1.安装</h2><p><code>npm install hexo-cli -g</code></p>
 <h2 id="1-2-新建一个目录命名为blog"><a href="#1-2-新建一个目录命名为blog" class="headerlink" title="1.2.新建一个目录命名为blog"></a>1.2.新建一个目录命名为blog</h2><h2 id="1-3-初始化一个hexo目录"><a href="#1-3-初始化一个hexo目录" class="headerlink" title="1.3.初始化一个hexo目录"></a>1.3.初始化一个hexo目录</h2><p><code>hexo init</code></p>
 <h2 id="1-4-运行hexo本地服务器"><a href="#1-4-运行hexo本地服务器" class="headerlink" title="1.4.运行hexo本地服务器"></a>1.4.运行hexo本地服务器</h2><p><code>hexo server</code> 简写<code>hexo s</code></p>
+<a id="more"></a>
+
 <h2 id="1-5-新建文章"><a href="#1-5-新建文章" class="headerlink" title="1.5.新建文章"></a>1.5.新建文章</h2><p><code>hexo new &#39;我的第一篇博客&#39;</code>简写<code>hexo n &#39;我的第一篇博客&#39;</code></p>
 <ul>
 <li>新建的md文件会出现在<code>blog/source/_posts/我的第一篇博客</code></li>
@@ -225,6 +227,7 @@ var _hmt = _hmt || [];
 <p>之后在文章中按如下写法引入资源即可</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//asset_img 是固定写法 example.jpg是图片名 再后面的是图片描述</span></span><br><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="1-12-首页显示部分文章"><a href="#1-12-首页显示部分文章" class="headerlink" title="1.12. 首页显示部分文章"></a>1.12. 首页显示部分文章</h2><p>在<code>md</code>文件中，插入<code>&lt;!--more--&gt;</code>该标签上面的内容在主页显示，下面的部分会隐藏</p>
 
       
 
@@ -341,7 +344,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Hexo博客的搭建过程"><span class="toc-number">1.</span> <span class="toc-text">一 :Hexo博客的搭建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-新建一个目录命名为blog"><span class="toc-number">1.2.</span> <span class="toc-text">1.2.新建一个目录命名为blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-初始化一个hexo目录"><span class="toc-number">1.3.</span> <span class="toc-text">1.3.初始化一个hexo目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-运行hexo本地服务器"><span class="toc-number">1.4.</span> <span class="toc-text">1.4.运行hexo本地服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-新建文章"><span class="toc-number">1.5.</span> <span class="toc-text">1.5.新建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-清理缓存"><span class="toc-number">1.6.</span> <span class="toc-text">1.6.清理缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-部署到本地"><span class="toc-number">1.7.</span> <span class="toc-text">1.7.部署到本地</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-部署到本地和远端"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.7.1.部署到本地和远端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-hexo删除文章"><span class="toc-number">1.8.</span> <span class="toc-text">1.8.hexo删除文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-部署博客到github"><span class="toc-number">1.9.</span> <span class="toc-text">1.9.部署博客到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-关于更换主题"><span class="toc-number">1.10.</span> <span class="toc-text">1.10.关于更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-通过相对路径引入图片及其他资源"><span class="toc-number">1.11.</span> <span class="toc-text">1.11 通过相对路径引入图片及其他资源</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Hexo博客的搭建过程"><span class="toc-number">1.</span> <span class="toc-text">一 :Hexo博客的搭建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-新建一个目录命名为blog"><span class="toc-number">1.2.</span> <span class="toc-text">1.2.新建一个目录命名为blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-初始化一个hexo目录"><span class="toc-number">1.3.</span> <span class="toc-text">1.3.初始化一个hexo目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-运行hexo本地服务器"><span class="toc-number">1.4.</span> <span class="toc-text">1.4.运行hexo本地服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-新建文章"><span class="toc-number">1.5.</span> <span class="toc-text">1.5.新建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-清理缓存"><span class="toc-number">1.6.</span> <span class="toc-text">1.6.清理缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-部署到本地"><span class="toc-number">1.7.</span> <span class="toc-text">1.7.部署到本地</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-部署到本地和远端"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.7.1.部署到本地和远端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-hexo删除文章"><span class="toc-number">1.8.</span> <span class="toc-text">1.8.hexo删除文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-部署博客到github"><span class="toc-number">1.9.</span> <span class="toc-text">1.9.部署博客到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-关于更换主题"><span class="toc-number">1.10.</span> <span class="toc-text">1.10.关于更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-通过相对路径引入图片及其他资源"><span class="toc-number">1.11.</span> <span class="toc-text">1.11 通过相对路径引入图片及其他资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-首页显示部分文章"><span class="toc-number">1.12.</span> <span class="toc-text">1.12. 首页显示部分文章</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -453,15 +456,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
             
             <div class="clearfix"></div>
