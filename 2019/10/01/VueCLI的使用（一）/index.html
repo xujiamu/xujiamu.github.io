@@ -6,20 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>&#39;Hexo博客搭建&#39; | Mu的博客</title>
+  <title>VueCli的使用（一） | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
-<meta name="keywords" content="博客 个人博客 搭建过程 教程">
+  <meta name="description" content="Vue CLI2注·：如果安装脚手架报错 可以在控制台尝试如下命令 npm clean cache --force 或 直接找到目录 C:\Users\25209\AppData\Roaming\npm-cache 删除这个文件夹  AppData 有时是隐藏的 需要在查看里设置显示隐藏文件夹 1.1. CLI 俗称脚手架1.1.1. Vue.CLI是一个官方发布的vue.js项目脚手架1.1.2">
+<meta name="keywords" content="VueCLI 脚手架 VueCLI2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;Hexo博客搭建&#39;">
-<meta property="og:url" content="http://yoursite.com/2019/09/25/Hexo博客搭建/index.html">
+<meta property="og:title" content="VueCli的使用（一）">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
+<meta property="og:description" content="Vue CLI2注·：如果安装脚手架报错 可以在控制台尝试如下命令 npm clean cache --force 或 直接找到目录 C:\Users\25209\AppData\Roaming\npm-cache 删除这个文件夹  AppData 有时是隐藏的 需要在查看里设置显示隐藏文件夹 1.1. CLI 俗称脚手架1.1.1. Vue.CLI是一个官方发布的vue.js项目脚手架1.1.2">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-30T16:09:35.535Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/webpack01.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/webpack02.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/webpack03.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/webpack04.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/webpack05.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/vueCLI03.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/vueCLI02.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/vueCLI04.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/vueCLI05.png">
+<meta property="og:updated_time" content="2019-10-01T14:59:27.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;Hexo博客搭建&#39;">
-<meta name="twitter:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
+<meta name="twitter:title" content="VueCli的使用（一）">
+<meta name="twitter:description" content="Vue CLI2注·：如果安装脚手架报错 可以在控制台尝试如下命令 npm clean cache --force 或 直接找到目录 C:\Users\25209\AppData\Roaming\npm-cache 删除这个文件夹  AppData 有时是隐藏的 需要在查看里设置显示隐藏文件夹 1.1. CLI 俗称脚手架1.1.1. Vue.CLI是一个官方发布的vue.js项目脚手架1.1.2">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/01/VueCLI的使用（一）/webpack01.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -153,81 +163,188 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-VueCLI的使用（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      &#39;Hexo博客搭建&#39;
+      VueCli的使用（一）
     </h1>
   
 
         
-        <a href="/2019/09/25/Hexo博客搭建/" class="archive-article-date">
-  	<time datetime="2019-09-25T13:42:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
+        <a href="/2019/10/01/VueCLI的使用（一）/" class="archive-article-date">
+  	<time datetime="2019-10-01T14:42:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一-Hexo博客的搭建过程"><a href="#一-Hexo博客的搭建过程" class="headerlink" title="一 :Hexo博客的搭建过程"></a>一 :Hexo博客的搭建过程</h1><h2 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1.安装"></a>1.1.安装</h2><p><code>npm install hexo-cli -g</code></p>
-<h2 id="1-2-新建一个目录命名为blog"><a href="#1-2-新建一个目录命名为blog" class="headerlink" title="1.2.新建一个目录命名为blog"></a>1.2.新建一个目录命名为blog</h2><h2 id="1-3-初始化一个hexo目录"><a href="#1-3-初始化一个hexo目录" class="headerlink" title="1.3.初始化一个hexo目录"></a>1.3.初始化一个hexo目录</h2><p><code>hexo init</code></p>
-<h2 id="1-4-运行hexo本地服务器"><a href="#1-4-运行hexo本地服务器" class="headerlink" title="1.4.运行hexo本地服务器"></a>1.4.运行hexo本地服务器</h2><p><code>hexo server</code> 简写<code>hexo s</code></p>
-<a id="more"></a>
+        <h1 id="Vue-CLI2"><a href="#Vue-CLI2" class="headerlink" title="Vue CLI2"></a>Vue CLI2</h1><p>注·：如果安装脚手架报错 可以在控制台尝试如下命令</p>
+<p><code>npm clean cache --force</code> 或 直接找到目录</p>
+<p><code>C:\Users\25209\AppData\Roaming\npm-cache</code></p>
+<p>删除这个文件夹  AppData 有时是隐藏的 需要在查看里设置显示隐藏文件夹</p>
+<h2 id="1-1-CLI-俗称脚手架"><a href="#1-1-CLI-俗称脚手架" class="headerlink" title="1.1. CLI 俗称脚手架"></a>1.1. CLI 俗称脚手架</h2><h3 id="1-1-1-Vue-CLI是一个官方发布的vue-js项目脚手架"><a href="#1-1-1-Vue-CLI是一个官方发布的vue-js项目脚手架" class="headerlink" title="1.1.1. Vue.CLI是一个官方发布的vue.js项目脚手架"></a>1.1.1. Vue.CLI是一个官方发布的vue.js项目脚手架</h3><h3 id="1-1-2-使用脚手架可以快速搭建vue开发环境，及对应的webpack配置"><a href="#1-1-2-使用脚手架可以快速搭建vue开发环境，及对应的webpack配置" class="headerlink" title="1.1.2. 使用脚手架可以快速搭建vue开发环境，及对应的webpack配置"></a>1.1.2. 使用脚手架可以快速搭建vue开发环境，及对应的webpack配置</h3><h3 id="1-1-3-在我们开发大型项目时，通常要考虑项目的结构，部署，热加载，代码单元测试等问题，webpack模块化开发时也需要配置许多相关插件与loader-（详情见webpack）-使用脚手架能快速完成这部分功能，提高开发效率"><a href="#1-1-3-在我们开发大型项目时，通常要考虑项目的结构，部署，热加载，代码单元测试等问题，webpack模块化开发时也需要配置许多相关插件与loader-（详情见webpack）-使用脚手架能快速完成这部分功能，提高开发效率" class="headerlink" title="1.1.3. 在我们开发大型项目时，通常要考虑项目的结构，部署，热加载，代码单元测试等问题，webpack模块化开发时也需要配置许多相关插件与loader （详情见webpack） 使用脚手架能快速完成这部分功能，提高开发效率"></a>1.1.3. 在我们开发大型项目时，通常要考虑项目的结构，部署，热加载，代码单元测试等问题，webpack模块化开发时也需要配置许多相关插件与loader （详情见webpack） 使用脚手架能快速完成这部分功能，提高开发效率</h3><h3 id="1-1-4-使用前提-基于node"><a href="#1-1-4-使用前提-基于node" class="headerlink" title="1.1.4. 使用前提 基于node"></a>1.1.4. 使用前提 基于node</h3><a id="more"></a>
 
-<h2 id="1-5-新建文章"><a href="#1-5-新建文章" class="headerlink" title="1.5.新建文章"></a>1.5.新建文章</h2><p><code>hexo new &#39;我的第一篇博客&#39;</code>简写<code>hexo n &#39;我的第一篇博客&#39;</code></p>
-<ul>
-<li>新建的md文件会出现在<code>blog/source/_posts/我的第一篇博客</code></li>
-</ul>
-<h2 id="1-6-清理缓存"><a href="#1-6-清理缓存" class="headerlink" title="1.6.清理缓存"></a>1.6.清理缓存</h2><ul>
-<li><code>hexo clean</code> 一般在更新博客更改主题之后，都可以执行这条命令一次</li>
-</ul>
-<h2 id="1-7-部署到本地"><a href="#1-7-部署到本地" class="headerlink" title="1.7.部署到本地"></a>1.7.部署到本地</h2><p><code>hexo generate</code>简写 <code>hexo g</code></p>
-<h3 id="1-7-1-部署到本地和远端"><a href="#1-7-1-部署到本地和远端" class="headerlink" title="1.7.1.部署到本地和远端"></a>1.7.1.部署到本地和远端</h3><p><code>hexo generate --deploy</code> 或 <code>$ hexo deploy --generate</code></p>
-<p>简写<code>hexo g -d</code> 或 <code>hexo d -g</code></p>
-<h2 id="1-8-hexo删除文章"><a href="#1-8-hexo删除文章" class="headerlink" title="1.8.hexo删除文章"></a>1.8.hexo删除文章</h2><p>直接删除对应文件夹的文件后，执行一次<code>hexo clean</code>即可 注意<code>_posts</code>不能为空，必须至少有一个文件</p>
-<h2 id="1-9-部署博客到github"><a href="#1-9-部署博客到github" class="headerlink" title="1.9.部署博客到github"></a>1.9.部署博客到github</h2><ul>
-<li><p>首先需要在blog目录下载一个插件</p>
-</li>
-<li><p>命令为<code>npm install --save hexo-deployer-git</code></p>
-</li>
-<li><p>配置blog 目录下<code>_config.yml</code></p>
-<ul>
-<li><p>在文件最后 deploy中开始配置</p>
-</li>
-<li><p>type repo branch 都是新添加的属性</p>
+<h2 id="1-2-安装Vue-CLI"><a href="#1-2-安装Vue-CLI" class="headerlink" title="1.2. 安装Vue CLI"></a>1.2. 安装Vue CLI</h2><h3 id="1-2-1-文档地址：https-cli-vuejs-org-zh-guide-creating-a-project-html-vue-create"><a href="#1-2-1-文档地址：https-cli-vuejs-org-zh-guide-creating-a-project-html-vue-create" class="headerlink" title="1.2.1. 文档地址：https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create"></a>1.2.1. 文档地址：<a href="https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create" target="_blank" rel="noopener">https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create</a></h3><h3 id="1-2-2-安装"><a href="#1-2-2-安装" class="headerlink" title="1.2.2. 安装"></a>1.2.2. 安装</h3><ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/xujiamu/xujiamu.github.io.git</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-创建项目"><a href="#1-3-创建项目" class="headerlink" title="1.3. 创建项目"></a>1.3. 创建项目</h2><p>vue create 是vue-cli3.x的初始化方式，目前模板是固定的，模板选项可自由配置，创建出来的是vue-cli3的项目，与cue-cli2项目结构不同，配置方法不同，具体配置方法参考官方文档[网页链接](https://cli.vuejs.org/zh/guide/)。vue init 是vue-cli2.x的初始化方式，可以使用github上面的一些模板来初始化项目，webpack是官方推荐的标准模板名。vue-cli2.x项目向3.x迁移只需要把static目录复制到public目录下，老项目的src目录覆盖3.x的src目录(如果修改了配置，可以查看文档，用cli3的方法进行配置)</p>
+### 1.3.1. Vue CLI 3.x创建
 
 <ul>
-<li>之后即可执行<code>hexo deploy</code> 简写<code>hexo d</code>部署到远端</li>
+<li><p><code>3.x</code> 创建一个项目</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create hello-world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打包运行<code>npm run serve</code></p>
+</li>
 </ul>
-<h2 id="1-10-关于更换主题"><a href="#1-10-关于更换主题" class="headerlink" title="1.10.关于更换主题"></a>1.10.关于更换主题</h2><p>推荐的主题</p>
-<p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a></p>
-<p>使用：</p>
-<p>第一步安装主题到blog目录</p>
-<p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
-<p>配置：<code>_config.yml</code>文件下的<code>theme: yilia</code></p>
-<p>之后执行 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g </span><br><span class="line">hexo s <span class="comment">//本地查看</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上述无问题后即可推到远端</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-2-Vue-CLI-2-x-创建"><a href="#1-3-2-Vue-CLI-2-x-创建" class="headerlink" title="1.3.2. Vue CLI 2.x 创建"></a>1.3.2. Vue CLI 2.x 创建</h3><ul>
+<li><p><code>2.x</code>创建一个项目</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在3.x中使用2.x 需安装如下工具</span></span><br><span class="line">npm install -g @vue/cli-init</span><br><span class="line"><span class="comment">//之后可以用2.x的语法了</span></span><br><span class="line">vue init webpack vue_demo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打包运行<code>npm run dev</code></p>
+<p><code>2.x</code>使用如下</p>
+</li>
+<li><p><strong>Project name项目名 不允许大写</strong></p>
+</li>
+<li><p><strong>描述 作者  选默认</strong></p>
+</li>
+<li><p>Vue build  有两个选项 第一个就是webpack中提过的”runtime+compiler”  第二个是压缩版，runtime-only这两个相比：第一个是建议大多数人用的完整版，第二个体积更小，运行更快，此处我们选了第一个，之后会详细解释，一二的区别。</p>
+</li>
+<li><p><strong>是否安装 <code>vue-router</code> 这里暂时不需要</strong></p>
+</li>
+<li><p>*<em>是否使用 <code>ESLint</code> 这里使用 *</em></p>
+<ul>
+<li><code>ESLint 是一个插件化的 javascript 代码检测工具，它可以用于检查常见的 JavaScript 代码误，也可以进行代码风格检查，这样我们就可以根据自己的喜好指定一套 ESLint 配置，然后应用到所编写的项目上，从而实现辅助编码规范的执行，有效控制项目代码的质量。</code></li>
+</ul>
+</li>
+<li><p><strong><code>unit tests</code> 和 <code>e2e tests</code> 两个测试工具 一个单元测试，一个（end to end）端到端测试，暂不需要</strong></p>
+</li>
+<li><p>最后一个选项 选择下载方式 分别为 <code>npm  yarn  手动</code></p>
+</li>
+<li><img src="/2019/10/01/VueCLI的使用（一）/webpack01.png">
 
-<p>注: <code>yilia</code>相关配置参考</p>
-<p><a href="https://github.com/litten/BlogBackup/blob/master/_config.yml" target="_blank" rel="noopener">https://github.com/litten/BlogBackup/blob/master/_config.yml</a></p>
-<p><a href="https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml" target="_blank" rel="noopener">https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml</a></p>
-<h2 id="1-11-通过相对路径引入图片及其他资源"><a href="#1-11-通过相对路径引入图片及其他资源" class="headerlink" title="1.11 通过相对路径引入图片及其他资源"></a>1.11 通过相对路径引入图片及其他资源</h2><p>打开 <code>_config.yml</code>文件中的 如下选项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="1-4-Vue-CLI2-中npm-run-dev解释"><a href="#1-4-Vue-CLI2-中npm-run-dev解释" class="headerlink" title="1.4. Vue CLI2 中npm run dev解释"></a>1.4. <code>Vue CLI2 中npm run dev</code>解释</h2><p>安装完毕后 会提示用户输入 <strong><code>npm run dev</code></strong>打包程序  运行它会自动创建一个本地服务器</p>
+<p>这条语句会自动在项目目录下做以下步骤</p>
+<ul>
+<li>查找<code>package.json</code> </li>
+<li>在<code>package.json</code>找到scripts对象 进行执行     scripts参数对象详解<ul>
+<li>他的作用是代理封装<code>webpack</code>的原生命令提高可读性（不封装参数太多不利于理解和代码可读性）</li>
+<li><code>dev</code>参数是项目入口代码，它会根据参数的内容找到相应的<code>js</code>文件并执行</li>
+<li><code>start</code>参数是对<code>npm run dev</code>指令的进一步封装，可以直接执行 <code>npm start</code>创建本地服务器</li>
+<li><code>lint</code>跟之前安装的<code>ESLint</code>有关用于检查代码风格</li>
+<li><code>build</code>是执行打包命令时使用的</li>
+</ul>
+</li>
+</ul>
+<img src="/2019/10/01/VueCLI的使用（一）/webpack02.png">
 
-<p>打开该选项后，在<code>_post</code>文件夹下会出现一个文章同名文件夹，在这个文件夹里面存放图片等资源</p>
-<p>之后在文章中按如下写法引入资源即可</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//asset_img 是固定写法 example.jpg是图片名 再后面的是图片描述</span></span><br><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-5-Vue-CLI-关于webpack配置的解释"><a href="#1-5-Vue-CLI-关于webpack配置的解释" class="headerlink" title="1.5. Vue CLI 关于webpack配置的解释"></a>1.5. Vue CLI 关于webpack配置的解释</h2><ul>
+<li><code>Webpack</code>理解  （是一个静态模块打包工具 基于<code>node.js</code>开发 JavaScript模块打包后就可以运行在浏览器  ）<ul>
+<li>核心原理：一切皆模块    按需加载（通过异步加载代码，不需要的不回加载）</li>
+<li>支持：自动刷新(热更新)和热替换 （<code>HMR</code>）<ul>
+<li>自动刷新模式有两种 一种<code>iframe</code> 默认模式 一种<code>inline</code>通过scripts配置</li>
+<li>热替换(<code>HMR</code>)不需要刷新页面就可以直接替换增删模块 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>参考链接 <a href="https://www.cnblogs.com/hhhyaaon/p/5664002.html" target="_blank" rel="noopener">https://www.cnblogs.com/hhhyaaon/p/5664002.html</a>   </li>
+<li><a href="https://segmentfault.com/a/1190000005089993" target="_blank" rel="noopener">https://segmentfault.com/a/1190000005089993</a></li>
+<li><a href="https://blog.csdn.net/six_six_six_666/article/details/82633731" target="_blank" rel="noopener">https://blog.csdn.net/six_six_six_666/article/details/82633731</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"dev"</span>: <span class="string">"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js"</span></span><br><span class="line"><span class="comment">//关于该属性中各个名称的理解</span></span><br><span class="line"><span class="comment">//webpack提供两种用户交互接口  其一 webpack cli tool 默认交互方式 与webpack一同安装</span></span><br><span class="line"><span class="comment">//其二 webpack-dev-server 他是一个node服务器 通过npm安装</span></span><br><span class="line"><span class="comment">//--inline 配置自动更新</span></span><br><span class="line"><span class="comment">//这里没有配置热替换  加上 --hot 即可设置</span></span><br><span class="line"><span class="comment">//如果--inline --hot 同时存在 优先执行热替换 如果无法执行 再执行热更新</span></span><br><span class="line"><span class="comment">//--progress 是否在编译时显示进度条</span></span><br><span class="line"><span class="comment">//--config 后跟配置文件</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="1-12-首页显示部分文章"><a href="#1-12-首页显示部分文章" class="headerlink" title="1.12. 首页显示部分文章"></a>1.12. 首页显示部分文章</h2><p>在<code>md</code>文件中，插入<code>&lt;!--more--&gt;</code>该标签上面的内容在主页显示，下面的部分会隐藏</p>
+<ul>
+<li><p><code>config</code>中 <code>index.js 中dev对象</code>内容理解</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//静态资源目录</span></span><br><span class="line">assetsSubDirectory: <span class="string">'static'</span>,</span><br><span class="line">    <span class="comment">//静态资源默认访问格式</span></span><br><span class="line">    assetsPublicPath: <span class="string">'/'</span>,</span><br><span class="line">    proxyTable: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Various Dev Server settings</span></span><br><span class="line">    host: <span class="string">'localhost'</span>, <span class="comment">// can be overwritten by process.env.HOST</span></span><br><span class="line">        <span class="comment">//默认端口号 如果被占用会自动更换</span></span><br><span class="line">    port: <span class="number">8080</span>, <span class="comment">// can be overwritten by process.env.PORT, if port is in use, a free one will be determined</span></span><br><span class="line">        <span class="comment">//打包成功后是否自动打开网页</span></span><br><span class="line">    autoOpenBrowser: <span class="literal">false</span>,</span><br><span class="line">    errorOverlay: <span class="literal">true</span>,</span><br><span class="line">    notifyOnErrors: <span class="literal">true</span>,</span><br><span class="line">    poll: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
+<li><img src="/2019/10/01/VueCLI的使用（一）/webpack03.png">
+
+</li>
+</ul>
+<h2 id="1-6-vuecli2配置的目录中各文件的理解"><a href="#1-6-vuecli2配置的目录中各文件的理解" class="headerlink" title="1.6. vuecli2配置的目录中各文件的理解"></a>1.6. <code>vuecli2</code>配置的目录中各文件的理解</h2><ul>
+<li><p><code>build</code>和<code>config</code>文件夹都是配置webpack用的， <code>build</code>中的文件是配置的主要内容，<code>config</code>中的文件保存的是配置中需要的各种变量</p>
+</li>
+<li><p><code>src</code>项目目录   默认有以下两个</p>
+<ul>
+<li><code>components</code>  组件目录</li>
+<li><code>assets</code>存放可以压缩的资源：包括图片css样式等，如图片 会设定一<code>limit</code>大于<code>limit</code>的值 会通过<code>file-loader</code>压缩，小于就直接通过<code>url-loader</code> 而下面介绍的<code>static</code>目录中的图片是全部原名上传的不会压缩更改</li>
+</ul>
+</li>
+<li><p><code>static</code>公共资源目录 <code>github</code>上传时如果公共目录为空，会忽略这个文件夹    添加<code>.gitkeep</code>能保证，即使为空也不被忽略</p>
+</li>
+<li><p><code>.babelrc</code>  JavaScript语法编译器配置，用来编译新语法 提高兼容性（即webpack中配置到的bable 的 更全面的配置）</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [</span><br><span class="line">    [<span class="string">"env"</span>, &#123;</span><br><span class="line">      <span class="string">"modules"</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">"targets"</span>: &#123;</span><br><span class="line">          <span class="comment">//这句话含义：兼容市场份额大于1% 的浏览器，从最新版本开始往前的两个版本，不兼容ie8</span></span><br><span class="line">        <span class="string">"browsers"</span>: [<span class="string">"&gt; 1%"</span>, <span class="string">"last 2 versions"</span>, <span class="string">"not ie &lt;= 8"</span>]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    <span class="string">"stage-2"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"plugins"</span>: [<span class="string">"transform-vue-jsx"</span>, <span class="string">"transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>.editorconfig</code>设置编码格式， 代码风格</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">root = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[*]</span><br><span class="line"> <span class="comment">//编码格式</span></span><br><span class="line">charset = utf<span class="number">-8</span></span><br><span class="line"> <span class="comment">//缩进风格 空格</span></span><br><span class="line">indent_style = space</span><br><span class="line"> <span class="comment">//缩进字节 2个</span></span><br><span class="line">indent_size = <span class="number">2</span></span><br><span class="line"> <span class="comment">//代码换行通过 1f</span></span><br><span class="line">end_of_line = lf</span><br><span class="line"> <span class="comment">//一个代码文件写完后 自动回车到下一行</span></span><br><span class="line">insert_final_newline = <span class="literal">true</span></span><br><span class="line"> <span class="comment">//自动去除代码中一些无效的空格</span></span><br><span class="line">trim_trailing_whitespace = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>.eslintignore</code>与<code>.gitignore</code>忽略上传文件类似，它是给 <code>ESLint</code> 用于忽略文件，使之不被语法检查</p>
+</li>
+<li><p><code>.eslintrc.js</code> 是<code>eslint</code>配置文件 如果 想改变风格可以重新配置，参考链接</p>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_38606332/article/details/80864381" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38606332/article/details/80864381</a></li>
+</ul>
+</li>
+<li><p><code>.postcssrc.js</code> 配置<code>postcss</code></p>
+<ul>
+<li><code>postcss</code>一个运行插件的平台，专门解决<code>css</code>兼容问题</li>
+</ul>
+</li>
+<li><p><code>package-lock.json</code>存放了node_modules中所有依赖的名称及版本，比package.json更加全面 有这个文件时，当你执行 npm install 下载包时，速度会更快</p>
+</li>
+<li><p>项目完成后还要创建一个dist文件夹里面是压缩优化过得最终发布版本的代码</p>
+</li>
+</ul>
+<img src="/2019/10/01/VueCLI的使用（一）/webpack04.png">
+
+<p>资源<code>src</code>中的main文件是项目的入口文件 在<code>build</code>中的<code>webpack.base.conf.js</code>配置<img src="/2019/10/01/VueCLI的使用（一）/webpack05.png"></p>
+<h2 id="1-7-组件化的理解：是被封装起来的视图，是一个功能明确单一的文件-里面包含了实现功能所必需的的html-css-js-img等文件"><a href="#1-7-组件化的理解：是被封装起来的视图，是一个功能明确单一的文件-里面包含了实现功能所必需的的html-css-js-img等文件" class="headerlink" title="1.7. 组件化的理解：是被封装起来的视图，是一个功能明确单一的文件 里面包含了实现功能所必需的的html css js img等文件"></a>1.7. 组件化的理解：是被封装起来的视图，是一个功能明确单一的文件 里面包含了实现功能所必需的的<code>html css js img</code>等文件</h2><h2 id="1-8-一些其他内容的解释"><a href="#1-8-一些其他内容的解释" class="headerlink" title="1.8. 一些其他内容的解释"></a>1.8. 一些其他内容的解释</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 设置 viewpprt(初始视口) 的宽度等于设备宽度，并且无缩放--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在开发环境下，Vue 会提供很多警告来帮你对付常见的错误与陷阱。而在生产环境下，这些警告语句却没有用，反而会增加应用的体积。此外，有些警告检查还有一些小的运行时开销，这在生产环境模式下是可以避免的。  作用就是：关闭警告，加快运行速度，减少体积</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-9-Vue-CLI2-中的npm-run-buid过程"><a href="#1-9-Vue-CLI2-中的npm-run-buid过程" class="headerlink" title="1.9. Vue CLI2 中的npm run buid过程"></a>1.9. Vue CLI2 中的<code>npm run buid过程</code></h2><ul>
+<li>文件打包<code>npm run build</code> 生成dist文件夹<ul>
+<li>打包过程<ul>
+<li>首先执行命令后 在<code>package.json</code>中找到<code>scripts</code>对象 根据<code>build</code>属性 执行<code>build</code>文件中的<code>build.js</code>根据里面的内容依次执行 补充说明:<code>config</code>目录下<code>index.js</code>除了上文提到的<code>dev</code>对象外还配置了<code>build</code>对象，程序会分析其中的内容，得到最后的结果</li>
+</ul>
+</li>
+<li>项目打包后执行 <code>index.html</code>控制台有404错误 一般是 引用路径问题 此时只需要将 <code>config</code>目录下的<code>index.js</code>中 <code>assetsPublicPath: &#39;/&#39;</code>修改为<code>assetsPublicPath: &#39;./&#39;</code>也就是加一个点 ，再重新执行<code>npm run build</code>即可成功</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-10-关闭eslint的方法"><a href="#1-10-关闭eslint的方法" class="headerlink" title="1.10. 关闭eslint的方法"></a>1.10. 关闭<code>eslint</code>的方法<img src="/2019/10/01/VueCLI的使用（一）/vueCLI03.png"></h2><img src="/2019/10/01/VueCLI的使用（一）/vueCLI02.png">
+
+<h2 id="1-11-runtime-compiler，runtime-only的详细区别"><a href="#1-11-runtime-compiler，runtime-only的详细区别" class="headerlink" title="1.11. runtime+compiler，runtime-only的详细区别"></a>1.11. runtime+compiler，runtime-only的详细区别</h2><img src="/2019/10/01/VueCLI的使用（一）/vueCLI04.png">
+
+<h3 id="1-11-1-runtime-compiler-runtime-only"><a href="#1-11-1-runtime-compiler-runtime-only" class="headerlink" title="1.11.1.  runtime+compiler runtime-only"></a>1.11.1.  runtime+compiler runtime-only</h3><img src="/2019/10/01/VueCLI的使用（一）/vueCLI05.png">
+
+<p>两者写法的区别：入口文件main中，</p>
+<p>runtime+compiler 使用了 template 和 components属性</p>
+<p>runtime-only使用了 render方法</p>
+<p>vue 运行过程；</p>
+<p>template-&gt;(parse)-&gt;ast(虚拟DOM树)-&gt;(compile)-&gt;render-&gt;真实DOM树-&gt;ui界面</p>
+<p>rutime-only相当于直接从 render 步骤开始执行，render-only中的template内容交给了 vue-template-compiler（它是开发时依赖，打包后不会存在）去处理， 因为省去了前两步，所以压缩的代码包更小，效率更高</p>
+<p>render方法中的参数h实际上是 <code>createElement</code></p>
+<p><code>createElement(&#39;标签&#39;，{属性}，[内容，(还可以嵌套createElement)])</code></p>
+<p>在这里传入的就是组件App  <code>createElement(App)</code></p>
 
       
 
@@ -241,7 +358,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">博客 个人博客 搭建过程 教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VueCLI 脚手架 VueCLI2</a>
         		</li>
       		
 		</ul>
@@ -297,7 +414,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/25/Hexo博客搭建/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/01/VueCLI的使用（一）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,15 +428,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/09/25/jQuery常用方法总结（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          &#39;jQuery常用方法总结（一）&#39;
-        
-      </div>
-    </a>
   
+    <a href="/2019/09/30/webpack详解（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack详解（二）</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -344,7 +457,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Hexo博客的搭建过程"><span class="toc-number">1.</span> <span class="toc-text">一 :Hexo博客的搭建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-新建一个目录命名为blog"><span class="toc-number">1.2.</span> <span class="toc-text">1.2.新建一个目录命名为blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-初始化一个hexo目录"><span class="toc-number">1.3.</span> <span class="toc-text">1.3.初始化一个hexo目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-运行hexo本地服务器"><span class="toc-number">1.4.</span> <span class="toc-text">1.4.运行hexo本地服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-新建文章"><span class="toc-number">1.5.</span> <span class="toc-text">1.5.新建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-清理缓存"><span class="toc-number">1.6.</span> <span class="toc-text">1.6.清理缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-部署到本地"><span class="toc-number">1.7.</span> <span class="toc-text">1.7.部署到本地</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-部署到本地和远端"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.7.1.部署到本地和远端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-hexo删除文章"><span class="toc-number">1.8.</span> <span class="toc-text">1.8.hexo删除文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-部署博客到github"><span class="toc-number">1.9.</span> <span class="toc-text">1.9.部署博客到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-关于更换主题"><span class="toc-number">1.10.</span> <span class="toc-text">1.10.关于更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-通过相对路径引入图片及其他资源"><span class="toc-number">1.11.</span> <span class="toc-text">1.11 通过相对路径引入图片及其他资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-首页显示部分文章"><span class="toc-number">1.12.</span> <span class="toc-text">1.12. 首页显示部分文章</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-CLI2"><span class="toc-number">1.</span> <span class="toc-text">Vue CLI2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-CLI-俗称脚手架"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. CLI 俗称脚手架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-Vue-CLI是一个官方发布的vue-js项目脚手架"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1. Vue.CLI是一个官方发布的vue.js项目脚手架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-使用脚手架可以快速搭建vue开发环境，及对应的webpack配置"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2. 使用脚手架可以快速搭建vue开发环境，及对应的webpack配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-在我们开发大型项目时，通常要考虑项目的结构，部署，热加载，代码单元测试等问题，webpack模块化开发时也需要配置许多相关插件与loader-（详情见webpack）-使用脚手架能快速完成这部分功能，提高开发效率"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3. 在我们开发大型项目时，通常要考虑项目的结构，部署，热加载，代码单元测试等问题，webpack模块化开发时也需要配置许多相关插件与loader （详情见webpack） 使用脚手架能快速完成这部分功能，提高开发效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-使用前提-基于node"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4. 使用前提 基于node</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-安装Vue-CLI"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. 安装Vue CLI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-文档地址：https-cli-vuejs-org-zh-guide-creating-a-project-html-vue-create"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.2.1. 文档地址：https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-安装"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2.2. 安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-创建项目"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. 创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-Vue-CLI-2-x-创建"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.3.2. Vue CLI 2.x 创建</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-Vue-CLI2-中npm-run-dev解释"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. Vue CLI2 中npm run dev解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Vue-CLI-关于webpack配置的解释"><span class="toc-number">1.5.</span> <span class="toc-text">1.5. Vue CLI 关于webpack配置的解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-vuecli2配置的目录中各文件的理解"><span class="toc-number">1.6.</span> <span class="toc-text">1.6. vuecli2配置的目录中各文件的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-组件化的理解：是被封装起来的视图，是一个功能明确单一的文件-里面包含了实现功能所必需的的html-css-js-img等文件"><span class="toc-number">1.7.</span> <span class="toc-text">1.7. 组件化的理解：是被封装起来的视图，是一个功能明确单一的文件 里面包含了实现功能所必需的的html css js img等文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-一些其他内容的解释"><span class="toc-number">1.8.</span> <span class="toc-text">1.8. 一些其他内容的解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-Vue-CLI2-中的npm-run-buid过程"><span class="toc-number">1.9.</span> <span class="toc-text">1.9. Vue CLI2 中的npm run buid过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-关闭eslint的方法"><span class="toc-number">1.10.</span> <span class="toc-text">1.10. 关闭eslint的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-runtime-compiler，runtime-only的详细区别"><span class="toc-number">1.11.</span> <span class="toc-text">1.11. runtime+compiler，runtime-only的详细区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-11-1-runtime-compiler-runtime-only"><span class="toc-number">1.11.1.</span> <span class="toc-text">1.11.1.  runtime+compiler runtime-only</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
