@@ -153,6 +153,152 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-VueCLI的使用（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/03/VueCLI的使用（二）/">VueCLI的使用（二）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/03/VueCLI的使用（二）/" class="archive-article-date">
+  	<time datetime="2019-10-02T16:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue-CLI3"><a href="#Vue-CLI3" class="headerlink" title="Vue CLI3"></a>Vue CLI3</h1><h2 id="2-1-与vue-cli2-的区别"><a href="#2-1-与vue-cli2-的区别" class="headerlink" title="2.1. 与vue cli2 的区别"></a>2.1. 与vue cli2 的区别</h2><ul>
+<li>基于webpack4打造 不同于vue cli2 基于webpack3打造</li>
+<li>设计原则是0配置，移除了 build目录 和 config目录</li>
+<li>提供了vue UI 命令 提供了可视化配置 ，更人性化</li>
+<li>移除了static 文件夹 ，新增public文件夹 并将index.html移到该文件夹</li>
+</ul>
+<!-- more >
+
+## 2.2.  配置过程
+
+### 2.2.1. `vue create 名称`
+
+### 2.2.2.
+
+<img src="/2019/10/03/VueCLI的使用（二）/vueCLI06.png">
+
+<p>选择预设：</p>
+<ul>
+<li>default 默认</li>
+<li>manually 手动</li>
+</ul>
+<p>此处选手动方便了解配置  </p>
+<h3 id="2-2-3"><a href="#2-2-3" class="headerlink" title="2.2.3."></a>2.2.3.</h3><img src="/2019/10/03/VueCLI的使用（二）/vueCLI07.png">
+
+<p>空格控制选中取消</p>
+<ul>
+<li><p>babel 提供语法转化提高兼容性 如es6转为es5</p>
+</li>
+<li><p>linter    实际上是eslint</p>
+</li>
+<li><p>unit 单元测试</p>
+</li>
+<li><p>e2e 端到端测试</p>
+</li>
+<li><p>progressive web app (pwa)</p>
+<p>PWA（Progressive Web App）是一种理念，使用多种技术来增强web app的功能，可以让网站的体验变得更好，能够模拟一些<a href="https://baike.baidu.com/item/原生/1203260">原生</a>功能，比如通知<a href="https://baike.baidu.com/item/推送/9908161">推送</a>。在移动端利用标准化框架，让网页应用呈现和原生应用相似的体验。</p>
+</li>
+</ul>
+<h3 id="2-2-4"><a href="#2-2-4" class="headerlink" title="2.2.4."></a>2.2.4.</h3><img src="/2019/10/03/VueCLI的使用（二）/vueCLI08.png">
+
+<ul>
+<li>babel ，postcss ,eslint ,etc 相关的配置文件时放在 配置文件里 还是 package.json 里</li>
+<li>这里选择了config </li>
+</ul>
+<h3 id="2-2-5"><a href="#2-2-5" class="headerlink" title="2.2.5."></a>2.2.5.</h3><img src="/2019/10/03/VueCLI的使用（二）/vueCLI09.png">
+
+<ul>
+<li>是否将之前的步骤保存成一个默认配置</li>
+<li>如果选择保存 会让你再命名一个名称</li>
+<li>之后再创建项目时 2.2.2步 会多出来一个默认配置项，就是之前新保存的配置项</li>
+<li>补充：可以在<code>C:\Users\25209</code>中<code>.vuerc</code>中看到配置信息，删除对应的配置项即可，删除新建的配置项</li>
+<li>扩展：<code>.vuerc</code>类似的文件最后都有<code>rc</code>这个rc最早来源于Linux起名的习惯，可以理解为<code>run command</code></li>
+</ul>
+<p>到此为止项目创建成功，vueCLI3会自动将项目目录初始化成一个git目录，项目当中也有一个隐藏文件夹<code>.git</code></p>
+<p>补充：webstorm中vcs 选项中的内容就是git相关的选项是对git命令的一层封装</p>
+<img src="/2019/10/03/VueCLI的使用（二）/vueCLI10.png">
+
+<ul>
+<li>vue cli3 中将大部分生产环境的工具，及配置文件都封装在cli-service中 达到了精简的目的，所以build 与 serve 执行的也是它当中的配置</li>
+</ul>
+<h2 id="2-3-配置文件的查看和修改-通过vue-ui"><a href="#2-3-配置文件的查看和修改-通过vue-ui" class="headerlink" title="2.3. 配置文件的查看和修改 通过vue ui"></a>2.3. 配置文件的查看和修改 通过vue ui</h2><h3 id="2-3-1-启动方式-在任意终端上-输入-vue-ui-即可"><a href="#2-3-1-启动方式-在任意终端上-输入-vue-ui-即可" class="headerlink" title="2.3.1. 启动方式 在任意终端上 输入 vue ui 即可"></a>2.3.1. 启动方式 在任意终端上 输入 <code>vue ui</code> 即可</h3><ul>
+<li>在导入选项，找到指定目录 ，点击导入文件夹，进入项目仪表盘界面</li>
+<li>在项目配置里面启动运行时编译 实际上就是询问是否用 runtime+compiler 启动就是用，不启动不用</li>
+</ul>
+<h3 id="2-3-2-如果找到隐藏的vue-cli3-配置文件"><a href="#2-3-2-如果找到隐藏的vue-cli3-配置文件" class="headerlink" title="2.3.2. 如果找到隐藏的vue cli3 配置文件"></a>2.3.2. 如果找到隐藏的vue cli3 配置文件</h3><ul>
+<li>实际上配置文件都在<code>node_modules</code>中<code>@vue</code>目录下</li>
+<li><code>@vue</code>目录下<code>cli-service</code>中<code>webpack.config.js</code>是配置文件的入口</li>
+</ul>
+<h3 id="2-3-3-一般自己更改配置文件，可以在项目根目录下创建一个vue-config-js文件（名称固定，不能乱写）"><a href="#2-3-3-一般自己更改配置文件，可以在项目根目录下创建一个vue-config-js文件（名称固定，不能乱写）" class="headerlink" title="2.3.3. 一般自己更改配置文件，可以在项目根目录下创建一个vue.config.js文件（名称固定，不能乱写）"></a>2.3.3. 一般自己更改配置文件，可以在项目根目录下创建一个<code>vue.config.js</code>文件（名称固定，不能乱写）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//在这里面写配置信息，会自动加到对应配置文件里</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-补充："><a href="#2-4-补充：" class="headerlink" title="2.4. 补充："></a>2.4. 补充：</h2><p><code>vue-cli2</code>中<code>webpack.base.config.js</code>文件的<code>resolve</code>可以设置import或require的别名，使文件引入更简单 <code>src</code>也可以用不过要在别名前面加上<code>~</code>才行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">resove:&#123;</span><br><span class="line">    <span class="comment">//生效的文件类型</span></span><br><span class="line">    extensions:[<span class="string">'.js'</span>,<span class="string">'.vue'</span>,<span class="string">'.json'</span>],</span><br><span class="line">    alias:&#123;</span><br><span class="line">        <span class="comment">//在实际使用时@就代表src文件夹</span></span><br><span class="line">        <span class="string">'@'</span>:resolve(<span class="string">'src'</span>)，</span><br><span class="line">        <span class="string">'assets'</span>:resolve(<span class="string">'src/assets'</span>),</span><br><span class="line">        <span class="string">'components'</span>:resolve(<span class="string">'src/components'</span>),</span><br><span class="line">        <span class="string">'views'</span>:resolve(<span class="string">'src/views'</span>),      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+-->
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VueCLI 脚手架 VueCLI3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/03/VueCLI的使用（二）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-VueCLI的使用（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -844,7 +990,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -853,10 +1007,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
             
             <div class="clearfix"></div>
