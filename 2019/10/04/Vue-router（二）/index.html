@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: VueCLI 脚手架 VueCLI3 | Mu的博客</title>
+  <title>Vue-router（二） | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="天津师范大学20级应届毕业生，对于前端所必须的各项技能均有一定的了解">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mu的博客">
-<meta property="og:url" content="http://yoursite.com/tags/VueCLI-脚手架-VueCLI3/index.html">
+  <meta name="description" content="Vue-router的使用2.1. 安装npm install vue-route --save 2.2. 使用概述2.2.1. src中创建router文件夹 新建index.js之后做以下步骤 一：导入路由对象 并使用Vue.use(VueRouter) 二：创建路由实例，并传入映射配置 三：在Vue实例中挂载路由实例 (重点挂载时必须取名为router)否则会出错">
+<meta name="keywords" content="Vue-router 路由 前端路由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-router（二）">
+<meta property="og:url" content="http://yoursite.com/2019/10/04/Vue-router（二）/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="天津师范大学20级应届毕业生，对于前端所必须的各项技能均有一定的了解">
+<meta property="og:description" content="Vue-router的使用2.1. 安装npm install vue-route --save 2.2. 使用概述2.2.1. src中创建router文件夹 新建index.js之后做以下步骤 一：导入路由对象 并使用Vue.use(VueRouter) 二：创建路由实例，并传入映射配置 三：在Vue实例中挂载路由实例 (重点挂载时必须取名为router)否则会出错">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/Vue-router（二）/vue-router02.png">
+<meta property="og:updated_time" content="2019-10-04T08:56:20.561Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mu的博客">
-<meta name="twitter:description" content="天津师范大学20级应届毕业生，对于前端所必须的各项技能均有一定的了解">
+<meta name="twitter:title" content="Vue-router（二）">
+<meta name="twitter:description" content="Vue-router的使用2.1. 安装npm install vue-route --save 2.2. 使用概述2.2.1. src中创建router文件夹 新建index.js之后做以下步骤 一：导入路由对象 并使用Vue.use(VueRouter) 二：创建路由实例，并传入映射配置 三：在Vue实例中挂载路由实例 (重点挂载时必须取名为router)否则会出错">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/04/Vue-router（二）/vue-router02.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -151,60 +155,306 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue-router（二）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/03/VueCLI的使用（二）/" class="archive-article-date">
-  	<time datetime="2019-10-02T16:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/03/VueCLI的使用（二）/">VueCLI的使用（二）</a>
+    <h1 class="article-title" itemprop="name">
+      Vue-router（二）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/04/Vue-router（二）/" class="archive-article-date">
+  	<time datetime="2019-10-04T08:30:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Vue-router的使用"><a href="#Vue-router的使用" class="headerlink" title="Vue-router的使用"></a>Vue-router的使用</h1><h2 id="2-1-安装"><a href="#2-1-安装" class="headerlink" title="2.1. 安装"></a>2.1. 安装</h2><p><code>npm install vue-route --save</code></p>
+<h2 id="2-2-使用概述"><a href="#2-2-使用概述" class="headerlink" title="2.2. 使用概述"></a>2.2. 使用概述</h2><h3 id="2-2-1-src中创建router文件夹-新建index-js之后做以下步骤"><a href="#2-2-1-src中创建router文件夹-新建index-js之后做以下步骤" class="headerlink" title="2.2.1. src中创建router文件夹 新建index.js之后做以下步骤"></a>2.2.1. src中创建router文件夹 新建index.js之后做以下步骤</h3><ul>
+<li>一：导入路由对象 并使用<code>Vue.use(VueRouter)</code></li>
+<li>二：创建路由实例，并传入映射配置</li>
+<li>三：在Vue实例中挂载路由实例 (重点挂载时必须取名为<code>router</code>)否则会出错</li>
+</ul>
+<a id="more"></a>
+
+<h4 id="2-2-1-1-步骤二映射配置详解："><a href="#2-2-1-1-步骤二映射配置详解：" class="headerlink" title="2.2.1.1. 步骤二映射配置详解："></a>2.2.1.1. 步骤二映射配置详解：</h4><ul>
+<li>创建路由组件</li>
+<li>在路由配置文件中导入组件，在routes中填入与组件数量相等的对象，对象path属性代表路由地址，compent属性填入组件名称（省略.vue），如果还有子路由，子路由填到children属性中</li>
+<li>通过<code>&lt;router-link&gt;``&lt;router-view&gt;</code></li>
+</ul>
+<p>补充：routes数组中对象的其他属性</p>
+<ul>
+<li>redirect 重定向： 设置它时不需要设置componet属性，他的值可以设置为任意已有的path值，那么访问他自己的path时就会跳转到redirect设定path值所在的组件</li>
+</ul>
+<p>vue-router对象除routes的其他属性：</p>
+<ul>
+<li><p>mode:将其添加在routes后面即可，vue-router默认跳转模式是hash 如果想设置成history跳转 在mode中填入<code>mode:&#39;history&#39;</code>即可</p>
+</li>
+<li><p>linkActiveClass:直改变所有活动路由class名 （与1.2.2.2）中的<code>active-class</code>，</p>
+</li>
+<li><p>meta：（元数据）用于在路由中增加网页头部信息，比如title</p>
+<ul>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">meta:&#123;</span><br><span class="line">    title:<span class="string">'home'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-2-lt-router-link-gt-lt-router-link-gt-的属性"><a href="#2-2-2-lt-router-link-gt-lt-router-link-gt-的属性" class="headerlink" title="2.2.2. &lt;router-link&gt;&lt;/router-link&gt;的属性"></a>2.2.2. <code>&lt;router-link&gt;&lt;/router-link&gt;</code>的属性</h3><ul>
+<li>to 用于指定跳转路径</li>
+<li>tag:默认渲染出来的是a标签，修改tag后可渲染为其他标签<ul>
+<li>如：<code>tag=&quot;button&quot;</code></li>
+</ul>
+</li>
+<li>replace:在设置mode为history后默认是通过pushState进行跳转，如果想转为 repalceState，只需直接在标签纸填入<code>replace</code>即可</li>
+<li>active-class:如果想要改变默认的活动class<code>.router-link-active</code>那么将active-class的值改变即可<code>active-class=&quot;active&quot;</code>(注意：这种方式每个标签都需要添加该属性)</li>
+</ul>
+<h3 id="2-2-3-设置活动的样式"><a href="#2-2-3-设置活动的样式" class="headerlink" title="2.2.3. 设置活动的样式"></a>2.2.3. 设置活动<router-link>的样式</router-link></h3><ul>
+<li>通过观察网页能够发现，切到哪个路由，它对应的标签上就会有<code>.router-link-active</code>所以可以通过这个class给活动样式设置属性</li>
+</ul>
+<h3 id="2-2-4-几种路由形式"><a href="#2-2-4-几种路由形式" class="headerlink" title="2.2.4. 几种路由形式"></a>2.2.4. 几种路由形式</h3><p>示例见先前保存的代码<code>vue2文件夹中</code></p>
+<ul>
+<li>基本路由：先设计组件 然后写路由 引入<code>vue，vue-router,各个组件</code>  创建<code>new VueRouter</code>实例，数组方式写</li>
+<li>嵌套路由 ：在父路由对象中，添加<code>children</code>属性<ul>
+<li>注意点：</li>
+<li><code>children</code>里也有多个对象 ，每个对象是一个子路由</li>
+<li>对象中的path 要不写全，要不就只写一个单词，不能加<code>/</code>加<code>/</code>代表根目录 会出问题</li>
+<li>相对的 <code>router-link</code>则必须写全 ，不能简写</li>
+</ul>
+</li>
+<li>缓存路由：通过<code>keep-alive</code>标签实现</li>
+<li>动态路由：通过在<code>path</code>属性中想要动态的部分加上<code>/:userid</code>  <code>router-link</code>中<code>to</code>属性改为<code>:to</code>动态获取 <code>:to</code>中填入数据<code>:to=&quot;&#39;/abc&#39;+变量名&quot;</code> 编程式路由写法：<code>this.$router.push(&#39;url&#39;)</code><ul>
+<li>路由传递数据：通过<code>$route</code> 或 <code>props</code>实现</li>
+<li><code>$route</code>中传递数据的方法有两种</li>
+<li>一：<code>$route</code>中<code>params</code>动态路由方式实现</li>
+<li><code>$route</code>中的<code>query</code>也可用来传递数据 传递时 <code>path</code>路径正常书写即可<ul>
+<li><code>router-link</code>中<code>to</code>属性改为<code>:to</code> 写法为<code>:to={path=&#39;&#39;,query={name=&#39;&#39;,age=&#39;&#39;}}</code></li>
+<li>编程式路由写法：<code>this.$router.push({path:&#39;&#39;,query:{}})</code></li>
+</ul>
+</li>
+<li>总结：传递一条数据用 <code>params</code>传递多条数据用<code>query</code></li>
+</ul>
+</li>
+<li>编程式路由：它不同于标签<code>&lt;router-link&gt;</code>它通过<code>this.$router实现</code> 他里面有两个方法 <code>一个push：切换了地址,一个replace：替换了内容</code> 可以通过<code>$router.go</code>看出区别  <code>push</code>跟<code>router-link</code>效果相似</li>
+<li><code>$router 和 $route</code>的区别 前者主要操纵路由 保存了一些路由相关的方法 （<code>$router实际上就是创建的路由实例对象</code>），后者 代表拿到的活动路由对象，保存的一些组件中的数据(<code>$route实际上就是拿到的活动路由对象，也就是路由当中 routes里保存的任意一个在活动的对象</code>)</li>
+</ul>
+<h2 id="2-3-关于vue-cli的打包"><a href="#2-3-关于vue-cli的打包" class="headerlink" title="2.3. 关于vue-cli的打包"></a>2.3. 关于vue-cli的打包</h2><p>注：vue-cli在打包项目时，会进行一定的分类，不会直接将所有的内容打包在一个js文件里</p>
+<ul>
+<li>dist-&gt; static文件夹 和 index.html </li>
+<li>static 文件夹内 会专门 有 css文件夹 里面有css打包后的问价</li>
+<li>有js文件夹 一般分为三种<ul>
+<li>一：app开头 存放所有开发人员书写的业务代码</li>
+<li>二：manifest 存放底层支撑的代码，比如处理依赖关系，处理兼容新语法 其有一个关键的函数<code>__webpack_require__</code></li>
+<li>三：vendor开头 存放所有依赖的第三方包 如vue/axios/vue-router….</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-4-关于路由懒加载"><a href="#2-4-关于路由懒加载" class="headerlink" title="2.4. 关于路由懒加载"></a>2.4. 关于路由懒加载</h2><ul>
+<li><p>随着项目的扩大，app文件的内容势必也会不断增加，如果要一次请求拿到所有数据，那么耗费的时间也会增加，会有不好的用户体验</p>
+</li>
+<li><p>这时我们就需要使用路由的懒加载</p>
+</li>
+<li><p>懒加载能够创建许多除app外，不同的路由组件打包后的js文件，他会在请求路由时，从服务器按需加载，当然了渲染和路由还都是前端处理的，只不过从一次请求拿到所有数据变为多次请求了</p>
+</li>
+<li><p>使用方法</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这两种写法就实现了路由懒加载</span></span><br><span class="line">&#123;</span><br><span class="line">    path:<span class="string">'home'</span>,</span><br><span class="line">    component()=&gt;<span class="keyword">import</span> <span class="string">'../components/Home'</span></span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//或 </span></span><br><span class="line"><span class="comment">//推荐这种写法 方便管理</span></span><br><span class="line"><span class="keyword">const</span> Home = <span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">import</span> <span class="string">'../components/Home'</span></span><br><span class="line">&#123;</span><br><span class="line">    path:<span class="string">'home'</span>,</span><br><span class="line">    component: Home</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-5Vue-use-插件-相当于直接加载对应插件对象的install方法"><a href="#2-5Vue-use-插件-相当于直接加载对应插件对象的install方法" class="headerlink" title="2.5Vue.use(插件)相当于直接加载对应插件对象的install方法"></a>2.5Vue.use(插件)相当于直接加载对应插件对象的install方法</h2><h3 id="2-5-1-router和-route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object-defineproperty-来绑定新属性"><a href="#2-5-1-router和-route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object-defineproperty-来绑定新属性" class="headerlink" title="2.5.1. $router和$route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object.defineproperty()来绑定新属性"></a>2.5.1. <code>$router</code>和<code>$route</code>就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了<code>Object.defineproperty()</code>来绑定新属性</h3><h3 id="2-5-2-和是两个新的全局组件"><a href="#2-5-2-和是两个新的全局组件" class="headerlink" title="2.5.2. 和是两个新的全局组件"></a>2.5.2. <router-link>和<router-view>是两个新的全局组件</router-view></router-link></h3><h2 id="2-6-导航守卫"><a href="#2-6-导航守卫" class="headerlink" title="2.6. 导航守卫"></a>2.6. 导航守卫</h2><h3 id="2-6-1-全局导航守卫"><a href="#2-6-1-全局导航守卫" class="headerlink" title="2.6.1. 全局导航守卫"></a>2.6.1. 全局导航守卫</h3><h4 id="2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"><a href="#2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题" class="headerlink" title="2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"></a>2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以使用如下方式实现，缺点是每个组件都需要添加一遍，效率低</span></span><br><span class="line">created() &#123;</span><br><span class="line">    <span class="comment">//这个方法可以改变网页的title名</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">'home'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用 vue-router的实例方法 beforEach（全局前置守卫 guard）</p>
+<p>next参数详解：next 代表进行管道中下一个钩子，必须执行 ，next中可以有参数，比如可以传入一个url地址 ，那么路由就会中断当前导航，自动跳转到新地址，根据这个特性可以，加入适当的条件判定，在合适条件下跳转，不合适不跳转</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先需要在每个路由对象中加入 meta：&#123;title：'home'&#125;</span></span><br><span class="line">meta: &#123;</span><br><span class="line">    title: <span class="string">'home'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//之后使用实例方法 beforEach</span></span><br><span class="line"><span class="comment">//传入回调函数 参数有三个 </span></span><br><span class="line"><span class="comment">//to from 表示从from跳转到to to是现在的 from 是原来的  next </span></span><br><span class="line">router.beforeEach(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// document.title = to.meta.title 这种写法是错误的</span></span><br><span class="line">    <span class="comment">//错误的原因 ： 如果你的路由是一个嵌套路由那么上述写法会导致，每点击一个子路由的,显示的title值都是不同的 ，因为他们都有一个自己的meta 如果你没有设置meta·它就会显示 undefined</span></span><br><span class="line">    <span class="comment">//目标,我们应该让一个基本路由就显示他自己的title 不管其中有多少嵌套路由</span></span><br><span class="line">    <span class="comment">//解决方法 to里面有一个 matched 数组 里面的第0个元素对象就代表 基本路由 所以可以使用如下写法</span></span><br><span class="line">    <span class="built_in">document</span>.title = to.matched[<span class="number">0</span>].meta.title</span><br><span class="line">    next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-6-1-2-补充-afterEach-全局后置钩子-hook"><a href="#2-6-1-2-补充-afterEach-全局后置钩子-hook" class="headerlink" title="2.6.1.2. 补充 afterEach  (全局后置钩子 hook)"></a>2.6.1.2. 补充 <code>afterEach</code>  (全局后置钩子 hook)</h4><p>与<code>beforEach</code>区别：<code>afterEach</code>在跳转后执行回调，<code>beforEach</code>在跳转前回调</p>
+<p>即 该钩子在<code>beforeEach</code>执行完毕后执行 </p>
+<p>参数 ：<code>to from</code>没有<code>next</code></p>
+<h3 id="2-6-2-路由独享守卫"><a href="#2-6-2-路由独享守卫" class="headerlink" title="2.6.2. 路由独享守卫"></a>2.6.2. 路由独享守卫</h3><ul>
+<li><p><code>beforeEnter</code>可以直接在路由配置上定义，参数与<code>beforeEach</code>相同</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">   &#123;</span><br><span class="line">     path: <span class="string">'/foo'</span>,</span><br><span class="line">     component: Foo,</span><br><span class="line">     beforeEnter: <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">       <span class="comment">// ...</span></span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-6-3-组件内守卫"><a href="#2-6-3-组件内守卫" class="headerlink" title="2.6.3. 组件内守卫"></a>2.6.3. 组件内守卫</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//路由组建守卫都有next都需要执行</span></span><br><span class="line"><span class="keyword">const</span> Foo = &#123;</span><br><span class="line">  template: <span class="string">`...`</span>,</span><br><span class="line">  beforeRouteEnter (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// 在渲染该组件的对应路由被 confirm 前调用</span></span><br><span class="line">    <span class="comment">// 不！能！获取组件实例 `this`</span></span><br><span class="line">    <span class="comment">// 因为当守卫执行前，组件实例还没被创建</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteUpdate (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// 在当前路由改变，但是该组件被复用时调用</span></span><br><span class="line">    <span class="comment">// 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span></span><br><span class="line">    <span class="comment">// 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span></span><br><span class="line">    <span class="comment">// 可以访问组件实例 `this`</span></span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteLeave (to, <span class="keyword">from</span>, next) &#123;</span><br><span class="line">    <span class="comment">// 导航离开该组件的对应路由时调用</span></span><br><span class="line">    <span class="comment">// 可以访问组件实例 `this`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-6-4-导航解析流程"><a href="#2-6-4-导航解析流程" class="headerlink" title="2.6.4. 导航解析流程"></a>2.6.4. 导航解析流程</h3><ol>
+<li>导航被触发。</li>
+<li>在失活的组件里调用离开守卫。</li>
+<li>调用全局的 <code>beforeEach</code> 守卫。</li>
+<li>在重用的组件里调用 <code>beforeRouteUpdate</code> 守卫 (2.2+)。</li>
+<li>在路由配置里调用 <code>beforeEnter</code>。</li>
+<li>解析异步路由组件。</li>
+<li>在被激活的组件里调用 <code>beforeRouteEnter</code>。</li>
+<li>调用全局的 <code>beforeResolve</code> 守卫 (2.5+)。</li>
+<li>导航被确认。</li>
+<li>调用全局的 <code>afterEach</code> 钩子。</li>
+<li>触发 DOM 更新。</li>
+<li>用创建好的实例调用 <code>beforeRouteEnter</code> 守卫中传给 <code>next</code> 的回调函数。</li>
+</ol>
+<h2 id="2-7-用keep-alive可以保证组件不会被销毁，状态得以保留"><a href="#2-7-用keep-alive可以保证组件不会被销毁，状态得以保留" class="headerlink" title="2.7. 用keep-alive可以保证组件不会被销毁，状态得以保留"></a>2.7. 用<code>keep-alive</code>可以保证组件不会被销毁，状态得以保留</h2><ul>
+<li><p>可以通过vue生命周期<code>mounted</code> 和<code>destoryed</code>测出组件的状态</p>
+</li>
+<li><p>注意：保持状态这里有个要点，与上文的meta属性原由类似，<code>keep-alive</code>保存的状态只有一层路由组件的状态，正常情况下不包括它子路由的状态，</p>
+</li>
+<li><p>关于生命周期钩子函数的<code>mountd    destoryed等</code>：如果用<code>keep-alive</code>保持那么大多数生命周期钩子都不会在执行</p>
+</li>
+<li><p>唯一例外的只有 <code>activated</code> 和 <code>deactivated</code> 他俩一个在组件处于活动状态时执行，一个在组件处于非活动状态时执行 注—这两个钩子函数只有在组件被<keep-alive>包裹时执行，实际上如果没有<keep-alive>它俩永远不会执行</keep-alive></keep-alive></p>
+</li>
+<li><p>解决：那么如果我们要保持多层路由的状态，就要同时使用到，<code>$router.push</code>(用它达到重定向效果)结合<code>activated</code>和路由独享守卫<code>beforeRouteLeave</code> (这里只能用独享守卫，不能用<code>deactivated</code>因为<code>deactivated</code>的<code>this.route.path</code>的值在新的组件里已经变了，<code>beforeRouteLeave</code>能取到旧的<code>this.route.path</code>的值)</p>
+<p>​    ！！！！上述解决内容全都写在对应根路由里!!!</p>
+</li>
+<li><p><code>keep-alive</code>中的两个属性</p>
+<ul>
+<li><code>include</code>:条件匹配的组件缓存状态</li>
+<li>值类型是字符串或正则 ，填字符串时多个组件名间用逗号<code>,</code>隔开</li>
+<li><code>exclude</code>:条件匹配的组件，不缓存状态，类型于<code>include</code>相同</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-8-遇到的一些错误"><a href="#2-8-遇到的一些错误" class="headerlink" title="2.8. 遇到的一些错误"></a>2.8. 遇到的一些错误</h2><img src="/2019/10/04/Vue-router（二）/vue-router02.png">
+
+<p>解决方法：下载老版本<code>vue-router</code>如 <code>3.0.0</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">VueCLI 脚手架 VueCLI3</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue-router 路由 前端路由</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/04/Vue-router（二）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/03/Vue-router（一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue-router（一 ）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-router的使用"><span class="toc-number">1.</span> <span class="toc-text">Vue-router的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">2.1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-使用概述"><span class="toc-number">1.2.</span> <span class="toc-text">2.2. 使用概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-src中创建router文件夹-新建index-js之后做以下步骤"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.2.1. src中创建router文件夹 新建index.js之后做以下步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-1-步骤二映射配置详解："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.2.1.1. 步骤二映射配置详解：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-lt-router-link-gt-lt-router-link-gt-的属性"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2.2. &lt;router-link&gt;&lt;/router-link&gt;的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-设置活动的样式"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.2.3. 设置活动的样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-几种路由形式"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.2.4. 几种路由形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-关于vue-cli的打包"><span class="toc-number">1.3.</span> <span class="toc-text">2.3. 关于vue-cli的打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-关于路由懒加载"><span class="toc-number">1.4.</span> <span class="toc-text">2.4. 关于路由懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5Vue-use-插件-相当于直接加载对应插件对象的install方法"><span class="toc-number">1.5.</span> <span class="toc-text">2.5Vue.use(插件)相当于直接加载对应插件对象的install方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-router和-route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object-defineproperty-来绑定新属性"><span class="toc-number">1.5.1.</span> <span class="toc-text">2.5.1. $router和$route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object.defineproperty()来绑定新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-和是两个新的全局组件"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.5.2. 和是两个新的全局组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-导航守卫"><span class="toc-number">1.6.</span> <span class="toc-text">2.6. 导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-全局导航守卫"><span class="toc-number">1.6.1.</span> <span class="toc-text">2.6.1. 全局导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-2-补充-afterEach-全局后置钩子-hook"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">2.6.1.2. 补充 afterEach  (全局后置钩子 hook)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-路由独享守卫"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.6.2. 路由独享守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-组件内守卫"><span class="toc-number">1.6.3.</span> <span class="toc-text">2.6.3. 组件内守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-4-导航解析流程"><span class="toc-number">1.6.4.</span> <span class="toc-text">2.6.4. 导航解析流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-用keep-alive可以保证组件不会被销毁，状态得以保留"><span class="toc-number">1.7.</span> <span class="toc-text">2.7. 用keep-alive可以保证组件不会被销毁，状态得以保留</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-遇到的一些错误"><span class="toc-number">1.8.</span> <span class="toc-text">2.8. 遇到的一些错误</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -227,9 +477,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
