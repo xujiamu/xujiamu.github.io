@@ -6,20 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>&#39;Hexo博客搭建&#39; | Mu的博客</title>
+  <title>vuex（一） | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
-<meta name="keywords" content="博客 个人博客 搭建过程 教程">
+  <meta name="description" content="Vuex（一）1.1. vuex的解释及应用环境 Vuex是一个状态管理工具 状态管理可以理解为管理某些被多个组件公共享的变量 应用环境：多个组件之间共享状态，且他们的关系较为复杂时使用，简单的父子通讯没必要使用vuex 比如 用户登录状态，用户名，头像，地理位置 购物车物品 收藏 等等">
+<meta name="keywords" content="vuex 状态管理工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;Hexo博客搭建&#39;">
-<meta property="og:url" content="http://yoursite.com/2019/09/25/Hexo博客搭建/index.html">
+<meta property="og:title" content="vuex（一）">
+<meta property="og:url" content="http://yoursite.com/2019/10/07/vuex（一）/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
+<meta property="og:description" content="Vuex（一）1.1. vuex的解释及应用环境 Vuex是一个状态管理工具 状态管理可以理解为管理某些被多个组件公共享的变量 应用环境：多个组件之间共享状态，且他们的关系较为复杂时使用，简单的父子通讯没必要使用vuex 比如 用户登录状态，用户名，头像，地理位置 购物车物品 收藏 等等">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-30T16:09:35.535Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex02.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex01.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex04.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex05.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex03.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex07.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex08.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex06.png">
+<meta property="og:updated_time" content="2019-10-07T15:51:09.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#39;Hexo博客搭建&#39;">
-<meta name="twitter:description" content="一 :Hexo博客的搭建过程1.1.安装npm install hexo-cli -g 1.2.新建一个目录命名为blog1.3.初始化一个hexo目录hexo init 1.4.运行hexo本地服务器hexo server 简写hexo s">
+<meta name="twitter:title" content="vuex（一）">
+<meta name="twitter:description" content="Vuex（一）1.1. vuex的解释及应用环境 Vuex是一个状态管理工具 状态管理可以理解为管理某些被多个组件公共享的变量 应用环境：多个组件之间共享状态，且他们的关系较为复杂时使用，简单的父子通讯没必要使用vuex 比如 用户登录状态，用户名，头像，地理位置 购物车物品 收藏 等等">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/07/vuex（一）/vuex02.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -153,81 +162,148 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vuex（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      &#39;Hexo博客搭建&#39;
+      vuex（一）
     </h1>
   
 
         
-        <a href="/2019/09/25/Hexo博客搭建/" class="archive-article-date">
-  	<time datetime="2019-09-25T13:42:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-25</time>
+        <a href="/2019/10/07/vuex（一）/" class="archive-article-date">
+  	<time datetime="2019-10-07T15:43:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一-Hexo博客的搭建过程"><a href="#一-Hexo博客的搭建过程" class="headerlink" title="一 :Hexo博客的搭建过程"></a>一 :Hexo博客的搭建过程</h1><h2 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1.安装"></a>1.1.安装</h2><p><code>npm install hexo-cli -g</code></p>
-<h2 id="1-2-新建一个目录命名为blog"><a href="#1-2-新建一个目录命名为blog" class="headerlink" title="1.2.新建一个目录命名为blog"></a>1.2.新建一个目录命名为blog</h2><h2 id="1-3-初始化一个hexo目录"><a href="#1-3-初始化一个hexo目录" class="headerlink" title="1.3.初始化一个hexo目录"></a>1.3.初始化一个hexo目录</h2><p><code>hexo init</code></p>
-<h2 id="1-4-运行hexo本地服务器"><a href="#1-4-运行hexo本地服务器" class="headerlink" title="1.4.运行hexo本地服务器"></a>1.4.运行hexo本地服务器</h2><p><code>hexo server</code> 简写<code>hexo s</code></p>
+        <h1 id="Vuex（一）"><a href="#Vuex（一）" class="headerlink" title="Vuex（一）"></a>Vuex（一）</h1><h2 id="1-1-vuex的解释及应用环境"><a href="#1-1-vuex的解释及应用环境" class="headerlink" title="1.1. vuex的解释及应用环境"></a>1.1. vuex的解释及应用环境</h2><ul>
+<li>Vuex是一个状态管理工具</li>
+<li>状态管理可以理解为管理某些被多个组件公共享的变量</li>
+<li>应用环境：多个组件之间共享状态，且他们的关系较为复杂时使用，简单的父子通讯没必要使用vuex<ul>
+<li>比如 用户登录状态，用户名，头像，地理位置 购物车物品 收藏 等等</li>
+</ul>
+</li>
+</ul>
 <a id="more"></a>
 
-<h2 id="1-5-新建文章"><a href="#1-5-新建文章" class="headerlink" title="1.5.新建文章"></a>1.5.新建文章</h2><p><code>hexo new &#39;我的第一篇博客&#39;</code>简写<code>hexo n &#39;我的第一篇博客&#39;</code></p>
+<h2 id="1-2-vuex的安装-在项目根目录中执行-npm-install-vuex"><a href="#1-2-vuex的安装-在项目根目录中执行-npm-install-vuex" class="headerlink" title="1.2. vuex的安装 在项目根目录中执行 npm install vuex"></a>1.2. vuex的安装 在项目根目录中执行 <code>npm install vuex</code></h2><h2 id="1-3-vuex单一状态树-single-source-of-truth-的概念"><a href="#1-3-vuex单一状态树-single-source-of-truth-的概念" class="headerlink" title="1.3. vuex单一状态树(single source of truth)的概念"></a>1.3. vuex单一状态树(single source of truth)的概念</h2><ul>
+<li>实际上就是指多个组件共用一个数据源，也就是一个store，通过这一个store处理数据</li>
+</ul>
+<h2 id="1-4-图示vuex"><a href="#1-4-图示vuex" class="headerlink" title="1.4. 图示vuex"></a>1.4. 图示vuex</h2><h3 id="1-4-1-关于图片的一些解释"><a href="#1-4-1-关于图片的一些解释" class="headerlink" title="1.4.1. 关于图片的一些解释"></a>1.4.1. 关于图片的一些解释</h3><ul>
+<li>必须将数据的处理都通过mutations的原因：</li>
+<li>实际上在将数据放到 state中管理之后 ，各个使用它的组件都可以通过<code>$store.state.name</code>来使用，并且直接在组件内部修改他们,但是这样就不经过mutations的处理了，而不经过<code>mutations</code>处理的数据 vue插件<code>devtool</code>是无法观察数据在不同组件中的变化的，这样的话程序如果出现问题，我们将很难确定，问题出在哪个组件中</li>
+<li>为什么要有<code>actions</code> 或 <code>actions</code>上面的<code>backend</code>是什么</li>
+<li>因为数据的处理都是在<code>mutations</code>中执行的,从这个角度上看，<code>actions</code>变得可有可无,实际上在使用中,我们也可以跳过<code>actions</code>这一步直接用<code>mutations</code>处理数据,那么为什么要有<code>actions</code>呢，这是因为异步请求的处理是不建议用<code>mutations</code>执行的 <code>devtool</code>也无法检测到异步，所以异步操作专门写在<code>actions</code>中  所以图中的<code>backend</code>(后端)是画在<code>actions</code>上面的</li>
+</ul>
+<img src="/2019/10/07/vuex（一）/vuex02.png">
+
+<img src="/2019/10/07/vuex（一）/vuex01.png">
+
+<h2 id="1-5-Vuex的使用"><a href="#1-5-Vuex的使用" class="headerlink" title="1.5. Vuex的使用"></a>1.5. Vuex的使用</h2><h3 id="1-5-1-创建store文件夹-在文件夹中创建index-js"><a href="#1-5-1-创建store文件夹-在文件夹中创建index-js" class="headerlink" title="1.5.1. 创建store文件夹 在文件夹中创建index.js"></a>1.5.1. 创建<code>store</code>文件夹 在文件夹中创建<code>index.js</code></h3><ul>
+<li>导入vuex 使用 Vue.use(Vuex)</li>
+<li>创建Vuex.Store 实例 配置<code>state getters mutatins actions modules</code></li>
+<li>将store挂载到Vue实例上，属性名必须写<code>store</code></li>
+</ul>
+<h3 id="1-5-2-Vue-Store各属性解释"><a href="#1-5-2-Vue-Store各属性解释" class="headerlink" title="1.5.2. Vue.Store各属性解释"></a>1.5.2. Vue.Store各属性解释</h3><h4 id="1-5-2-1-state"><a href="#1-5-2-1-state" class="headerlink" title="1.5.2.1. state"></a>1.5.2.1. state</h4><ul>
+<li><p>存放被管理的数据</p>
+</li>
+<li><p>在组件中通过 <code>$store.state.名称</code>来使用</p>
+</li>
+<li><p>如果组件中调用方法名和<code>state</code>中定义名称相同，可以通过<code>...mapState([在这里将名称映射进来])</code>使用</p>
 <ul>
-<li>新建的md文件会出现在<code>blog/source/_posts/我的第一篇博客</code></li>
-</ul>
-<h2 id="1-6-清理缓存"><a href="#1-6-清理缓存" class="headerlink" title="1.6.清理缓存"></a>1.6.清理缓存</h2><ul>
-<li><code>hexo clean</code> 一般在更新博客更改主题之后，都可以执行这条命令一次</li>
-</ul>
-<h2 id="1-7-部署到本地"><a href="#1-7-部署到本地" class="headerlink" title="1.7.部署到本地"></a>1.7.部署到本地</h2><p><code>hexo generate</code>简写 <code>hexo g</code></p>
-<h3 id="1-7-1-部署到本地和远端"><a href="#1-7-1-部署到本地和远端" class="headerlink" title="1.7.1.部署到本地和远端"></a>1.7.1.部署到本地和远端</h3><p><code>hexo generate --deploy</code> 或 <code>$ hexo deploy --generate</code></p>
-<p>简写<code>hexo g -d</code> 或 <code>hexo d -g</code></p>
-<h2 id="1-8-hexo删除文章"><a href="#1-8-hexo删除文章" class="headerlink" title="1.8.hexo删除文章"></a>1.8.hexo删除文章</h2><p>直接删除对应文件夹的文件后，执行一次<code>hexo clean</code>即可 注意<code>_posts</code>不能为空，必须至少有一个文件</p>
-<h2 id="1-9-部署博客到github"><a href="#1-9-部署博客到github" class="headerlink" title="1.9.部署博客到github"></a>1.9.部署博客到github</h2><ul>
-<li><p>首先需要在blog目录下载一个插件</p>
-</li>
-<li><p>命令为<code>npm install --save hexo-deployer-git</code></p>
-</li>
-<li><p>配置blog 目录下<code>_config.yml</code></p>
-<ul>
-<li><p>在文件最后 deploy中开始配置</p>
-</li>
-<li><p>type repo branch 都是新添加的属性</p>
-</li>
+<li>调用方法名和state定义缺一不可 </li>
+<li>调用在<code>vue实例中</code>比<code>template</code>前面多个this</li>
 </ul>
 </li>
+<li><p>补充</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//上述的写法是组件方法和getters方法同名时的写法</span></span><br><span class="line">...mapGetters([<span class="string">'test1'</span>,<span class="string">'test2'</span>,<span class="string">'test3'</span>])</span><br><span class="line"><span class="comment">//如果不同名 可以传入对象属性名是组件方法名，属性值则是getters方法名</span></span><br><span class="line">...mapGetters(&#123;</span><br><span class="line">    test1:<span class="string">'test4'</span>,</span><br><span class="line">    test2:<span class="string">'test5'</span>,</span><br><span class="line">    test3:<span class="string">'test6'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注:使用时要先引入 <code>import {mapState,mapActions,mapGetters} from &#39;vuex&#39;</code>这里引入了包括后文提及的gettters和 actions</p>
+</li>
+<li><p>在vuex中以对象方式存在 数据作为属性存放</p>
+</li>
+<li><p>state中存放的数据都是响应式的 但是如果想要给数据对象增加属性，是不能像这样<code>obj[&#39;test&#39;]=124</code>直接添加的 直接添加不是响应式属性，</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">state:&#123;</span><br><span class="line">    test:&#123;</span><br><span class="line">        a:<span class="number">2</span></span><br><span class="line">        b:<span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">mutations:&#123;</span><br><span class="line">    addtestProperty(state)&#123;</span><br><span class="line">        <span class="comment">//vuex挂载之后是可以访问到vue对象的</span></span><br><span class="line">        <span class="comment">//这里通过Vue.set添加了c属性</span></span><br><span class="line">        Vue.set(state.test,c,<span class="number">5</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>同样的删除属性也不能通过<code>delete Obj.test</code>直接删，这样也不是响应式的，需要通过</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">state:&#123;</span><br><span class="line">    test:&#123;</span><br><span class="line">        a:<span class="number">2</span></span><br><span class="line">        b:<span class="number">3</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">mutations:&#123;</span><br><span class="line">    addtestProperty(state)&#123;</span><br><span class="line">        <span class="comment">//vuex挂载之后是可以访问到vue对象的</span></span><br><span class="line">        <span class="comment">//这里通过Vue.delete删除了a属性</span></span><br><span class="line">        Vue.delete(state.test,a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/xujiamu/xujiamu.github.io.git</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-2-2-getters"><a href="#1-5-2-2-getters" class="headerlink" title="1.5.2.2. getters"></a>1.5.2.2. getters</h4><ul>
+<li>存放处理数据的计算属性</li>
+<li>在组件的计算属性中通过返回 <code>return this.$store.gettters.方法名</code>来使用</li>
+<li>或者在1.4.2.1的引入之后 ，在计算属性里直接使用<code>...mapGetters([计算方法名])</code>使用</li>
+<li>在vuex中以对象方式存在, 属性是一个个回调函数，相当于 计算属性的get方法  必须return返回 回调函数的参数有两个<ul>
+<li>一个是 <code>state</code>对象</li>
+<li>一个是<code>getters自身</code> 可以用于拿到其他计算属性 返回的结果用于自身计算</li>
+</ul>
+</li>
+<li>补充：如果想给<code>getters</code>中的方法传递参数，直接传递是不能接收的，这点跟计算属性相同<ul>
+<li>但我们可以通过给<code>getters</code>里对应的方法 return一个函数，函数中返回return需要的结果 那么在组件中传参就相当于，调用返回的函数，并给函数传递参数，这时我们就实现了向<code>getters</code>中的方法传递参数</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-5-2-3-actions"><a href="#1-5-2-3-actions" class="headerlink" title="1.5.2.3. actions"></a>1.5.2.3. actions</h4><ul>
+<li>存放处理数据的异步方法</li>
+<li>在组件的方法属性中通过返回<code>this.$store.dispath(&#39;方法名&#39;,传递的数据(可选))</code>来使用</li>
+<li>或者在1.4.2.1的引入之后 ，在计算属性里直接使用<code>...mapActions([方法名])</code>使用</li>
+<li>在vuex中以对象方式存在, 属性是一个个回调函数 ，参数可以有多个 第一个是<code>{commit}</code>剩下的是传递过来的数据<ul>
+<li>回调函数内部固定写法调用mutations方法<code>commit(&#39;mutations的方法名&#39;，{参数中的数据})</code> </li>
+<li>注意：这里的<code>{commit}</code>是解构的写法，如果不这么写 ，也可以传入<code>context</code>（理解为上下文对象,里面包括<code>commit  state等</code>） 不过这种写法在调用时就比较麻烦了：<code>context.commit(&#39;mutations的方法名&#39;，{参数中的数据})</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="1-5-2-4-mutations"><a href="#1-5-2-4-mutations" class="headerlink" title="1.5.2.4. mutations"></a>1.5.2.4. mutations</h4><ul>
+<li>数据方法的具体处理过程</li>
+<li>在vuex中以对象方式存在，属性是一个个回调函数</li>
+<li>回调函数的内容就是对数据的处理</li>
+<li>如果没有异步操作 在组建的方法属性中，通过<code>this.$score.commit(&#39;方法名&#39;,arg:可选数据参数)</code>调用<code>mutationsa</code>中新增的方法</li>
+<li>调用的方法由两个参数，一个是<code>state</code>一个是传入的数据，(state,arg)</li>
+<li>没有异步操作，还有一种写法<code>this.$score.commit({type:&#39;方法名&#39;,其他数据参数 })</code>   </li>
+<li>调用的方法由两个参数，一个是<code>state</code>一个是传入的数据的对象，<code>(state,payload)</code>   在方法中<code>payload.其他参数名</code>就可以使用其他参数了</li>
+<li>如果有异步操作，属性的命名与<code>actions</code>中<code>commit</code>的方法名 一一对应，一个<code>commit</code>对应一个属性名</li>
+<li>每个属性的回调参数有两个 <ul>
+<li>一个是state</li>
+<li>可选：一个是commit传递过来的数据对象的结构{传递过来的一个个数据名}</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-5-2-5-关于mutation-types-js文件"><a href="#1-5-2-5-关于mutation-types-js文件" class="headerlink" title="1.5.2.5. 关于mutation-types.js文件"></a>1.5.2.5. 关于<code>mutation-types.js</code>文件</h4><ul>
+<li>专门用于将mutations的方法名保存为常量 方便使用</li>
+<li>效果如图示</li>
+<li>首先创建在<code>store</code>文件夹中创建一个<code>mutations-types.js</code>然后在里面定义共有的变量 一般来说 变量名大写 名称小写</li>
+</ul>
+<img src="/2019/10/07/vuex（一）/vuex04.png">
 
 <ul>
-<li>之后即可执行<code>hexo deploy</code> 简写<code>hexo d</code>部署到远端</li>
+<li>然后在方法中调用时就可以先通过<code>import</code>引入变量，然后如图所示，通过变量名直接调用</li>
 </ul>
-<h2 id="1-10-关于更换主题"><a href="#1-10-关于更换主题" class="headerlink" title="1.10.关于更换主题"></a>1.10.关于更换主题</h2><p>推荐的主题</p>
-<p><a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia</a></p>
-<p>使用：</p>
-<p>第一步安装主题到blog目录</p>
-<p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
-<p>配置：<code>_config.yml</code>文件下的<code>theme: yilia</code></p>
-<p>之后执行 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g </span><br><span class="line">hexo s <span class="comment">//本地查看</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上述无问题后即可推到远端</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<img src="/2019/10/07/vuex（一）/vuex05.png">
 
-<p>注: <code>yilia</code>相关配置参考</p>
-<p><a href="https://github.com/litten/BlogBackup/blob/master/_config.yml" target="_blank" rel="noopener">https://github.com/litten/BlogBackup/blob/master/_config.yml</a></p>
-<p><a href="https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml" target="_blank" rel="noopener">https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml</a></p>
-<h2 id="1-11-通过相对路径引入图片及其他资源"><a href="#1-11-通过相对路径引入图片及其他资源" class="headerlink" title="1.11 通过相对路径引入图片及其他资源"></a>1.11 通过相对路径引入图片及其他资源</h2><p>打开 <code>_config.yml</code>文件中的 如下选项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>最后新建方法时，先通过<code>import</code>引入变量，然后如图所示，因为对象的属性如果是变量必须要用<code>[]</code>包裹，所以这里使用中括号</li>
+</ul>
+<img src="/2019/10/07/vuex（一）/vuex03.png">
 
-<p>打开该选项后，在<code>_post</code>文件夹下会出现一个文章同名文件夹，在这个文件夹里面存放图片等资源</p>
-<p>之后在文章中按如下写法引入资源即可</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//asset_img 是固定写法 example.jpg是图片名 再后面的是图片描述</span></span><br><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>补充：如果还通过<code>actions</code>的处理，方法也是一样的，只不过通过<code>actions</code>处理就不需要在这里引入文件了,直接在<code>actions</code>中引入通过 在对应方法的返回值里面用 比如</li>
+</ul>
+<img src="/2019/10/07/vuex（一）/vuex07.png">
 
-<h2 id="1-12-首页显示部分文章"><a href="#1-12-首页显示部分文章" class="headerlink" title="1.12. 首页显示部分文章"></a>1.12. 首页显示部分文章</h2><p>在<code>md</code>文件中，插入<code>&lt;!--more--&gt;</code>该标签上面的内容在主页显示，下面的部分会隐藏</p>
+<img src="/2019/10/07/vuex（一）/vuex08.png">
+
+<img src="/2019/10/07/vuex（一）/vuex06.png">
+
 
       
 
@@ -241,7 +317,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">博客 个人博客 搭建过程 教程</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vuex 状态管理工具</a>
         		</li>
       		
 		</ul>
@@ -297,7 +373,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/25/Hexo博客搭建/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/07/vuex（一）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,15 +387,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/09/25/jQuery常用方法总结（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          &#39;jQuery常用方法总结（一）&#39;
-        
-      </div>
-    </a>
   
+    <a href="/2019/10/06/axios/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">axios</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -344,7 +416,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一-Hexo博客的搭建过程"><span class="toc-number">1.</span> <span class="toc-text">一 :Hexo博客的搭建过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-新建一个目录命名为blog"><span class="toc-number">1.2.</span> <span class="toc-text">1.2.新建一个目录命名为blog</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-初始化一个hexo目录"><span class="toc-number">1.3.</span> <span class="toc-text">1.3.初始化一个hexo目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-运行hexo本地服务器"><span class="toc-number">1.4.</span> <span class="toc-text">1.4.运行hexo本地服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-新建文章"><span class="toc-number">1.5.</span> <span class="toc-text">1.5.新建文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-清理缓存"><span class="toc-number">1.6.</span> <span class="toc-text">1.6.清理缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-7-部署到本地"><span class="toc-number">1.7.</span> <span class="toc-text">1.7.部署到本地</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-1-部署到本地和远端"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.7.1.部署到本地和远端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-8-hexo删除文章"><span class="toc-number">1.8.</span> <span class="toc-text">1.8.hexo删除文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-9-部署博客到github"><span class="toc-number">1.9.</span> <span class="toc-text">1.9.部署博客到github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-10-关于更换主题"><span class="toc-number">1.10.</span> <span class="toc-text">1.10.关于更换主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-11-通过相对路径引入图片及其他资源"><span class="toc-number">1.11.</span> <span class="toc-text">1.11 通过相对路径引入图片及其他资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-12-首页显示部分文章"><span class="toc-number">1.12.</span> <span class="toc-text">1.12. 首页显示部分文章</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vuex（一）"><span class="toc-number">1.</span> <span class="toc-text">Vuex（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-vuex的解释及应用环境"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. vuex的解释及应用环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-vuex的安装-在项目根目录中执行-npm-install-vuex"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. vuex的安装 在项目根目录中执行 npm install vuex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-vuex单一状态树-single-source-of-truth-的概念"><span class="toc-number">1.3.</span> <span class="toc-text">1.3. vuex单一状态树(single source of truth)的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-图示vuex"><span class="toc-number">1.4.</span> <span class="toc-text">1.4. 图示vuex</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-1-关于图片的一些解释"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.4.1. 关于图片的一些解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-Vuex的使用"><span class="toc-number">1.5.</span> <span class="toc-text">1.5. Vuex的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-1-创建store文件夹-在文件夹中创建index-js"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.5.1. 创建store文件夹 在文件夹中创建index.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-2-Vue-Store各属性解释"><span class="toc-number">1.5.2.</span> <span class="toc-text">1.5.2. Vue.Store各属性解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-1-state"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">1.5.2.1. state</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-2-getters"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">1.5.2.2. getters</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-3-actions"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">1.5.2.3. actions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-4-mutations"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">1.5.2.4. mutations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-2-5-关于mutation-types-js文件"><span class="toc-number">1.5.2.5.</span> <span class="toc-text">1.5.2.5. 关于mutation-types.js文件</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
