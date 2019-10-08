@@ -17,7 +17,7 @@
 <meta property="og:description" content="Vue-router的使用2.1. 安装npm install vue-route --save 2.2. 使用概述2.2.1. src中创建router文件夹 新建index.js之后做以下步骤 一：导入路由对象 并使用Vue.use(VueRouter) 二：创建路由实例，并传入映射配置 三：在Vue实例中挂载路由实例 (重点挂载时必须取名为router)否则会出错">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/10/04/Vue-router（二）/vue-router02.png">
-<meta property="og:updated_time" content="2019-10-04T08:56:20.561Z">
+<meta property="og:updated_time" content="2019-10-08T10:30:40.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue-router（二）">
 <meta name="twitter:description" content="Vue-router的使用2.1. 安装npm install vue-route --save 2.2. 使用概述2.2.1. src中创建router文件夹 新建index.js之后做以下步骤 一：导入路由对象 并使用Vue.use(VueRouter) 二：创建路由实例，并传入映射配置 三：在Vue实例中挂载路由实例 (重点挂载时必须取名为router)否则会出错">
@@ -268,7 +268,15 @@ var _hmt = _hmt || [];
 
 </li>
 </ul>
-<h2 id="2-5Vue-use-插件-相当于直接加载对应插件对象的install方法"><a href="#2-5Vue-use-插件-相当于直接加载对应插件对象的install方法" class="headerlink" title="2.5Vue.use(插件)相当于直接加载对应插件对象的install方法"></a>2.5Vue.use(插件)相当于直接加载对应插件对象的install方法</h2><h3 id="2-5-1-router和-route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object-defineproperty-来绑定新属性"><a href="#2-5-1-router和-route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object-defineproperty-来绑定新属性" class="headerlink" title="2.5.1. $router和$route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object.defineproperty()来绑定新属性"></a>2.5.1. <code>$router</code>和<code>$route</code>就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了<code>Object.defineproperty()</code>来绑定新属性</h3><h3 id="2-5-2-和是两个新的全局组件"><a href="#2-5-2-和是两个新的全局组件" class="headerlink" title="2.5.2. 和是两个新的全局组件"></a>2.5.2. <router-link>和<router-view>是两个新的全局组件</router-view></router-link></h3><h2 id="2-6-导航守卫"><a href="#2-6-导航守卫" class="headerlink" title="2.6. 导航守卫"></a>2.6. 导航守卫</h2><h3 id="2-6-1-全局导航守卫"><a href="#2-6-1-全局导航守卫" class="headerlink" title="2.6.1. 全局导航守卫"></a>2.6.1. 全局导航守卫</h3><h4 id="2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"><a href="#2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题" class="headerlink" title="2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"></a>2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以使用如下方式实现，缺点是每个组件都需要添加一遍，效率低</span></span><br><span class="line">created() &#123;</span><br><span class="line">    <span class="comment">//这个方法可以改变网页的title名</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">'home'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-5Vue-use-插件-写法的含义"><a href="#2-5Vue-use-插件-写法的含义" class="headerlink" title="2.5Vue.use(插件)写法的含义"></a>2.5Vue.use(插件)写法的含义</h2><ul>
+<li><p>相当于直接加载对应插件对象的install方法</p>
+</li>
+<li><p><code>$router</code>和<code>$route</code>就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了<code>Object.defineproperty()</code>来绑定新属性</p>
+</li>
+<li><p><code>&lt;router-link&gt;和&lt;router-view&gt;</code>是两个新的全局组件</p>
+</li>
+</ul>
+<h2 id="2-6-导航守卫"><a href="#2-6-导航守卫" class="headerlink" title="2.6. 导航守卫"></a>2.6. 导航守卫</h2><h3 id="2-6-1-全局导航守卫"><a href="#2-6-1-全局导航守卫" class="headerlink" title="2.6.1. 全局导航守卫"></a>2.6.1. 全局导航守卫</h3><h4 id="2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"><a href="#2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题" class="headerlink" title="2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"></a>2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以使用如下方式实现，缺点是每个组件都需要添加一遍，效率低</span></span><br><span class="line">created() &#123;</span><br><span class="line">    <span class="comment">//这个方法可以改变网页的title名</span></span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">'home'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>使用 vue-router的实例方法 beforEach（全局前置守卫 guard）</p>
 <p>next参数详解：next 代表进行管道中下一个钩子，必须执行 ，next中可以有参数，比如可以传入一个url地址 ，那么路由就会中断当前导航，自动跳转到新地址，根据这个特性可以，加入适当的条件判定，在合适条件下跳转，不合适不跳转</p>
@@ -444,7 +452,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-router的使用"><span class="toc-number">1.</span> <span class="toc-text">Vue-router的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">2.1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-使用概述"><span class="toc-number">1.2.</span> <span class="toc-text">2.2. 使用概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-src中创建router文件夹-新建index-js之后做以下步骤"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.2.1. src中创建router文件夹 新建index.js之后做以下步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-1-步骤二映射配置详解："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.2.1.1. 步骤二映射配置详解：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-lt-router-link-gt-lt-router-link-gt-的属性"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2.2. &lt;router-link&gt;&lt;/router-link&gt;的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-设置活动的样式"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.2.3. 设置活动的样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-几种路由形式"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.2.4. 几种路由形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-关于vue-cli的打包"><span class="toc-number">1.3.</span> <span class="toc-text">2.3. 关于vue-cli的打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-关于路由懒加载"><span class="toc-number">1.4.</span> <span class="toc-text">2.4. 关于路由懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5Vue-use-插件-相当于直接加载对应插件对象的install方法"><span class="toc-number">1.5.</span> <span class="toc-text">2.5Vue.use(插件)相当于直接加载对应插件对象的install方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-router和-route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object-defineproperty-来绑定新属性"><span class="toc-number">1.5.1.</span> <span class="toc-text">2.5.1. $router和$route就相当于直接绑定在vue原型上的属性，所以在每个引入之后在每一个实例中都可以引用，这里使用了Object.defineproperty()来绑定新属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-和是两个新的全局组件"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.5.2. 和是两个新的全局组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-导航守卫"><span class="toc-number">1.6.</span> <span class="toc-text">2.6. 导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-全局导航守卫"><span class="toc-number">1.6.1.</span> <span class="toc-text">2.6.1. 全局导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-2-补充-afterEach-全局后置钩子-hook"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">2.6.1.2. 补充 afterEach  (全局后置钩子 hook)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-路由独享守卫"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.6.2. 路由独享守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-组件内守卫"><span class="toc-number">1.6.3.</span> <span class="toc-text">2.6.3. 组件内守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-4-导航解析流程"><span class="toc-number">1.6.4.</span> <span class="toc-text">2.6.4. 导航解析流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-用keep-alive可以保证组件不会被销毁，状态得以保留"><span class="toc-number">1.7.</span> <span class="toc-text">2.7. 用keep-alive可以保证组件不会被销毁，状态得以保留</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-遇到的一些错误"><span class="toc-number">1.8.</span> <span class="toc-text">2.8. 遇到的一些错误</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-router的使用"><span class="toc-number">1.</span> <span class="toc-text">Vue-router的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">2.1. 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-使用概述"><span class="toc-number">1.2.</span> <span class="toc-text">2.2. 使用概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-src中创建router文件夹-新建index-js之后做以下步骤"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.2.1. src中创建router文件夹 新建index.js之后做以下步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-1-步骤二映射配置详解："><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.2.1.1. 步骤二映射配置详解：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-lt-router-link-gt-lt-router-link-gt-的属性"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2.2. &lt;router-link&gt;&lt;/router-link&gt;的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-设置活动的样式"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.2.3. 设置活动的样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-几种路由形式"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.2.4. 几种路由形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-关于vue-cli的打包"><span class="toc-number">1.3.</span> <span class="toc-text">2.3. 关于vue-cli的打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-关于路由懒加载"><span class="toc-number">1.4.</span> <span class="toc-text">2.4. 关于路由懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5Vue-use-插件-写法的含义"><span class="toc-number">1.5.</span> <span class="toc-text">2.5Vue.use(插件)写法的含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-导航守卫"><span class="toc-number">1.6.</span> <span class="toc-text">2.6. 导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-1-全局导航守卫"><span class="toc-number">1.6.1.</span> <span class="toc-text">2.6.1. 全局导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-1-比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">2.6.1.1. 比如有需求要每次切换页面时，在网页某个位置显示自己网页的标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-1-2-补充-afterEach-全局后置钩子-hook"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">2.6.1.2. 补充 afterEach  (全局后置钩子 hook)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-2-路由独享守卫"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.6.2. 路由独享守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-3-组件内守卫"><span class="toc-number">1.6.3.</span> <span class="toc-text">2.6.3. 组件内守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-4-导航解析流程"><span class="toc-number">1.6.4.</span> <span class="toc-text">2.6.4. 导航解析流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-用keep-alive可以保证组件不会被销毁，状态得以保留"><span class="toc-number">1.7.</span> <span class="toc-text">2.7. 用keep-alive可以保证组件不会被销毁，状态得以保留</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-遇到的一些错误"><span class="toc-number">1.8.</span> <span class="toc-text">2.8. 遇到的一些错误</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -560,7 +568,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">axios 异步请求 Promise特性 请求响应数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,15 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,7 +584,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
+                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">axios 异步请求 Promise特性 请求响应数据</a>
               </li>
             
             <div class="clearfix"></div>
