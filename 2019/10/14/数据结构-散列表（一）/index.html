@@ -6,35 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vuex（二） | Mu的博客</title>
+  <title>数据结构-散列表（一） | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vuex（二）2.1. 使用actions如何知道异步请求已经完成 两种方法">
-<meta name="keywords" content="Vuex 状态管理工具">
+  <meta name="description" content="数据结构 （散列表：一）1.1. 散列表(哈希表)1.1.1. 散列表的理解 是根据键(key)而直接访问存储内存的数据结构 它基于数组，但是完善了数组插入删除效率低的缺点 插入删除都接近O(1) 速度比树还要快">
+<meta name="keywords" content="JavaScript数据结构 散列表 哈希表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vuex（二）">
-<meta property="og:url" content="http://yoursite.com/2019/10/08/vuex（二）/index.html">
+<meta property="og:title" content="数据结构-散列表（一）">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/数据结构-散列表（一）/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="Vuex（二）2.1. 使用actions如何知道异步请求已经完成 两种方法">
+<meta property="og:description" content="数据结构 （散列表：一）1.1. 散列表(哈希表)1.1.1. 散列表的理解 是根据键(key)而直接访问存储内存的数据结构 它基于数组，但是完善了数组插入删除效率低的缺点 插入删除都接近O(1) 速度比树还要快">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex09.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex10.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex11.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex12.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex13.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex16.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex14.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex17.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex15.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex18.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex19.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex20.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex21.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex22.png">
-<meta property="og:updated_time" content="2019-10-08T10:41:10.301Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/14/数据结构-散列表（一）/数据结构51.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/14/数据结构-散列表（一）/数据结构06.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/14/数据结构-散列表（一）/数据结构05.png">
+<meta property="og:updated_time" content="2019-10-15T13:45:11.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vuex（二）">
-<meta name="twitter:description" content="Vuex（二）2.1. 使用actions如何知道异步请求已经完成 两种方法">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex09.png">
+<meta name="twitter:title" content="数据结构-散列表（一）">
+<meta name="twitter:description" content="数据结构 （散列表：一）1.1. 散列表(哈希表)1.1.1. 散列表的理解 是根据键(key)而直接访问存储内存的数据结构 它基于数组，但是完善了数组插入删除效率低的缺点 插入删除都接近O(1) 速度比树还要快">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/14/数据结构-散列表（一）/数据结构51.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -172,104 +161,210 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vuex（二）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构-散列表（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vuex（二）
+      数据结构-散列表（一）
     </h1>
   
 
         
-        <a href="/2019/10/08/vuex（二）/" class="archive-article-date">
-  	<time datetime="2019-10-08T10:32:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+        <a href="/2019/10/14/数据结构-散列表（一）/" class="archive-article-date">
+  	<time datetime="2019-10-14T07:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vuex（二）"><a href="#Vuex（二）" class="headerlink" title="Vuex（二）"></a>Vuex（二）</h1><h2 id="2-1-使用actions如何知道异步请求已经完成"><a href="#2-1-使用actions如何知道异步请求已经完成" class="headerlink" title="2.1. 使用actions如何知道异步请求已经完成"></a>2.1. 使用<code>actions</code>如何知道异步请求已经完成</h2><ul>
-<li>两种方法</li>
+        <h1 id="数据结构-（散列表：一）"><a href="#数据结构-（散列表：一）" class="headerlink" title="数据结构 （散列表：一）"></a>数据结构 （散列表：一）</h1><h2 id="1-1-散列表-哈希表"><a href="#1-1-散列表-哈希表" class="headerlink" title="1.1. 散列表(哈希表)"></a>1.1. 散列表(哈希表)</h2><h3 id="1-1-1-散列表的理解"><a href="#1-1-1-散列表的理解" class="headerlink" title="1.1.1. 散列表的理解"></a>1.1.1. 散列表的理解</h3><ul>
+<li>是根据键(key)而直接访问存储内存的数据结构</li>
+<li>它基于数组，但是完善了数组插入删除效率低的缺点 插入删除都接近<code>O(1)</code> 速度比树还要快</li>
 </ul>
 <a id="more"></a>
 
-<h3 id="2-1-1-通过传入对象解决"><a href="#2-1-1-通过传入对象解决" class="headerlink" title="2.1.1. 通过传入对象解决"></a>2.1.1. 通过传入对象解决</h3><ul>
-<li>通过在<code>dispath</code>的方法中传入对象，在对象的属性里，传递需要的参数，并传递一个回调函数，在<code>actions</code>的对应方法中接收这个参数对象，异步操作的最后，执行对象中的回调方法，当方法成功执行时，证明异步请求已完成</li>
+<ul>
+<li>缺点</li>
+<li>1.数据无序</li>
+<li>2.不允许重复</li>
 </ul>
-<img src="/2019/10/08/vuex（二）/vuex09.png">
-
-<img src="/2019/10/08/vuex（二）/vuex10.png">
-
-<h3 id="2-1-2-通过传入接收promise解决"><a href="#2-1-2-通过传入接收promise解决" class="headerlink" title="2.1.2. 通过传入接收promise解决"></a>2.1.2. 通过传入接收promise解决</h3><ul>
-<li>因为在<code>Vuex</code>中<code>dispath</code>方法的返回值实际上就是 对应 <code>actions</code>中方法得返回值，所以我们可以 在<code>actions</code> 方法中 <code>return</code>一个<code>promise</code>实例对象，在实例对象中 调用<code>reslove</code>方法， 之后如果请求成功，它的返回值就会执行then，又因为上文说的两个方法的返回值相同，所以我们可以直接在<code>dispath</code>后面写<code>then</code>，<code>then</code>我们就可以执行一些操作，来证明异步请求成功</li>
+<h3 id="1-1-2-散列表的实现"><a href="#1-1-2-散列表的实现" class="headerlink" title="1.1.2. 散列表的实现"></a>1.1.2. 散列表的实现</h3><ul>
+<li><p>1.因为他是根据key值访问，所以我们就要设计一个实现key的方法</p>
+</li>
+<li><p>比如：一个散列表中保存了许多单词，每个单词都有释义，例句等等信息，如果想要查找某个单词，我们显然不能通过数字来找，这时就可以设置一个编码格式 (ASCII UTF-8 等等)，在查询时，输入单词名（key），通过计算单词的编码值，得到他的位置，从而实现快速查找，插入也是如此，通过赋予新单词一个新的编码值，来快速保存</p>
+</li>
+<li><p>2.如何转化：</p>
+</li>
+<li><p>这里为了方便计算，我们自己设置一种编码方式</p>
+</li>
+<li><p>a-z 代表十进制 1-26 空格 代表十进制的 0</p>
+</li>
+<li><p>首先不能通过单纯的加来计算编码，因为这样会出现重复码值得情况，如<code>abc</code> 和 <code>f</code>的码值就相同</p>
+</li>
+<li><p>其次，可以考虑使用幂的连乘 如 <code>abc</code> : 1 * 27^2^ + 2 * 27^1^ + 3 * 27^0^ 这样基本不会造成重复，但占用内存过大，有很多浪费的空间 所以同样排除</p>
+<ul>
+<li>补充：上述连乘的思路来源,每个字母在每个位置包括空格的0一共有27个,所以可以将它看成27位进1，这样就能枚举所有的可能，因为数组下标是10进制，所以我们再将27进制转为10进制就能得到上述方法。缺点也如上述所说，实际单词远远没有枚举所展示的那么多，有很多空位所以需要考虑其他方法</li>
 </ul>
-<img src="/2019/10/08/vuex（二）/vuex11.png">
-
-<img src="/2019/10/08/vuex（二）/vuex12.png">
-
-<h2 id="2-2-关于vuex-store中-mudules属性详解"><a href="#2-2-关于vuex-store中-mudules属性详解" class="headerlink" title="2.2. 关于vuex.store中$mudules属性详解"></a>2.2. 关于vuex.store中<code>$mudules</code>属性详解</h2><ul>
-<li>因为vuex是单一状态树，所以当项目过大时，难免state对象存储的数据量也过大，所以这时我们就需要用到$moudules，它能够将数据按模块划分，每一个模块中，也都拥有自己的<code>state actions mutations gettters</code> 通过合理的划分，就能够减少单一state带来的数据量庞大问题</li>
+</li>
+<li><p>最终方法 ：哈希化</p>
+</li>
 </ul>
-<p>图一：</p>
-<img src="/2019/10/08/vuex（二）/vuex13.png">
+<h3 id="1-1-3-哈希化-哈希函数-哈希表的关系"><a href="#1-1-3-哈希化-哈希函数-哈希表的关系" class="headerlink" title="1.1.3. 哈希化 哈希函数 哈希表的关系"></a>1.1.3. 哈希化 哈希函数 哈希表的关系</h3><ul>
+<li>哈希化：将大数字转化成数组下标的过程称为哈希化</li>
+<li>哈希函数： 我们通过会将实现哈希化的代码放在一个函数中，这个函数就称为哈希函数</li>
+<li>哈希表： 将数据存放哈希函数的到的地址中，形成一一对应关系的表，这个表就是哈希表</li>
+</ul>
+<h3 id="1-1-4-哈希表的常见构造方法："><a href="#1-1-4-哈希表的常见构造方法：" class="headerlink" title="1.1.4. 哈希表的常见构造方法："></a>1.1.4. 哈希表的常见构造方法：</h3><ul>
+<li>直接定址法  <ul>
+<li>例如有 1到 100岁的人口统计表，年龄为关键字,哈希函数就直接取关键字自身</li>
+</ul>
+</li>
+<li>数字分析法  <ul>
+<li>比如有生日数据为 98.10.01   97.11.21    97.03.05</li>
+<li>通过分析发现 前三位易重复，后三位随机性更大，所以取后三位</li>
+</ul>
+</li>
+<li>平方取中法 <ul>
+<li>取关键字平方后的中间几位位哈希地址</li>
+</ul>
+</li>
+<li>折叠法 <ul>
+<li>将关键字分为位数相同的几部分(最后一部分位数可以不同)，然后取这几部分的叠加和(舍去进位形成哈希地址)</li>
+</ul>
+</li>
+<li>除留余数法  <ul>
+<li>取关键字被某个不大于哈希表表长m的数p除后所得余数为哈希地址</li>
+</ul>
+</li>
+<li>随机数法<ul>
+<li>选择一个随机函数，取关键字的随机函数值为它的哈希地址</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-1-5-解决哈希表冲突的方法"><a href="#1-1-5-解决哈希表冲突的方法" class="headerlink" title="1.1.5. 解决哈希表冲突的方法"></a>1.1.5. 解决哈希表冲突的方法</h3><ul>
+<li><p>拉链法(链地址法)：拉出一个动态链代替静态顺序结构，可以避免冲突，但缺点是设计麻烦，增加了编程复杂度</p>
+<ul>
+<li>（这里不光拉出链表可以，拉出数组也可以，因为在第一次根据哈希化的地址找到对应的数组或链表后，在查找具体的数据，都是通过线性查找，一个个再具体找到的，不能一次性得到，这样查找的效率基本上是一致的</li>
+<li>注：子数组只能线性查找的原因是，我们保存的只有哈希化的静态数组地址，没有子数组的地址，所以子数组也只能线性）</li>
+<li>补充： 拉出数组可以还有一个前提，那就是冲突的数据是插在拉出的数组最后的，如果是插在前面，则还是使用链表，因为数组插入前面的时间复杂度为O(n)</li>
+</ul>
+</li>
+</ul>
+<p>  <strong>2.</strong>设记录关键字集合 key={32,13,49,55,22,39,20}，选取哈希函数为 H(x)=key mod 7；解决冲突的方法为“链地址法”。</p>
+<p>  <strong>（1</strong>）画出所构造的哈希表；</p>
+<p>  <strong>（2</strong>）求该哈希表查找成功和查找不成功情况下的平均查找长度</p>
+<p>  <strong>（1**</strong>）</p>
+  <img src="/2019/10/14/数据结构-散列表（一）/数据结构51.png">
+
+<p>  成功：每个数据几次插到链尾的和/数据数量</p>
+<p>  <strong>成功：ASLsucc= (1*4+2*2+3)/7=11/7;</strong> </p>
+<p>  不成功：每个链前面有几个数据的和 除以数组长</p>
+<p>  <strong>不成功：ASLnsucc= (1+1+2+3)/7=7/7=1</strong></p>
+<img src="/2019/10/14/数据结构-散列表（一）/数据结构06.png">
+
+
 
 <ul>
-<li>自定义模块中state:</li>
-<li>图一$moudules中定义了模块a ,模块a的具体内容通过图二定义的变量<code>muduleA</code>来保存,由图三可以看出，<code>模块a</code>直接作为<code>根state</code>里面的对象保存在里面，那么在使用时就可以通过图四的方法<code>$store.state.a.name</code>来调用数据</li>
-</ul>
-<p>图二</p>
-<img src="/2019/10/08/vuex（二）/vuex16.png">
-
-<p>图三</p>
-<img src="/2019/10/08/vuex（二）/vuex14.png">
-
-<p>自定义模块中计算getters:</p>
-<p>图四，图六得出以下结论</p>
+<li><p>开放地址法 ：也细分为多种方法</p>
 <ul>
-<li><code>getters</code>中方法传递的第一个参数<code>state</code>是<code>moduleA</code>中的<code>state</code> </li>
-<li>第二个参数，<code>getters</code>是是<code>moduleA</code>中的<code>getters</code> </li>
-<li>第三个参数，<code>rootState</code>是是<code>根State</code>中的<code>state</code> </li>
-<li>使用时直接<code>$store.getters.方法名</code>即可 ，所以根对象中的计算方法，不能与子对象相同，否则重名会出错</li>
+<li>线性探测法； 冲突时 将原本地址，向后移一位，如果再冲突，再向后移，直到不冲突位置</li>
 </ul>
-<p>图四</p>
-<img src="/2019/10/08/vuex（二）/vuex17.png">
-
-<p>自定义模块中mutations：</p>
-<p>图二，图五：</p>
+<p>例：</p>
+<p><strong>1.</strong> <strong>设记录关键字集合 key={33,20,53,55,23,38,40,65}</strong>，选取哈希函数为 H(x)=key mod 11；解决冲突的方法为“线性探测法”。</p>
+<p><strong>（1</strong>）请按上述条件将 key <strong>中各值依次填入下表中：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>0</strong></th>
+<th><strong>1</strong></th>
+<th><strong>2</strong></th>
+<th><strong>3</strong></th>
+<th><strong>4</strong></th>
+<th><strong>5</strong></th>
+<th><strong>6</strong></th>
+<th><strong>7</strong></th>
+<th><strong>8</strong></th>
+<th><strong>9</strong></th>
+<th><strong>10</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>33</strong></td>
+<td><strong>55</strong></td>
+<td><strong>23</strong></td>
+<td><strong>65</strong></td>
+<td></td>
+<td><strong>38</strong></td>
+<td></td>
+<td><strong>40</strong></td>
+<td></td>
+<td><strong>20</strong></td>
+<td><strong>53</strong></td>
+</tr>
+</tbody></table>
+<p> ==补充== 拿65举例，如果查找到结尾还是没位置，会从头重新开始找，直到找到位置</p>
+<p><strong>（2</strong>）求该哈希表查找成功和查找不成功情况下的平均查找长度。</p>
+<p>成功平均查找长度： 每次查找次数和/ 数据长度</p>
+<p><strong>成功：(1+2+2+5+1+1+1+2)/8=15/8;</strong> </p>
+<p>不成功平均查找长度： </p>
+<p><strong>不成功：(5+4+3+2+1+2+1+2+1+7+6)/11=34/11</strong></p>
+</li>
+</ul>
 <ul>
-<li>使用时直接<code>this.$store.commit(&#39;名称&#39;,&#39;参数&#39;)</code>即可，所以根对象中的处理方法，不能与子对象相同，否则重名会出错</li>
-<li>第一个参数，当前子对象的<code>state</code></li>
-<li>第二个参数，传递过来的变量</li>
+<li>二次探测法： 冲突时 从 +1 ，-1 ， +4 ，-4 ，+9 ，-9…..开始依次向两边探测，直到有空位为止</li>
 </ul>
-<p>图五</p>
-<img src="/2019/10/08/vuex（二）/vuex15.png">
-
-<p>图六</p>
-<img src="/2019/10/08/vuex（二）/vuex18.png">
-
-<p>自定义模块中mutations：</p>
-<p>图七，图八，图九：</p>
 <ul>
-<li>使用时直接照普通写法即可，注意不能重名，理由同上</li>
-<li>注意：如果按照解构，只传一个commit 那么这个commit对应的是 子组件<code>mutations</code>的方法</li>
-<li>如果直接传上下文对象：这里的context就与根组件中传的<code>context</code>产生了很大的不同，多了一些对象属性和方法，具体见图九，可以根据实际需要来用</li>
+<li>多哈希法(再哈希法)：设置二种甚至多种哈希函数，来避免冲突<ul>
+<li>比如设置两种哈希函数 第二种需要具备以下特点:</li>
+<li>新的哈希函数需要和前面的哈希函数不同</li>
+<li>哈希函数不能输出为0 </li>
+<li>下面的双散列法就是一个完整的例子</li>
 </ul>
-<p>图七</p>
-<img src="/2019/10/08/vuex（二）/vuex19.png">
+</li>
+<li>双散列法：  根据双散列函数</li>
+<li>h(k,i)=(k mod h + i(1+k mod z)) mod h 进行计算</li>
+<li>k是插入的数据默认映射地址  i为探测次数 第一次是0之后每次加1 mod为取模  h为数组长度(为质数)  z为h下的最大质数</li>
+<li>比如插入59 得到位置4 但如果位置4已被占用</li>
+<li>h(59,0)=(59 mod 11 + 0*(1+59 mod 9)) mod 11=4</li>
+<li>则计算下一次 得到10 如果10为空则插入，如果不为空，按照此方式继续计算</li>
+<li>h(59,1)=(59 mod 11 + 1*(1+59 mod 9)) mod 11=10</li>
+</ul>
+<img src="/2019/10/14/数据结构-散列表（一）/数据结构05.png">
 
-<p>图八</p>
-<img src="/2019/10/08/vuex（二）/vuex20.png">
-
-<p>图九</p>
-<img src="/2019/10/08/vuex（二）/vuex21.png">
-
-<h2 id="2-3-vuex使用时推荐的目录结构"><a href="#2-3-vuex使用时推荐的目录结构" class="headerlink" title="2.3. vuex使用时推荐的目录结构"></a>2.3. vuex使用时推荐的目录结构</h2><p>如下图所示 ：index_copy.js文件为未拆分时的文件，不用理会，正常使用时不需要创建 其他各部分为规范的划分方法，一般情况下照此划分</p>
-<img src="/2019/10/08/vuex（二）/vuex22.png">
-
+<p>==注意== 开放地址法有一个需要注意的问题，比如，我们使用线性探测，来解决冲突，假设相同哈希的数据出现在数组 1,2,3 的位置， 这时我们删除 位置1 数据的时候，注意不能将其设为 null 因为如果这样我们查询 位置2 位置3 的数据 就会先根据哈希表的key查找 1 发现1 为空 ，就会认为数据不存在，从而返回false ，所以一般情况下，删除掉的数据，我们将其值，设为 -1 来避免上述情况</p>
+<h3 id="1-1-6-哈希化的效率"><a href="#1-1-6-哈希化的效率" class="headerlink" title="1.1.6. 哈希化的效率"></a>1.1.6. 哈希化的效率</h3><ul>
+<li>如果无冲突，效率很高</li>
+<li>如果有冲突，存取时间就依赖后来的探测长度</li>
+<li>平均探测长度以及平均存取时间，取决于<code>装填因子(Load Factor)</code> </li>
+<li>装填因子 = 总数据项 / 哈希表的长度</li>
+<li>开放地址法的装填因子最大是 1 </li>
+<li>链地址法 可以大于1 因为拉链可以无限延伸下去</li>
+<li>通过分析可以得出 同等长的数组，随着数据项的增长哈希化效率更高的是链地址法</li>
+</ul>
+<h3 id="1-1-7-哈希函数的设计思路"><a href="#1-1-7-哈希函数的设计思路" class="headerlink" title="1.1.7. 哈希函数的设计思路"></a>1.1.7. 哈希函数的设计思路</h3><ul>
+<li><p>尽可能减少乘除法，提高计算速度</p>
+</li>
+<li><p>尽可能让数据分布的更均匀</p>
+</li>
+<li><p>通过<code>霍纳法则</code>优化前面使用过的多项式求值连乘方法</p>
+</li>
+<li><p>原方法: 3*27^3^  + 1 * 27^2^ + 2 * 27^1^ + 3 * 27^0^       时间复杂度O(n^2^)</p>
+<p>// n+(n-1)+…1 = n(n-1) /2       即 n(n-1) /2 次乘法             n次加法 </p>
+</li>
+<li><p>现方法: 27(27(3*27+1)+2)+3        时间复杂度O(n)  // n次乘法 n次加法</p>
+</li>
+</ul>
+<h3 id="1-1-8-哈希表的长度"><a href="#1-1-8-哈希表的长度" class="headerlink" title="1.1.8. 哈希表的长度"></a>1.1.8. 哈希表的长度</h3><ul>
+<li>开放地址法数组长度应该尽量取质数 </li>
+<li>如果不是质数 比如15（下标为0~14） ，那么如果步长为5   有一个特定关键字默认映射在0  它的探测序列就会在 0， 5，10 之间一直往复循环，从而形成死循环</li>
+<li>而如果取 质数 13(下标为0~12) 步长为 5  关键字映射在0  那么探测序列就是 0，5 ， 10 ，2  ，7 ，12 ，4 ，9 ，1 ，6 ，11  ，3 ，8完全不会出现冲突问题</li>
+<li>注： 这里的步长就是指每一次探测的长度 是根据哈希函数的值来确定的</li>
+<li>链地址法不会出现这种问题，长度没有硬性要求</li>
+</ul>
 
       
 
@@ -283,7 +378,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vuex 状态管理工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaScript数据结构 散列表 哈希表</a>
         		</li>
       		
 		</ul>
@@ -339,7 +434,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/08/vuex（二）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/14/数据结构-散列表（一）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,18 +448,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/10/09/数据结构-数组/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/15/数据结构-散列表（二）/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据结构-数组
+          数据结构-散列表（二）
         
       </div>
     </a>
   
   
-    <a href="/2019/10/07/vuex（一）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vuex（一）</div>
+    <a href="/2019/10/13/数据结构-字典/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构-字典</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -391,7 +486,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vuex（二）"><span class="toc-number">1.</span> <span class="toc-text">Vuex（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-使用actions如何知道异步请求已经完成"><span class="toc-number">1.1.</span> <span class="toc-text">2.1. 使用actions如何知道异步请求已经完成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-通过传入对象解决"><span class="toc-number">1.1.1.</span> <span class="toc-text">2.1.1. 通过传入对象解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-通过传入接收promise解决"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.1.2. 通过传入接收promise解决</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-关于vuex-store中-mudules属性详解"><span class="toc-number">1.2.</span> <span class="toc-text">2.2. 关于vuex.store中$mudules属性详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-vuex使用时推荐的目录结构"><span class="toc-number">1.3.</span> <span class="toc-text">2.3. vuex使用时推荐的目录结构</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构-（散列表：一）"><span class="toc-number">1.</span> <span class="toc-text">数据结构 （散列表：一）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-散列表-哈希表"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. 散列表(哈希表)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-散列表的理解"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1.1. 散列表的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-散列表的实现"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.1.2. 散列表的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-哈希化-哈希函数-哈希表的关系"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.1.3. 哈希化 哈希函数 哈希表的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-哈希表的常见构造方法："><span class="toc-number">1.1.4.</span> <span class="toc-text">1.1.4. 哈希表的常见构造方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-解决哈希表冲突的方法"><span class="toc-number">1.1.5.</span> <span class="toc-text">1.1.5. 解决哈希表冲突的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-哈希化的效率"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.1.6. 哈希化的效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-7-哈希函数的设计思路"><span class="toc-number">1.1.7.</span> <span class="toc-text">1.1.7. 哈希函数的设计思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-8-哈希表的长度"><span class="toc-number">1.1.8.</span> <span class="toc-text">1.1.8. 哈希表的长度</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

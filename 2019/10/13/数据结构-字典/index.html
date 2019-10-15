@@ -6,35 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vuex（二） | Mu的博客</title>
+  <title>数据结构-字典 | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vuex（二）2.1. 使用actions如何知道异步请求已经完成 两种方法">
-<meta name="keywords" content="Vuex 状态管理工具">
+  <meta name="description" content="数据结构 （字典）1.1. 字典 也叫映射(Map)，一个抽象的数据结构，它包含着类似于，键(key)-&amp;gt;值(value)的对，解决字典问题的常用方法是利用散列表。">
+<meta name="keywords" content="JavaScript数据结构 字典">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vuex（二）">
-<meta property="og:url" content="http://yoursite.com/2019/10/08/vuex（二）/index.html">
+<meta property="og:title" content="数据结构-字典">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/数据结构-字典/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="Vuex（二）2.1. 使用actions如何知道异步请求已经完成 两种方法">
+<meta property="og:description" content="数据结构 （字典）1.1. 字典 也叫映射(Map)，一个抽象的数据结构，它包含着类似于，键(key)-&amp;gt;值(value)的对，解决字典问题的常用方法是利用散列表。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex09.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex10.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex11.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex12.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex13.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex16.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex14.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex17.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex15.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex18.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex19.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex20.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex21.png">
-<meta property="og:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex22.png">
-<meta property="og:updated_time" content="2019-10-08T10:41:10.301Z">
+<meta property="og:updated_time" content="2019-10-15T13:24:59.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vuex（二）">
-<meta name="twitter:description" content="Vuex（二）2.1. 使用actions如何知道异步请求已经完成 两种方法">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/08/vuex（二）/vuex09.png">
+<meta name="twitter:title" content="数据结构-字典">
+<meta name="twitter:description" content="数据结构 （字典）1.1. 字典 也叫映射(Map)，一个抽象的数据结构，它包含着类似于，键(key)-&amp;gt;值(value)的对，解决字典问题的常用方法是利用散列表。">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -172,103 +157,37 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vuex（二）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构-字典" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vuex（二）
+      数据结构-字典
     </h1>
   
 
         
-        <a href="/2019/10/08/vuex（二）/" class="archive-article-date">
-  	<time datetime="2019-10-08T10:32:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
+        <a href="/2019/10/13/数据结构-字典/" class="archive-article-date">
+  	<time datetime="2019-10-13T12:31:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Vuex（二）"><a href="#Vuex（二）" class="headerlink" title="Vuex（二）"></a>Vuex（二）</h1><h2 id="2-1-使用actions如何知道异步请求已经完成"><a href="#2-1-使用actions如何知道异步请求已经完成" class="headerlink" title="2.1. 使用actions如何知道异步请求已经完成"></a>2.1. 使用<code>actions</code>如何知道异步请求已经完成</h2><ul>
-<li>两种方法</li>
+        <h1 id="数据结构-（字典）"><a href="#数据结构-（字典）" class="headerlink" title="数据结构 （字典）"></a>数据结构 （字典）</h1><h2 id="1-1-字典"><a href="#1-1-字典" class="headerlink" title="1.1. 字典"></a>1.1. 字典</h2><ul>
+<li>也叫映射(Map)，一个抽象的数据结构，它包含着类似于，键(key)-&gt;值(value)的对，解决字典问题的常用方法是利用散列表。</li>
 </ul>
 <a id="more"></a>
 
-<h3 id="2-1-1-通过传入对象解决"><a href="#2-1-1-通过传入对象解决" class="headerlink" title="2.1.1. 通过传入对象解决"></a>2.1.1. 通过传入对象解决</h3><ul>
-<li>通过在<code>dispath</code>的方法中传入对象，在对象的属性里，传递需要的参数，并传递一个回调函数，在<code>actions</code>的对应方法中接收这个参数对象，异步操作的最后，执行对象中的回调方法，当方法成功执行时，证明异步请求已完成</li>
-</ul>
-<img src="/2019/10/08/vuex（二）/vuex09.png">
-
-<img src="/2019/10/08/vuex（二）/vuex10.png">
-
-<h3 id="2-1-2-通过传入接收promise解决"><a href="#2-1-2-通过传入接收promise解决" class="headerlink" title="2.1.2. 通过传入接收promise解决"></a>2.1.2. 通过传入接收promise解决</h3><ul>
-<li>因为在<code>Vuex</code>中<code>dispath</code>方法的返回值实际上就是 对应 <code>actions</code>中方法得返回值，所以我们可以 在<code>actions</code> 方法中 <code>return</code>一个<code>promise</code>实例对象，在实例对象中 调用<code>reslove</code>方法， 之后如果请求成功，它的返回值就会执行then，又因为上文说的两个方法的返回值相同，所以我们可以直接在<code>dispath</code>后面写<code>then</code>，<code>then</code>我们就可以执行一些操作，来证明异步请求成功</li>
-</ul>
-<img src="/2019/10/08/vuex（二）/vuex11.png">
-
-<img src="/2019/10/08/vuex（二）/vuex12.png">
-
-<h2 id="2-2-关于vuex-store中-mudules属性详解"><a href="#2-2-关于vuex-store中-mudules属性详解" class="headerlink" title="2.2. 关于vuex.store中$mudules属性详解"></a>2.2. 关于vuex.store中<code>$mudules</code>属性详解</h2><ul>
-<li>因为vuex是单一状态树，所以当项目过大时，难免state对象存储的数据量也过大，所以这时我们就需要用到$moudules，它能够将数据按模块划分，每一个模块中，也都拥有自己的<code>state actions mutations gettters</code> 通过合理的划分，就能够减少单一state带来的数据量庞大问题</li>
-</ul>
-<p>图一：</p>
-<img src="/2019/10/08/vuex（二）/vuex13.png">
-
 <ul>
-<li>自定义模块中state:</li>
-<li>图一$moudules中定义了模块a ,模块a的具体内容通过图二定义的变量<code>muduleA</code>来保存,由图三可以看出，<code>模块a</code>直接作为<code>根state</code>里面的对象保存在里面，那么在使用时就可以通过图四的方法<code>$store.state.a.name</code>来调用数据</li>
+<li><code>es6</code>中，使用<code>Map</code>实现字典</li>
+<li>补充：<code>es6中</code>的<code>Weakmap</code>只存放对象的弱引用，当该对象的强引用被删除时，<code>WeakMap</code>中的弱引用也会被清除，<code>Map</code>则不会</li>
 </ul>
-<p>图二</p>
-<img src="/2019/10/08/vuex（二）/vuex16.png">
-
-<p>图三</p>
-<img src="/2019/10/08/vuex（二）/vuex14.png">
-
-<p>自定义模块中计算getters:</p>
-<p>图四，图六得出以下结论</p>
-<ul>
-<li><code>getters</code>中方法传递的第一个参数<code>state</code>是<code>moduleA</code>中的<code>state</code> </li>
-<li>第二个参数，<code>getters</code>是是<code>moduleA</code>中的<code>getters</code> </li>
-<li>第三个参数，<code>rootState</code>是是<code>根State</code>中的<code>state</code> </li>
-<li>使用时直接<code>$store.getters.方法名</code>即可 ，所以根对象中的计算方法，不能与子对象相同，否则重名会出错</li>
-</ul>
-<p>图四</p>
-<img src="/2019/10/08/vuex（二）/vuex17.png">
-
-<p>自定义模块中mutations：</p>
-<p>图二，图五：</p>
-<ul>
-<li>使用时直接<code>this.$store.commit(&#39;名称&#39;,&#39;参数&#39;)</code>即可，所以根对象中的处理方法，不能与子对象相同，否则重名会出错</li>
-<li>第一个参数，当前子对象的<code>state</code></li>
-<li>第二个参数，传递过来的变量</li>
-</ul>
-<p>图五</p>
-<img src="/2019/10/08/vuex（二）/vuex15.png">
-
-<p>图六</p>
-<img src="/2019/10/08/vuex（二）/vuex18.png">
-
-<p>自定义模块中mutations：</p>
-<p>图七，图八，图九：</p>
-<ul>
-<li>使用时直接照普通写法即可，注意不能重名，理由同上</li>
-<li>注意：如果按照解构，只传一个commit 那么这个commit对应的是 子组件<code>mutations</code>的方法</li>
-<li>如果直接传上下文对象：这里的context就与根组件中传的<code>context</code>产生了很大的不同，多了一些对象属性和方法，具体见图九，可以根据实际需要来用</li>
-</ul>
-<p>图七</p>
-<img src="/2019/10/08/vuex（二）/vuex19.png">
-
-<p>图八</p>
-<img src="/2019/10/08/vuex（二）/vuex20.png">
-
-<p>图九</p>
-<img src="/2019/10/08/vuex（二）/vuex21.png">
-
-<h2 id="2-3-vuex使用时推荐的目录结构"><a href="#2-3-vuex使用时推荐的目录结构" class="headerlink" title="2.3. vuex使用时推荐的目录结构"></a>2.3. vuex使用时推荐的目录结构</h2><p>如下图所示 ：index_copy.js文件为未拆分时的文件，不用理会，正常使用时不需要创建 其他各部分为规范的划分方法，一般情况下照此划分</p>
-<img src="/2019/10/08/vuex（二）/vuex22.png">
+<p>通过对象实现字典的具体流程</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Map</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.items = &#123;&#125;</span><br><span class="line">    <span class="comment">//增加键值对 set </span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.set = <span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.has(key)) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        <span class="keyword">this</span>.items[key] = value</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//判断是否存在指定key has</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.has = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items.hasOwnProperty(key)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//查询指定key的value get</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.get = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.has(key) ? <span class="keyword">this</span>.items[key] : <span class="literal">undefined</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//删除指定key的value delete</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.delete = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.has(key)) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        <span class="keyword">delete</span> <span class="keyword">this</span>.items[key]</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//删除全部的键值对 clear</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.clear = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.items = &#123;&#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">//查询键值对的数量 size</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.size = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.keys(<span class="keyword">this</span>.items).length</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//查询全部的key  keys</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.keys = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.keys(<span class="keyword">this</span>.items)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//查询全部的value values</span></span><br><span class="line">    <span class="built_in">Map</span>.prototype.values = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.values(<span class="keyword">this</span>.items)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -283,7 +202,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vuex 状态管理工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaScript数据结构 字典</a>
         		</li>
       		
 		</ul>
@@ -339,7 +258,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/08/vuex（二）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/13/数据结构-字典/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,18 +272,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/10/09/数据结构-数组/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/14/数据结构-散列表（一）/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据结构-数组
+          数据结构-散列表（一）
         
       </div>
     </a>
   
   
-    <a href="/2019/10/07/vuex（一）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vuex（一）</div>
+    <a href="/2019/10/12/数据结构-集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构-集</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -391,7 +310,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vuex（二）"><span class="toc-number">1.</span> <span class="toc-text">Vuex（二）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-使用actions如何知道异步请求已经完成"><span class="toc-number">1.1.</span> <span class="toc-text">2.1. 使用actions如何知道异步请求已经完成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-通过传入对象解决"><span class="toc-number">1.1.1.</span> <span class="toc-text">2.1.1. 通过传入对象解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-通过传入接收promise解决"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.1.2. 通过传入接收promise解决</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-关于vuex-store中-mudules属性详解"><span class="toc-number">1.2.</span> <span class="toc-text">2.2. 关于vuex.store中$mudules属性详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-vuex使用时推荐的目录结构"><span class="toc-number">1.3.</span> <span class="toc-text">2.3. vuex使用时推荐的目录结构</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据结构-（字典）"><span class="toc-number">1.</span> <span class="toc-text">数据结构 （字典）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-字典"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. 字典</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
