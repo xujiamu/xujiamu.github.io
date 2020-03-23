@@ -638,9 +638,9 @@ var _hmt = _hmt || [];
 
 </li>
 </ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;Title&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;button id=<span class="string">"execute"</span>&gt;点击我执行命令&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="undo"&gt;点击我执行命令&lt;/</span>button&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// 使用面向对象的方式（构造函数原型模式）实现命令模式</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  // 请求部分</span></span><br><span class="line"><span class="comment">  const Tv = &#123;</span></span><br><span class="line"><span class="comment">    open: function () &#123;</span></span><br><span class="line"><span class="comment">      console.log('打开电视机');</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    close: function () &#123;</span></span><br><span class="line"><span class="comment">      console.log('关闭电视机');</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  // 接受者   receiver(接收器)</span></span><br><span class="line"><span class="comment">  function OpenTvCommand(receiver) &#123;</span></span><br><span class="line"><span class="comment">    this.receiver = receiver</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  OpenTvCommand.prototype.execute = function () &#123;</span></span><br><span class="line"><span class="comment">    this.receiver.open()</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  OpenTvCommand.prototype.undo = function () &#123;</span></span><br><span class="line"><span class="comment">    this.receiver.close()</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  // 请求发起者</span></span><br><span class="line"><span class="comment">  const setCommand = function (command) &#123;</span></span><br><span class="line"><span class="comment">    document.getElementById('execute').addEventListener('click', () =&gt; &#123;</span></span><br><span class="line"><span class="comment">      command.execute()</span></span><br><span class="line"><span class="comment">    &#125;)</span></span><br><span class="line"><span class="comment">    document.getElementById('undo').addEventListener('click', () =&gt; &#123;</span></span><br><span class="line"><span class="comment">      command.undo()</span></span><br><span class="line"><span class="comment">    &#125;)</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  setCommand(new OpenTvCommand(Tv))</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用闭包方式实现命令模式</span></span><br><span class="line">  <span class="comment">// 请求部分</span></span><br><span class="line">  <span class="keyword">const</span> Tv = &#123;</span><br><span class="line">    open: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'打开电视机'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    close: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'关闭电视机'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 接收者</span></span><br><span class="line">  <span class="keyword">const</span> createCommand = <span class="function"><span class="keyword">function</span> (<span class="params">receiver</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> execute = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      receiver.open()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> undo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      receiver.close()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      execute,</span><br><span class="line">      undo</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 发起者</span></span><br><span class="line">  <span class="keyword">const</span> setCommand = <span class="function"><span class="keyword">function</span> (<span class="params">command</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'execute'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      command.execute()</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'undo'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      command.undo()</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  setCommand(createCommand(Tv))</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2020/02/20/命令模式/#more">more >></a>
+        
       
 
       
@@ -1042,10 +1042,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
               </li>
              
@@ -1054,11 +1050,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1066,7 +1058,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">axios 异步请求 Promise特性 请求响应数据</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,15 +1078,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1110,15 +1110,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1126,15 +1122,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微任务 宏任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 字典</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 散列表 哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1142,11 +1134,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 字典</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript数据结构 树 树结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 散列表 哈希表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,7 +1150,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 链表</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript数据结构 树 树结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1162,7 +1158,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1171,6 +1167,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
               </li>
              
               <li class="article-tag-list-item">
