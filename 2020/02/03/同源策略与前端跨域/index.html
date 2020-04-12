@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Mu的博客">
 <meta property="og:description" content="同源策略到前端跨域https://juejin.im/post/58f816198d6d81005874fd97 同源策略：就是要求域名，协议，端口，相同，非同源的脚本不能访问或操作其他域的页面对象">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-23T20:09:15.892Z">
+<meta property="og:updated_time" content="2020-04-12T16:59:18.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;同源策略与前端跨域&#39;">
 <meta name="twitter:description" content="同源策略到前端跨域https://juejin.im/post/58f816198d6d81005874fd97 同源策略：就是要求域名，协议，端口，相同，非同源的脚本不能访问或操作其他域的页面对象">
@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
 <ul>
 <li><p><strong>2.JSONP</strong>   <a href="https://juejin.im/post/5c23993de51d457b8c1f4ee1#heading-5" target="_blank" rel="noopener">https://juejin.im/post/5c23993de51d457b8c1f4ee1#heading-5</a></p>
 </li>
-<li><p>原理：利用 <script> 标签没有跨域限制的漏洞，网页可以得到从其他来源动态产生的 JSON 数据。JSONP请求一定需要对方的服务器做支持才可以</p>
+<li><p>原理：利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞，网页可以得到从其他来源动态产生的 JSON 数据。JSONP请求一定需要对方的服务器做支持才可以</p>
 </li>
 <li><p>优缺点：优点是简单兼容性好，可用于解决主流浏览器的跨域数据访问的问题。缺点是仅支持get方法具有局限性,不安全可能会遭受XSS攻击。</p>
 </li>
@@ -225,9 +225,9 @@ var _hmt = _hmt || [];
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.html</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">&#123; url, params, callback &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">    <span class="built_in">window</span>[callback] = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      resolve(data)</span><br><span class="line">      <span class="built_in">document</span>.body.removeChild(script)</span><br><span class="line">    &#125;</span><br><span class="line">    params = &#123; ...params, callback &#125; </span><br><span class="line">    <span class="keyword">let</span> arrs = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">      arrs.push(<span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = <span class="string">`<span class="subst">$&#123;url&#125;</span>?<span class="subst">$&#123;arrs.join(<span class="string">'&amp;'</span>)&#125;</span>`</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//相当于向</span></span><br><span class="line"><span class="comment">//  http://localhost:3000/say?wd=Iloveyou&amp;callback=show 请求数据</span></span><br><span class="line">jsonp(&#123;</span><br><span class="line">  url: <span class="string">'http://localhost:3000/say'</span>,</span><br><span class="line">  params: &#123; <span class="attr">wd</span>: <span class="string">'Iloveyou'</span> &#125;,</span><br><span class="line">  callback: <span class="string">'show'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// server.js </span></span><br><span class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">let</span> app = express()</span><br><span class="line">app.get(<span class="string">'/say'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> &#123; wd, callback &#125; = req.query</span><br><span class="line">  <span class="built_in">console</span>.log(wd) <span class="comment">// Iloveyou</span></span><br><span class="line">  <span class="built_in">console</span>.log(callback) <span class="comment">// show</span></span><br><span class="line">  res.end(<span class="string">`<span class="subst">$&#123;callback&#125;</span>('完成了')`</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(<span class="number">3000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//jQuery jsonp</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"https://www.targetDomain.com/jsonp?callback=callbackName"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="comment">//可以使用getJSON方法</span></span><br><span class="line">jQuery.getJSON(</span><br><span class="line">  <span class="string">"https://www.yourdomain.com/jsonp?callback=?"</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"name: "</span> + data.name);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"><span class="comment">//或 ajax</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">url:<span class="string">"http://crossdomain.com/jsonServerResponse"</span>,</span><br><span class="line">dataType:<span class="string">"jsonp"</span>,</span><br><span class="line">type:<span class="string">"get"</span>,<span class="comment">//可以省略</span></span><br><span class="line">jsonpCallback:<span class="string">"show"</span>,<span class="comment">//-&gt;自定义传递给服务器的函数名，而不是使用jQuery自动生成的，可省略</span></span><br><span class="line">jsonp:<span class="string">"callback"</span>,<span class="comment">//-&gt;把传递函数名的那个形参callback，可省略</span></span><br><span class="line">success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(data);&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p><strong>3.CORS</strong> ：CORS是一个W3C标准，全称是"跨域资源共享"（Cross-origin resource sharing）。</p>
+<li><p><strong>3.CORS</strong> ：CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。</p>
 <p>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。</p>
-<p><a href="https://www.ruanyifeng.com/blog/2016/04/cors.html">https://www.ruanyifeng.com/blog/2016/04/cors.html</a></p>
+<p><a href="https://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2016/04/cors.html</a></p>
 </li>
 <li><p><strong>浏览器不再一味禁止跨域访问, 而是检查目的站点的响应头域, 进而判断是否允许当前站点访问. 通常, 服务器使用以下的这些响应头域用来通知浏览器:</strong></p>
 <ul>
@@ -257,7 +257,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>比如请求方法是<code>PUT</code>或<code>DELETE</code>，或者<code>Content-Type</code>字段的类型是<code>application/json</code></p>
 </li>
-<li><p><strong>会在正式通信之前，增加一次HTTP查询请求，称为"预检"请求，浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的<code>XMLHttpRequest</code>请求，否则就报错</strong>。</p>
+<li><p><strong>会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求，浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的<code>XMLHttpRequest</code>请求，否则就报错</strong>。</p>
 </li>
 <li><p>如：</p>
 <ul>
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
 <li><p>说明： </p>
 <ul>
 <li>==预检请求的请求方法是OPTIONS==</li>
-<li>==除了<code>Origin</code>字段，"预检"请求的头信息包括两个特殊字段。==</li>
+<li>==除了<code>Origin</code>字段，”预检”请求的头信息包括两个特殊字段。==</li>
 <li>==<strong>Access-Control-Request-Method</strong> 该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法==</li>
 <li>==<strong>Access-Control-Request-Headers</strong>该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段==</li>
 </ul>
@@ -277,10 +277,10 @@ var _hmt = _hmt || [];
 </li>
 <li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line"><span class="built_in">Date</span>: Mon, <span class="number">01</span> Dec <span class="number">2008</span> <span class="number">01</span>:<span class="number">15</span>:<span class="number">39</span> GMT</span><br><span class="line">Server: Apache/<span class="number">2.0</span><span class="number">.61</span> (Unix)</span><br><span class="line">Access-Control-Allow-Origin: http:<span class="comment">//api.bob.com</span></span><br><span class="line">Access-Control-Allow-Methods: GET, POST, PUT</span><br><span class="line">Access-Control-Allow-Headers: X-Custom-Header</span><br><span class="line">Content-Type: text/html; charset=utf<span class="number">-8</span></span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Content-Length: <span class="number">0</span></span><br><span class="line">Keep-Alive: timeout=<span class="number">2</span>, max=<span class="number">100</span></span><br><span class="line">Connection: Keep-Alive</span><br><span class="line">Content-Type: text/plain</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>关键是有==<code>Access-Control-Allow-Origin</code>==字段  ，==如果浏览器否定了"预检"请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误==</p>
+<li><p>关键是有==<code>Access-Control-Allow-Origin</code>==字段  ，==如果浏览器否定了”预检”请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误==</p>
 </li>
 <li><p><strong>Access-Control-Allow-Methods</strong></p>
-<p>该字段必需，它的值是逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法。注意，返回的是所有支持的方法，而不单是浏览器请求的那个方法。这是为了==避免多次"预检"请求==</p>
+<p>该字段必需，它的值是逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法。注意，返回的是所有支持的方法，而不单是浏览器请求的那个方法。这是为了==避免多次”预检”请求==</p>
 </li>
 <li><p><strong>Access-Control-Allow-Headers</strong></p>
 <p>如果浏览器请求包括<code>Access-Control-Request-Headers</code>字段，则<code>Access-Control-Allow-Headers</code>字段是必需的。它也是一个逗号分隔的字符串，表明服务器支持的所有头信息字段</p>
@@ -330,28 +330,28 @@ var _hmt = _hmt || [];
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//a,b同域 因为iframe跨域可读，又因为name在不同域名中都存在，在第一次跨域加载成功后，域中已存在window.name 这时切换回 同域b页面，就可以拿到相应数据   注：b为中间代理页面，内容为空</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// a.html(http://localhost:3000/b.html)</span><br><span class="line">  <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://localhost:4000/c.html"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">onload</span>=<span class="string">"load()"</span> <span class="attr">id</span>=<span class="string">"iframe"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> first = <span class="literal">true</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// onload事件会触发2次，第1次加载跨域页，并留存数据于window.name</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">load</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span>(first)&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 第1次onload(跨域页)成功后，切换到同域代理页面</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>);</span></span><br><span class="line"><span class="actionscript">        iframe.src = <span class="string">'http://localhost:3000/b.html'</span>;</span></span><br><span class="line"><span class="actionscript">        first = <span class="literal">false</span>;</span></span><br><span class="line"><span class="actionscript">      &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 第2次onload(同域b.html页)成功后，读取同域window.name中数据</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(iframe.contentWindow.name);</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>==contentWindow属性返回 <iframe>元素的Window对象，该属性只读，但是可以像操作全局 DOM一样操作它，可以访问iframe内部文档及内部DOM==</p>
+<p>==contentWindow属性返回 <iframe>元素的Window对象，该属性只读，但是可以像操作全局 DOM一样操作它，可以访问iframe内部文档及内部DOM==</iframe></p>
 <ul>
 <li><strong>7.location.hash + iframe</strong><ul>
 <li>实现原理： a.html欲与c.html跨域相互通信，通过中间页b.html来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。</li>
-<li>具体实现步骤：一开始a.html给c.html传一个hash值，然后c.html收到hash值后，再把hash值传递给b.html，最后b.html将结果放到a.html的hash值中。<br>同样的，a.html和b.html是同域的，都是<a href="http://localhost:3000;而c.html是http://localhost:4000">http://localhost:3000;而c.html是http://localhost:4000</a></li>
+<li>具体实现步骤：一开始a.html给c.html传一个hash值，然后c.html收到hash值后，再把hash值传递给b.html，最后b.html将结果放到a.html的hash值中。<br>同样的，a.html和b.html是同域的，都是<a href="http://localhost:3000;而c.html是http://localhost:4000" target="_blank" rel="noopener">http://localhost:3000;而c.html是http://localhost:4000</a></li>
 </ul>
 </li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> // a.html</span><br><span class="line">  <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://localhost:4000/c.html#iloveyou"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="comment">//检测hash的变化</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(location.hash);</span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> // b.html</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.parent.parent.location.hash = location.hash </span></span><br><span class="line"><span class="actionscript">    <span class="comment">//b.html将结果放到a.html的hash值中，b.html可通过parent.parent访问a.html页面</span></span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">//c.html</span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"> <span class="built_in">console</span>.log(location.hash);</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//创造了一个iframe节点</span></span></span><br><span class="line"><span class="javascript">  <span class="keyword">let</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//设置它的src</span></span></span><br><span class="line"><span class="actionscript">  iframe.src = <span class="string">'http://localhost:3000/b.html#idontloveyou'</span>;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//将其添加到body下</span></span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.body.appendChild(iframe);</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>补充：==window.parent放回当前窗口的父窗口，如果当前窗口是一个<iframe> <object> <frame>那么父窗口为嵌入它的窗口==</p>
+<p>补充：==window.parent放回当前窗口的父窗口，如果当前窗口是一个<iframe> <object> <frame>那么父窗口为嵌入它的窗口==</object></iframe></p>
 <ul>
 <li><strong>8.document.domain + iframe</strong><ul>
 <li>该方式只能用于二级域名相同的情况下，比如 a.test.com 和 b.test.com 适用于该方式。</li>
-<li>只需要给页面添加 ==document.domain ='test.com' 表示二级域名都相同就可以实现跨域==。 （该方法为固定写法，就是专门用于此场景）</li>
+<li>只需要给页面添加 ==document.domain =’test.com’ 表示二级域名都相同就可以实现跨域==。 （该方法为固定写法，就是专门用于此场景）</li>
 <li>实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// a.html</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> helloa</span><br><span class="line">  <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"http://b.zf1.cn:3000/b.html"</span> <span class="attr">frameborder</span>=<span class="string">"0"</span> <span class="attr">onload</span>=<span class="string">"load()"</span> <span class="attr">id</span>=<span class="string">"frame"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.domain = <span class="string">'zf1.cn'</span></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">load</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(frame.contentWindow.a);</span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// b.html</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   hellob</span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">     <span class="built_in">document</span>.domain = <span class="string">'zf1.cn'</span></span></span><br><span class="line"><span class="actionscript">     <span class="keyword">var</span> a = <span class="number">100</span>;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-</script></p></li></ul>
+
       
 
       
@@ -580,15 +580,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">博客 个人博客 搭建过程 教程</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,11 +608,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
+                <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,23 +620,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,7 +628,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,11 +636,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,6 +668,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">函数柯里化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
@@ -676,11 +684,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微任务 宏任务</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,19 +692,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">函数柯里化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 字典</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 图</a>
+                <a href="javascript:void(0)" class="js-tag color3">微任务 宏任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,11 +700,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 字典</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript数据结构 树 树结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,7 +712,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript数据结构 树 树结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -728,7 +724,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,11 +740,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 集</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+                <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
               </li>
              
               <li class="article-tag-list-item">
