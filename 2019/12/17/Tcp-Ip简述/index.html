@@ -16,10 +16,19 @@
 <meta property="og:site_name" content="Mu的博客">
 <meta property="og:description" content="什么是TCP/IPTCP/IP 是一类协议系统，它是用于网络通信的一套协议集合． 通常分为四层：网络接口层，网络层，传输层，应用层">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-23T19:02:46.621Z">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9517.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9520.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9521.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9522.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9523.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9524.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9525.png">
+<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9526.png">
+<meta property="og:updated_time" content="2020-04-13T10:44:34.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;Tcp&#x2F;Ip简述&#39;">
 <meta name="twitter:description" content="什么是TCP/IPTCP/IP 是一类协议系统，它是用于网络通信的一套协议集合． 通常分为四层：网络接口层，网络层，传输层，应用层">
+<meta name="twitter:image" content="g:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9517.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -234,6 +243,60 @@ var _hmt = _hmt || [];
 <h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>两种到达目标网络的协议，TCP(传输控制协议) UDP(用户数据报协议)</p>
 <p>TCP:提供了完善的错误控制和流量控制,会建立连接通道，数据大小无限制<br>速度慢，但是可靠性高</p>
 <p>UDP:只提供了基本的错误检测,会把数据打包，数据大小有限制（64k）,不建立连接，速度快，但可靠性低</p>
+<h3 id="传输层（TCP-UDP详解）"><a href="#传输层（TCP-UDP详解）" class="headerlink" title="传输层（TCP,UDP详解）"></a>传输层（TCP,UDP详解）</h3><p>两种到达目标网络的协议，TCP(传输控制协议) UDP(用户数据报协议)</p>
+<p>TCP:提供了完善的错误控制和流量控制,会建立连接通道，数据大小无限制<br>速度慢，但是可靠性高</p>
+<p>UDP:只提供了基本的错误检测,会把数据打包，数据大小有限制（64k）,不建立连接，速度快，但可靠性低</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9517.png" alt="面试17"></p>
+<p><strong>全双工</strong>是指发送的同时可以接收</p>
+<p><strong>面向报文</strong>是指应用层交给UDP多长的报文，UDP就会发送多长的，所以报文必须长度合适，也就是上文所说的数据大小有限制</p>
+<p><strong>面向字节流</strong>就是指如果应用层交给TCP的数据过长，就可以分块发送，所以大小无限制</p>
+<p><strong>TCP流量控制</strong></p>
+<p>如果发送方把数据发送得过快，接收方可能会来不及接收，这就会造成数据的丢失。所谓流量控制就是让发送方的发送速率不要太快，要让接收方来得及接收。</p>
+<p>利用<strong>滑动窗口机制</strong>可以很方便地在TCP连接上实现对发送方的流量控制。</p>
+<p>设A向B发送数据。在连接建立时，B告诉了A：“我的接收窗口是 rwnd = 400 ”(这里的 rwnd 表示 receiver window) 。因此，发送方的发送窗口不能超过接收方给出的接收窗口的数值。请注意，TCP的窗口单位是字节，不是报文段。假设每一个报文段为100字节长，而数据报文段序号的初始值设为1。大写ACK表示首部中的确认位ACK，小写ack表示确认字段的值ack。</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9520.png" alt="面试20"></p>
+<p>从图中可以看出，B进行了三次流量控制。第一次把窗口减少到 rwnd = 300 ，第二次又减到了 rwnd = 100 ，最后减到 rwnd = 0 ，即不允许发送方再发送数据了。这种使发送方暂停发送的状态将持续到主机B重新发出一个新的窗口值为止。B向A发送的三个报文段都设置了 ACK = 1 ，只有在ACK=1时确认号字段才有意义。</p>
+<p>TCP为每一个连接设有一个持续计时器(persistence timer)。只要TCP连接的一方收到对方的零窗口通知，就启动持续计时器。若持续计时器设置的时间到期，就发送一个零窗口控测报文段（携1字节的数据），那么收到这个报文段的一方就重新设置持续计时器。</p>
+<p><strong>TCP拥塞控制</strong></p>
+<p>即 慢开始 拥塞避免 快重传 快恢复</p>
+<p>1.<strong>慢开始和拥塞避免</strong></p>
+<p>发送方维持一个拥塞窗口 cwnd ( congestion window )的状态变量。拥塞窗口的大小取决于网络的拥塞程度，并且动态地在变化。发送方让自己的发送窗口等于拥塞窗口。</p>
+<p>发送方控制拥塞窗口的原则是：只要网络没有出现拥塞，拥塞窗口就再增大一些，以便把更多的分组发送出去。但只要网络出现拥塞，拥塞窗口就减小一些，以减少注入到网络中的分组数。</p>
+<p><strong>慢开始算法</strong>：</p>
+<p>当主机开始发送数据时，如果立即所大量数据字节注入到网络，那么就有可能引起网络拥塞，因为现在并不清楚网络的负荷情况。<br>因此，较好的方法是 先探测一下，即由小到大逐渐增大发送窗口，也就是说，由小到大逐渐增大拥塞窗口数值。</p>
+<p>通常在刚刚开始发送报文段时，先把拥塞窗口 cwnd 设置为一个最大报文段MSS的数值。而在每收到一个对新的报文段的确认后，把拥塞窗口增加至多一个MSS的数值。用这样的方法逐步增大发送方的拥塞窗口 cwnd ，可以使分组注入到网络的速率更加合理。</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9521.png" alt="面试21"></p>
+<p>每经过一个传输轮次，拥塞窗口 cwnd 就加倍。<strong>一个传输轮次所经历的时间其实就是往返时间RTT。</strong>不过“传输轮次”更加强调：把拥塞窗口cwnd所允许发送的报文段都连续发送出去，并收到了对已发送的最后一个字节的确认。</p>
+<p>另，慢开始的“慢”并不是指cwnd的增长速率慢，而是指在TCP开始发送报文段时先设置cwnd=1，使得发送方在开始时只发送一个报文段（目的是试探一下网络的拥塞情况），然后再逐渐增大cwnd。</p>
+<p>为了防止拥塞窗口cwnd增长过大引起网络拥塞，还需要设置一个慢开始门限ssthresh（慢启动门阀）状态变量。慢开始门限ssthresh的用法如下：</p>
+<ul>
+<li>当 cwnd &lt; ssthresh 时，使用上述的慢开始算法。</li>
+<li>当 cwnd &gt; ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。</li>
+<li>当 cwnd = ssthresh 时，既可使用慢开始算法，也可使用拥塞控制避免算法</li>
+</ul>
+<p><strong>拥塞避免</strong></p>
+<p>让拥塞窗口cwnd缓慢地增大，即每经过<strong>一个往返时间RTT</strong>就把发送方的<strong>拥塞窗口cwnd加1，而不是加倍</strong>。这样拥塞窗口cwnd按线性规律缓慢增长，比慢开始算法的拥塞窗口增长速率缓慢得多。</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9522.png" alt="面试22"></p>
+<p>无论在慢开始阶段还是在拥塞避免阶段，只要发送方判断网络出现拥塞（其根据就是没有收到确认），就要把慢开始门限ssthresh设置为出现拥塞时的发送 方窗口值的一半（但不能小于2）。然后把拥塞窗口cwnd重新设置为1，执行慢开始算法。</p>
+<p>这样做的目的就是要迅速减少主机发送到网络中的分组数，使得发生 拥塞的路由器有足够时间把队列中积压的分组处理完毕。</p>
+<p>下图，用具体数值说明了上述拥塞控制的过程。现在发送窗口的大小和拥塞窗口一样大。</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9523.png" alt="面试23"></p>
+<p><strong>快重传和快恢复</strong></p>
+<p><strong>快重传</strong></p>
+<p>快重传算法首先要求接收方每收到一个失序的报文段后就立即发出重复确认（为的是使发送方及早知道有报文段没有到达对方）而不要等到自己发送数据时才进行捎带确认。</p>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9524.png" alt="面试24"></p>
+<p>接收方收到了M1和M2后都分别发出了确认。现在假定接收方没有收到M3但接着收到了M4。</p>
+<p>显然，接收方不能确认M4，因为M4是收到的失序报文段。根据 可靠传输原理，接收方可以什么都不做，也可以在适当时机发送一次对M2的确认。</p>
+<p>但按照快重传算法的规定，接收方应及时发送对M2的重复确认，这样做可以让 发送方及早知道报文段M3没有到达接收方。发送方接着发送了M5和M6。接收方收到这两个报文后，也还要再次发出对M2的重复确认。这样，发送方共收到了 接收方的四个对M2的确认，其中后三个都是重复确认。</p>
+<p><strong>快重传算法还规定，发送方只要一连收到三个重复确认就应当立即重传对方尚未收到的报文段M3，而不必 继续等待M3设置的重传计时器到期。</strong></p>
+<p>由于发送方尽早重传未被确认的报文段，因此采用快重传后可以使整个网络吞吐量提高约20%。</p>
+<p><strong>快恢复</strong></p>
+<p>与快重传配合使用的还有快恢复算法，其过程有以下两个要点：</p>
+<ul>
+<li>当发送方连续收到三个重复确认，就执行“乘法减小”算法，把慢开始门限ssthresh减半。</li>
+<li>与慢开始不同之处是现在不执行慢开始算法（即拥塞窗口cwnd现在不设置为1），而是把cwnd值设置为 慢开始门限ssthresh减半后的数值，然后开始执行拥塞避免算法（“加法增大”），使拥塞窗口缓慢地线性增大。</li>
+</ul>
+<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9525.png" alt="面试25"></p>
 <h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>运行在TCP协议上的协议</p>
 <ul>
 <li>HTTP 超文本传输协议</li>
@@ -254,6 +317,136 @@ var _hmt = _hmt || [];
 <ul>
 <li>域名是指  例：<code>www.abc.com</code></li>
 </ul>
+<h1 id="HTTP-HTTPS部分"><a href="#HTTP-HTTPS部分" class="headerlink" title="HTTP/HTTPS部分"></a>HTTP/HTTPS部分</h1><p><img src="G:%5C%E7%AC%94%E8%AE%B0%5C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95%E5%9B%BE%E7%89%87%5C%E9%9D%A2%E8%AF%9526.png" alt="面试26"></p>
+<h2 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h2><ul>
+<li>起始行<ul>
+<li>请求状态行： 请求方式 请求地址 协议及版本号</li>
+<li>响应状态行： 协议和版本号 返回的状态码  返回的状态（如OK）</li>
+</ul>
+</li>
+<li>头部<ul>
+<li>通用的：<ul>
+<li>Connection: 客户端和服务端通信时，是否持久连接</li>
+<li>Content-Length:内容长度;</li>
+<li>Content-Type:指定资源的MIME类型</li>
+</ul>
+</li>
+<li>请求头部信息<ul>
+<li>HOST:指定服务器域名和端口 ;     </li>
+<li>Accept: 接收的内容类型</li>
+<li>User-Agent客户端相关信息;  </li>
+<li>Accept-Encoding： 会将客户端能够理解的内容编码方式； Accept-Language:浏览器可接受的语言</li>
+<li><code>Accept-Charset</code> :可接受的字符集； <code>Cookie</code> : 携带的cookie信息；  Cache-Control`  ：缓存机制</li>
+<li>跨域相关的头见 面试题01-跨域访问的方案</li>
+</ul>
+</li>
+<li>响应头部信息<ul>
+<li>Server:服务器 相关信息 ；<code>Date</code>: 响应报文的时间；<code>Transfer-Encoding</code>: 传输编码的方法</li>
+<li><code>Set-Cookie</code>: 设置Cookie ； <code>ETag</code> 资源的表示符，用于比对资源，查看是否有更新</li>
+<li><code>Location</code> 首部指定的是需要将页面重新定向至的地址 ;<code>Expires</code>: 有效时间</li>
+<li>跨域相关的头见 面试题01-跨域访问的方案</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>空行</li>
+<li>实体<ul>
+<li>请求体</li>
+<li>响应体</li>
+</ul>
+</li>
+</ul>
+<h3 id="HTTP与HTTPS的区别"><a href="#HTTP与HTTPS的区别" class="headerlink" title="HTTP与HTTPS的区别"></a>HTTP与HTTPS的区别</h3><p>HTTP 是明文传输，HTTPS 通过 SSL\TLS 进行了加密</p>
+<p>HTTP 的端口号是 80，HTTPS 是 443</p>
+<p>HTTPS 需要到 CA 申请证书，一般免费证书很少，需要交费</p>
+<p>HTTPS 的连接很简单，是无状态的；HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议，比 HTTP 协议安全。</p>
+<h3 id="加密方式的解读"><a href="#加密方式的解读" class="headerlink" title="加密方式的解读"></a>加密方式的解读</h3><ul>
+<li><p>单纯使用对称秘钥（加密和解密使用同一个秘钥）： 弊端是可能会被中间人拦截，从而对传输的信息进行窥视和篡改</p>
+</li>
+<li><p>使用RSA（非对称加密）：一个私钥，一个公钥，只有对应的公钥私钥才能相互解密。缺点是速度非常的慢</p>
+</li>
+<li><p>使用对称加密+非对称加密： 由于使用对称密钥的好处是速度比较快，使用非对称密钥的好处是可以使得传输的内容不能被破解。所以可以通过使用 RSA 的方法将加密算法的对称密钥发送过去，之后就可以使用使用这个密钥，利用对称密钥来通信了。</p>
+<ul>
+<li>该方式的问题：安全是没有保障的，中间人可以拦截到 公钥，就可以对拦截到的公钥进行篡改（比如换第一次通讯时，接收方也不知道公钥是，所以如果中间人换一个新的公钥，就会出现安全问题）</li>
+<li>解决方法：通过在原始信息上，添加数字签名，形成数字证书，之后通过对数字证书进行解密，对比后，即可判断是否被人篡改过</li>
+</ul>
+</li>
+<li><p>也就是通过： 对称加密 + 非对称加密 + 数字证书 进行加密</p>
+</li>
+</ul>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="HTTP的特点"><a href="#HTTP的特点" class="headerlink" title="HTTP的特点"></a>HTTP的特点</h3><ul>
+<li>灵活可扩展: 一是语义上的自由，只规定了基本格式； 二是传输形式的多样性，文本，图片，视频都可以传输</li>
+<li>可靠传输： 因为它基于TCP/IP</li>
+<li>请求-应答： 也就是一收一发，有来有回</li>
+<li>无状态： 状态是指通信过程的上下文信息，而每次 http 请求都是独立、无关的，默认不需要保留状态信息。</li>
+</ul>
+<h3 id="HTTP的缺点："><a href="#HTTP的缺点：" class="headerlink" title="HTTP的缺点："></a>HTTP的缺点：</h3><ul>
+<li><p><strong>无状态</strong>： 在需要长连接的场景中，需要保存大量的上下文信息，以免传输大量重复的信息，那么这时候无状态就是 http 的缺点了。</p>
+<p>但与此同时，另外一些应用仅仅只是为了获取一些数据，不需要保存连接上下文信息，无状态反而减少了网络开销，成为了 http 的优点。</p>
+</li>
+<li><p><strong>明文传输</strong>: 即协议里的报文(主要指的是头部)不使用二进制数据，而是文本形式。</p>
+</li>
+<li><p><strong>队头阻塞问题</strong>： 当 http 开启长连接时，共用一个 TCP 连接，同一时刻只能处理一个请求，那么当前请求耗时过长的情况下，其它的请求只能处于阻塞状态</p>
+</li>
+</ul>
+<h3 id="HTTP-1-1"><a href="#HTTP-1-1" class="headerlink" title="HTTP 1.1"></a>HTTP 1.1</h3><ul>
+<li><p>解决了HTTP1.0队头阻塞问题： </p>
+<ul>
+<li><p>并发连接： 对于一个域名允许分配多个长连接，那么相当于增加了任务队列，不至于一个队伍的任务阻塞其它所有任务。</p>
+</li>
+<li><p>域名分片： 一个域名不是可以并发 6 个长连接吗？那我就多分几个域名。</p>
+<p>比如 content1.sanyuan.com 、content2.sanyuan.com。</p>
+<p>这样一个<code>sanyuan.com</code>域名下可以分出非常多的二级域名，而它们都指向同样的一台服务器，能够并发的长连接数更多了，事实上也更好地解决了队头阻塞的问题。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>错误通知的管理</strong>，在HTTP1.1中新增了24个错误状态响应码，如409（Conflict）表示请求的资源与资源的当前状态发生冲突；410（Gone）表示服务器上的某个资源被永久性的删除。</p>
+</li>
+<li><p><strong>长连接</strong>，HTTP 1.1支持长连接（PersistentConnection）和请求的流水线（Pipelining）处理，在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启Connection： keep-alive，一定程度上弥补了HTTP1.0每次请求都要创建连接的缺点。</p>
+</li>
+<li><p><strong>Host头处理</strong>，在HTTP1.0中认为每台服务器都绑定一个唯一的IP地址，因此，请求消息中的URL并没有传递主机名（hostname）。但随着虚拟主机技术的发展，在一台物理服务器上可以存在多个虚拟主机（Multi-homed Web Servers），并且它们共享一个IP地址。HTTP1.1的请求消息和响应消息都应支持Host头域，且请求消息中如果没有Host头域会报告一个错误（400 Bad Request）</p>
+</li>
+<li><p><strong>带宽优化及网络连接的使用</strong>，HTTP1.0中，存在一些浪费带宽的现象，例如客户端只是需要某个对象的一部分，而服务器却将整个对象送过来了，并且不支持断点续传功能，HTTP1.1则在请求头引入了range头域，它允许只请求资源的某个部分，即返回码是206（Partial Content），这样就方便了开发者自由的选择以便于充分利用带宽和连接。</p>
+</li>
+<li><p><strong>缓存处理</strong>，在HTTP1.0中主要使用header里的If-Modified-Since,Expires来做为缓存判断的标准，HTTP1.1则引入了更多的缓存控制策略例如Entity tag，If-Unmodified-Since, If-Match, If-None-Match等更多可供选择的缓存头来控制缓存策略。</p>
+</li>
+</ul>
+<h3 id="HTTP-2"><a href="#HTTP-2" class="headerlink" title="HTTP /2"></a>HTTP /2</h3><ul>
+<li>头部压缩： 使用HPACK 算法 ，在服务器和客户端之间建立哈希表，将用到的字段存放在这张表中，那么在传输的时候对于之前出现过的值，只需要把<strong>索引</strong>(比如0，1，2，…)传给对方即可，对方拿到索引查表就行了。</li>
+<li>多路复用： <ul>
+<li>HTTP 队头阻塞的问题，我们用并发连接和域名分片的方式来解决这个问题，但这并没有真正从 HTTP 本身的层面解决问题，只是增加了 TCP 连接，分摊风险而已。而且这么做也有弊端，多条 TCP 连接会竞争有限的带宽，让真正优先级高的请求不能优先处理。</li>
+<li>实现原理： HTTP/2 把报文全部换成二进制格式，全部传输<code>01</code>串，方便了机器的解析，分帧之后，服务器看到的不再是一个个完整的 HTTP 请求报文，而是一堆乱序的二进制帧。这些二进制帧不存在先后关系，因此也就不会排队等待，也就没有了 HTTP 的队头阻塞问题。</li>
+<li>这种二进制帧的<strong>双向传输的序列</strong>，也叫做<code>流</code>(Stream)。HTTP/2 用<code>流</code>来在一个 TCP 连接上来进行多个数据帧的通信，这就是<strong>多路复用</strong>的概念。</li>
+<li>注意乱序指的是不同 ID 的 Stream 是乱序的，但同一个 Stream ID 的帧一定是按顺序传输的。二进制帧到达后对方会将 Stream ID 相同的二进制帧组装成完整的<strong>请求报文</strong>和<strong>响应报文</strong>。在二进制帧还有一些额外的字段，实现了<strong>优先级</strong>和<strong>流量控制</strong>等功能</li>
+</ul>
+</li>
+<li>设置请求优先级： 通过二进制帧实现</li>
+<li>服务器推送：  HTTP/2 当中，服务器已经不再是完全被动地接收请求，响应请求，它也能新建 stream 来给客户端发送消息，当 TCP 连接建立之后，比如浏览器请求一个 HTML 文件，服务器就可以在返回 HTML 的基础上，将 HTML 中引用到的其他资源文件一起返回给客户端，减少客户端的等待。</li>
+</ul>
+<h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li><p>WebSocket 是 HTML5 开始提供的一种在单个 TCP 连接上进行全双工通讯的协议。</p>
+<p>WebSocket 使得客户端和服务器之间的数据交换变得更加简单，允许服务端主动向客户端推送数据。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。</p>
+</li>
+<li><p>建立在 TCP 协议之上</p>
+</li>
+<li><p>支持双向通信，实时性更强 ； </p>
+</li>
+<li><p>可以发送文本，也可以发送二进制数据。</p>
+</li>
+<li><p>较小的控制开销，头部信息较少，不像HTTP协议一样，每次通信都携带完整的头部</p>
+</li>
+<li><p>支持扩展，可以实现自定义的子协议</p>
+</li>
+<li><p>与 HTTP 协议有着良好的兼容性。默认端口也是80和443</p>
+</li>
+<li><p>没有同源限制</p>
+</li>
+<li><p>协议标识符是<code>ws</code>（如果加密，则为<code>wss</code>），服务器网址就是 URL。</p>
+</li>
+</ul>
+<h3 id="客户端API"><a href="#客户端API" class="headerlink" title="客户端API"></a>客户端API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.WebSocket 对象作为一个构造函数，用于新建 WebSocket 实例。</span></span><br><span class="line"><span class="keyword">var</span> ws = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 2. webSocket.readyState 属性返回实例对象的当前状态，共有四种。</span></span><br><span class="line"><span class="comment">// CONNECTING：值为0，表示正在连接。</span></span><br><span class="line"><span class="comment">// OPEN：值为1，表示连接成功，可以通信了。</span></span><br><span class="line"><span class="comment">// CLOSING：值为2，表示连接正在关闭。</span></span><br><span class="line"><span class="comment">// CLOSED：值为3，表示连接已经关闭，或者打开连接失败。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (ws.readyState) &#123;</span><br><span class="line">  <span class="keyword">case</span> WebSocket.CONNECTING:  <span class="comment">// 0</span></span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> WebSocket.OPEN:   <span class="comment">// 1</span></span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> WebSocket.CLOSING:    <span class="comment">// 2</span></span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> WebSocket.CLOSED:   <span class="comment">// 3</span></span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="comment">// this never happens</span></span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. webSocket.onopen  实例对象的onopen属性 用于指定连接成功后的回调函数。</span></span><br><span class="line">ws.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  ws.send(<span class="string">'Hello Server!'</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="comment">// 如果要指定多个回调函数，可以使用addEventListener方法。</span></span><br><span class="line">ws.addEventListener(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  ws.send(<span class="string">'Hello Server!'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. webSocket.onclose 实例对象的onclose属性 用于指定连接关闭后的回调函数。</span></span><br><span class="line">ws.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> code = event.code;</span><br><span class="line">  <span class="keyword">var</span> reason = event.reason;</span><br><span class="line">  <span class="keyword">var</span> wasClean = event.wasClean;</span><br><span class="line">  <span class="comment">// handle close event</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.addEventListener(<span class="string">"close"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> code = event.code;</span><br><span class="line">  <span class="keyword">var</span> reason = event.reason;</span><br><span class="line">  <span class="keyword">var</span> wasClean = event.wasClean;</span><br><span class="line">  <span class="comment">// handle close event</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//5. webSocket.onmessage 实例对象的onmessage属性用于指定收到服务器数据后的回调函数。</span></span><br><span class="line">ws.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = event.data;</span><br><span class="line">  <span class="comment">// 处理数据</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ws.addEventListener(<span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = event.data;</span><br><span class="line">  <span class="comment">// 处理数据</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注意，服务器数据可能是文本，也可能是二进制数据（blob对象或Arraybuffer对象）。</span></span><br><span class="line">ws.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> event.data === <span class="built_in">String</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Received data string"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(event.data <span class="keyword">instanceof</span> <span class="built_in">ArrayBuffer</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> buffer = event.data;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Received arraybuffer"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 6. webSocket.send() 实例对象的send()方法用于向服务器发送数据。</span></span><br><span class="line"><span class="comment">// 发送文本</span></span><br><span class="line">ws.send(<span class="string">'your message'</span>)</span><br><span class="line"><span class="comment">// 发送Blob对象</span></span><br><span class="line"><span class="keyword">var</span> file = <span class="built_in">document</span></span><br><span class="line">  .querySelector(<span class="string">'input[type="file"]'</span>)</span><br><span class="line">  .files[<span class="number">0</span>];</span><br><span class="line">ws.send(file)</span><br><span class="line"><span class="comment">// 发送ArrayBuffer</span></span><br><span class="line">   <span class="comment">// Sending canvas ImageData as ArrayBuffer</span></span><br><span class="line"><span class="keyword">var</span> img = canvas_context.getImageData(<span class="number">0</span>, <span class="number">0</span>, <span class="number">400</span>, <span class="number">320</span>);</span><br><span class="line"><span class="keyword">var</span> binary = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(img.data.length);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; img.data.length; i++) &#123;</span><br><span class="line">  binary[i] = img.data[i];</span><br><span class="line">&#125;</span><br><span class="line">ws.send(binary.buffer);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 7. webSocket.bufferedAmount 实例对象的bufferedAmount属性，表示还有多少字节的二进制数据没有发送出去。它可以用来判断发送是否结束</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(<span class="number">10000000</span>);</span><br><span class="line">socket.send(data);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (socket.bufferedAmount === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// 发送完毕</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 发送还没结束</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 8.  webSocket.onerror 实例对象的onerror属性，用于指定报错时的回调函数。</span></span><br><span class="line"></span><br><span class="line">socket.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle error event</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">socket.addEventListener(<span class="string">"error"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// handle error event</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="服务端实现"><a href="#服务端实现" class="headerlink" title="服务端实现"></a>服务端实现</h3><p>如： socket.IO</p>
 
       
 
@@ -375,7 +568,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是TCP-IP"><span class="toc-number">1.</span> <span class="toc-text">什么是TCP/IP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络接口层"><span class="toc-number">1.1.</span> <span class="toc-text">网络接口层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层"><span class="toc-number">1.2.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层"><span class="toc-number">1.3.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用层"><span class="toc-number">1.4.</span> <span class="toc-text">应用层</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是TCP-IP"><span class="toc-number">1.</span> <span class="toc-text">什么是TCP/IP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#网络接口层"><span class="toc-number">1.1.</span> <span class="toc-text">网络接口层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络层"><span class="toc-number">1.2.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层"><span class="toc-number">1.3.</span> <span class="toc-text">传输层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输层（TCP-UDP详解）"><span class="toc-number">1.4.</span> <span class="toc-text">传输层（TCP,UDP详解）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用层"><span class="toc-number">1.5.</span> <span class="toc-text">应用层</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP-HTTPS部分"><span class="toc-number"></span> <span class="toc-text">HTTP/HTTPS部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP报文结构"><span class="toc-number">1.</span> <span class="toc-text">HTTP报文结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP与HTTPS的区别"><span class="toc-number">1.1.</span> <span class="toc-text">HTTP与HTTPS的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加密方式的解读"><span class="toc-number">1.2.</span> <span class="toc-text">加密方式的解读</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP"><span class="toc-number">2.</span> <span class="toc-text">HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP的特点"><span class="toc-number">2.1.</span> <span class="toc-text">HTTP的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP的缺点："><span class="toc-number">2.2.</span> <span class="toc-text">HTTP的缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-1-1"><span class="toc-number">2.3.</span> <span class="toc-text">HTTP 1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-2"><span class="toc-number">2.4.</span> <span class="toc-text">HTTP /2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket"><span class="toc-number">3.</span> <span class="toc-text">websocket</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-number">3.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端API"><span class="toc-number">3.2.</span> <span class="toc-text">客户端API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务端实现"><span class="toc-number">3.3.</span> <span class="toc-text">服务端实现</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -491,19 +684,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,11 +704,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,23 +724,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jQuery javaScript框架 教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,15 +748,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">作用域 作用域链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">函数柯里化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,11 +760,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">函数柯里化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,15 +780,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微任务 宏任务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 散列表 哈希表</a>
+                <a href="javascript:void(0)" class="js-tag color3">对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,7 +792,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,19 +804,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 散列表 哈希表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript数据结构 树 树结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 图</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 集</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,11 +832,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防抖 节流 分时</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防抖 节流 分时</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 集</a>
               </li>
             
             <div class="clearfix"></div>
