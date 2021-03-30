@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>读书笔记-学习JavaScript数据结构与算法5-6章 | Mu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第五章 队列和双端队列特点: 先进先出(FIFO)  基于对象创建队列1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Queue &amp;#123;    constructor() &amp;#123;        this.count = 0 //">
+  <meta name="description" content="第五章 队列和双端队列特点: 先进先出(FIFO)">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读书笔记-学习JavaScript数据结构与算法5-6章">
 <meta property="og:url" content="http://yoursite.com/2021/03/20/读书笔记-学习JavaScript数据结构与算法5-6章/index.html">
 <meta property="og:site_name" content="Mu的博客">
-<meta property="og:description" content="第五章 队列和双端队列特点: 先进先出(FIFO)  基于对象创建队列1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Queue &amp;#123;    constructor() &amp;#123;        this.count = 0 //">
+<meta property="og:description" content="第五章 队列和双端队列特点: 先进先出(FIFO)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="g:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8402.png">
 <meta property="og:image" content="g:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8403.png">
 <meta property="og:image" content="g:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8404.png">
 <meta property="og:image" content="g:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8.png">
 <meta property="og:image" content="g:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E5%8F%8C%E5%90%91%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8.png">
-<meta property="og:updated_time" content="2021-03-30T16:36:41.439Z">
+<meta property="og:updated_time" content="2021-03-30T17:08:54.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记-学习JavaScript数据结构与算法5-6章">
-<meta name="twitter:description" content="第五章 队列和双端队列特点: 先进先出(FIFO)  基于对象创建队列1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Queue &amp;#123;    constructor() &amp;#123;        this.count = 0 //">
+<meta name="twitter:description" content="第五章 队列和双端队列特点: 先进先出(FIFO)">
 <meta name="twitter:image" content="g:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8402.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
@@ -176,7 +176,7 @@ var _hmt = _hmt || [];
 
         
         <a href="/2021/03/20/读书笔记-学习JavaScript数据结构与算法5-6章/" class="archive-article-date">
-  	<time datetime="2021-03-19T16:25:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
+  	<time datetime="2021-03-19T16:25:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-20</time>
 </a>
         
       </header>
@@ -184,6 +184,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="第五章-队列和双端队列"><a href="#第五章-队列和双端队列" class="headerlink" title="第五章 队列和双端队列"></a>第五章 队列和双端队列</h2><p>特点: 先进先出(FIFO)</p>
+<a id="more"></a>
+
 <p><img src="G:/%E7%AC%94%E8%AE%B0/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%8402.png" alt="数据结构02"></p>
 <h3 id="基于对象创建队列"><a href="#基于对象创建队列" class="headerlink" title="基于对象创建队列"></a>基于对象创建队列</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="number">0</span> <span class="comment">// 指向队列尾</span></span><br><span class="line">        <span class="keyword">this</span>.lowestCount = <span class="number">0</span> <span class="comment">// 指向队头</span></span><br><span class="line">        <span class="keyword">this</span>.items = &#123;&#125; <span class="comment">// 保存队列</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加元素</span></span><br><span class="line">    enqueue(element) &#123;</span><br><span class="line">        <span class="keyword">this</span>.items[<span class="keyword">this</span>.count] = element</span><br><span class="line">        <span class="keyword">this</span>.count++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 删除元素</span></span><br><span class="line">    dequeue() &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> delEle = <span class="keyword">this</span>.items[<span class="keyword">this</span>.lowestCount]</span><br><span class="line">        <span class="keyword">delete</span> <span class="keyword">this</span>.items[<span class="keyword">this</span>.lowestCount]</span><br><span class="line">        <span class="keyword">this</span>.lowestCount++</span><br><span class="line">        <span class="keyword">return</span> delEle</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 计数</span></span><br><span class="line">    size() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.count - <span class="keyword">this</span>.lowestCount</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判空</span></span><br><span class="line">    isEmpty() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.size() === <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 查看第一个元素</span></span><br><span class="line">    peek() &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.items[<span class="keyword">this</span>.lowestCount]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 清空队列</span></span><br><span class="line">    clear() &#123;</span><br><span class="line">        <span class="keyword">this</span>.items = &#123;&#125;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">this</span>.lowestCount = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    toString() &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> str = <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.items[<span class="keyword">this</span>.lowestCount]&#125;</span>`</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="keyword">this</span>.lowestCount + <span class="number">1</span>; i &lt; <span class="keyword">this</span>.count; i++) &#123;</span><br><span class="line">            str = <span class="string">`<span class="subst">$&#123;str&#125;</span>, <span class="subst">$&#123;<span class="keyword">this</span>.items[i]&#125;</span>`</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -467,19 +469,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">博客 个人博客 搭建过程 教程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">博客 个人博客 搭建过程 教程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,7 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,11 +489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
+                <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,11 +501,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">TCP/IP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">es6</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,7 +525,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">es6</a>
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,15 +537,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,11 +553,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">函数柯里化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,15 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">排序算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,7 +577,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">函数柯里化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">对象</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 字典</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,10 +601,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JavaScript数据结构 栈 队列</a>
               </li>
              
@@ -611,7 +609,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 集</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaScript数据结构 数组</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,11 +617,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaScript数据结构 集</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,11 +629,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,6 +642,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">防抖 节流 分时</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
