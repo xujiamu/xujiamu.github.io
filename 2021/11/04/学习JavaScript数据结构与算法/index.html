@@ -82,7 +82,7 @@
 <meta property="og:image" content="http://yoursite.com/2021/11/04/学习JavaScript数据结构与算法/ratInAmaze.png">
 <meta property="og:image" content="http://yoursite.com/2021/11/04/学习JavaScript数据结构与算法/sudoku-solver.png">
 <meta property="og:image" content="http://yoursite.com/2021/11/04/学习JavaScript数据结构与算法/大O增长关系-图.png">
-<meta property="og:updated_time" content="2021-11-04T15:34:36.239Z">
+<meta property="og:updated_time" content="2021-11-06T18:19:01.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习JavaScript数据结构与算法">
 <meta name="twitter:description" content="学习JavaScript数据结构与算法 第一章 JavaScript简介服务器环境搭建Chrome - 安装插件 `WebServer for Chrome` - 打开该插件可以点击CHOOSE FOLDER来选择需要在哪个文件夹中开启服务器 - 然后就能通过设定的URL（默认是http://127.0.0.1:8887）来进行访问">
@@ -299,8 +299,8 @@ var _hmt = _hmt || [];
 <tr>
 <td>负数(第一位符号位是0）</td>
 <td>如：-3 -&gt; 1000 0011</td>
-<td>如：  5 -&gt; 1111 1100</td>
-<td>如：  5 -&gt; 1111 1101</td>
+<td>如：   -3 -&gt; 1111 1100</td>
+<td>如：  -3-&gt; 1111 1101</td>
 </tr>
 </tbody></table>
 <ul>
@@ -343,10 +343,13 @@ var _hmt = _hmt || [];
 <li>转为原码 1000 1000, 转为10进制，结果是  -8</li>
 </ul>
 </li>
-<li><p>&lt;&lt; 左移 </p>
+<li><p><code>&lt;&lt;</code> 左移 </p>
 <ul>
-<li>除符号位外整体向左移动指定位数，多余高位舍弃， 新增低位正数补0，负数补1</li>
-<li>如 5 &lt;&lt; 2</li>
+<li>除符号位外整体向左移动指定位数，多余高位舍弃， 新增低位 不管正负数都补0<ul>
+<li>在数字没有溢出的前提下，对于正数和负数，左移一位都相当于乘以2的1次，左移n位就相当于乘以2的n次方。</li>
+</ul>
+</li>
+<li>如 5 &lt;&lt; 2 ， 5 乘2的2次方 5 * 4 = 20</li>
 <li>补码 0000 0101 移动2位 0001 0100  转为原码  0001 0100 转为 10进制 20</li>
 <li>如 -5 &lt;&lt; 2</li>
 <li>补码 1111 1011 移动2位 1110 1100 转为原码 1001 0100 转为 10进制 -20</li>
@@ -354,11 +357,21 @@ var _hmt = _hmt || [];
 </li>
 <li><p><code>&gt;&gt;</code> 右移</p>
 <ul>
-<li>除符号位外整体向右移动指定位数，多余低位舍弃， 新增高位正数补0，负数补1</li>
-<li>如 5 &gt;&gt; 2</li>
-<li>补码 0000 0101 移动2位 0000 0001 转为原码 0000 0001 转为 10进制 1</li>
-<li>如 -5 &gt;&gt; 2</li>
-<li>补码 1111 1011 移动2位 1111 1110 转为原码 1000 0010 转为 10进制 -2</li>
+<li><p>除符号位外整体向右移动指定位数，多余低位舍弃， 新增高位正数补0，负数补1</p>
+<ul>
+<li><p>右移一位相当于除2，右移n位相当于除以2的n次方。</p>
+<p>5 /(2^2)=1, 若为小数，则向下取整即可</p>
+</li>
+</ul>
+</li>
+<li><p>如 5 &gt;&gt; 2</p>
+</li>
+<li><p>补码 0000 0101 移动2位 0000 0001 转为原码 0000 0001 转为 10进制 1</p>
+</li>
+<li><p>如 -5 &gt;&gt; 2,   -5/(2^2)= - 2向下取整</p>
+</li>
+<li><p>补码 1111 1011 移动2位 1111 1110 转为原码 1000 0010 转为 10进制 -2</p>
+</li>
 </ul>
 </li>
 </ul>
