@@ -16,13 +16,10 @@
 <meta property="og:site_name" content="Mu的博客">
 <meta property="og:description" content="node概述 :">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cnode%5Cimg%5C01.png">
-<meta property="og:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cnode%5Cimg%5C02.png">
-<meta property="og:updated_time" content="2020-03-23T19:52:51.275Z">
+<meta property="og:updated_time" content="2022-03-27T15:52:44.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="&#39;node基础&#39;">
 <meta name="twitter:description" content="node概述 :">
-<meta name="twitter:image" content="g:%5C%E7%AC%94%E8%AE%B0%5Cnode%5Cimg%5C01.png">
   
     <link rel="alternative" href="/atom.xml" title="Mu的博客" type="application/atom+xml">
   
@@ -305,15 +302,8 @@ var _hmt = _hmt || [];
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">  &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"</span>&gt;</span><br><span class="line">  &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">  &lt;title&gt;Title&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">  &lt;script src="https:/</span><span class="regexp">/cdn.jsdelivr.net/</span>npm/vue@<span class="number">2.6</span><span class="number">.0</span><span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">  &lt;script src="</span>https:<span class="comment">//unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;div id="app"&gt;</span></span><br><span class="line"><span class="regexp">  &lt;h1&gt;GET POST 测试&lt;/</span>h1&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-<span class="keyword">for</span>=<span class="string">"(item,index) in items"</span> :key=<span class="string">"index"</span>&gt;&#123;&#123;item&#125;&#125;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/u</span>l&gt;</span><br><span class="line">  &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"item"</span> placeholder=<span class="string">"请输入"</span>&gt; <span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"submitPost"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">      <span class="comment">//通过 v-model 控制 通过点击事件执行post请求提交给后台，用于后台更新items</span></span><br><span class="line">      item: <span class="string">''</span>,</span><br><span class="line">      <span class="comment">//默认为空，第一次加载通过get 请求获取值，之后通过每次post 请求进行更新</span></span><br><span class="line">      items: []</span><br><span class="line">    &#125;,</span><br><span class="line">    created() &#123;</span><br><span class="line">      axios.get(<span class="string">'http://localhost:3000'</span>).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'\n[get-数据]'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">        <span class="keyword">this</span>.items = res.data</span><br><span class="line">      &#125;).catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      submitPost() &#123;</span><br><span class="line">        axios.post(<span class="string">'http://localhost:3000'</span>,&#123;</span><br><span class="line">          item: <span class="keyword">this</span>.item</span><br><span class="line">        &#125;).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'\n[post-数据]'</span>)</span><br><span class="line">          <span class="built_in">console</span>.log(res.data);</span><br><span class="line">          <span class="keyword">this</span>.items = res.data</span><br><span class="line">        &#125;).catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(err);</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="数据库相关"><a href="#数据库相关" class="headerlink" title="数据库相关"></a>数据库相关</h2><h3 id="创建node-数据库，并设计对应图表"><a href="#创建node-数据库，并设计对应图表" class="headerlink" title="创建node 数据库，并设计对应图表"></a>创建node 数据库，并设计对应图表</h3><p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cnode%5Cimg%5C01.png" alt="01"></p>
-<p><img src="G:%5C%E7%AC%94%E8%AE%B0%5Cnode%5Cimg%5C02.png" alt="02"></p>
-<h3 id="mysql的连接"><a href="#mysql的连接" class="headerlink" title="mysql的连接"></a>mysql的连接</h3><ol>
-<li>下载mysql依赖包  <code>npm i mysql -D</code></li>
-<li>进行连接，代码如下</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入mysql模块</span></span><br><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>)</span><br><span class="line"><span class="comment">//配置基本信息</span></span><br><span class="line"><span class="keyword">const</span> connection =  mysql.createConnection(&#123;</span><br><span class="line">  host: <span class="string">'localhost'</span>,</span><br><span class="line">  user: <span class="string">'root'</span>,</span><br><span class="line">  <span class="comment">//注意：密码也需要传递字符串！！</span></span><br><span class="line">  password: <span class="string">'159357'</span>,</span><br><span class="line">  database: <span class="string">'node'</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//连接数据库</span></span><br><span class="line">connection.connect()</span><br><span class="line"><span class="comment">//发送查询语句，并处理</span></span><br><span class="line">connection.query(<span class="string">'SELECT * FROM nodemysql'</span>,(err,res,fields) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err</span><br><span class="line">  <span class="built_in">console</span>.log(res);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'--------'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(fields);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//关闭连接</span></span><br><span class="line">connection.end()</span><br></pre></td></tr></table></figure>
+<p>## </p>
 
-<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3>
       
 
       
@@ -434,7 +424,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#node"><span class="toc-number">1.</span> <span class="toc-text">node</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.1.</span> <span class="toc-text">概述 :</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于谷歌v8引擎（v8引擎自身就是c-写的）-："><span class="toc-number">1.1.1.</span> <span class="toc-text">关于谷歌v8引擎（v8引擎自身就是c++写的） ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-常见命令"><span class="toc-number">1.2.</span> <span class="toc-text">npm 常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-模块"><span class="toc-number">1.3.</span> <span class="toc-text">HTTP 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL-模块"><span class="toc-number">1.4.</span> <span class="toc-text">URL 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs模块"><span class="toc-number">1.5.</span> <span class="toc-text">fs模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fs-文件管理"><span class="toc-number">1.5.1.</span> <span class="toc-text">fs 文件管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建一个简单的web-服务器"><span class="toc-number">1.6.</span> <span class="toc-text">搭建一个简单的web 服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example-1-js"><span class="toc-number">1.6.1.</span> <span class="toc-text">example-1.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-2-js"><span class="toc-number">1.6.2.</span> <span class="toc-text">example-2.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-3-js"><span class="toc-number">1.6.3.</span> <span class="toc-text">example-3.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非阻塞I-O事件驱动"><span class="toc-number">1.7.</span> <span class="toc-text">非阻塞I/O事件驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于进程与线程的理解"><span class="toc-number">1.7.1.</span> <span class="toc-text">关于进程与线程的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单线程的Node"><span class="toc-number">1.7.2.</span> <span class="toc-text">单线程的Node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非阻塞I-O"><span class="toc-number">1.7.3.</span> <span class="toc-text">非阻塞I/O</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#events-模块"><span class="toc-number">1.7.4.</span> <span class="toc-text">events 模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get-与-post-请求"><span class="toc-number">1.8.</span> <span class="toc-text">get 与 post 请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#补充两个小知识点"><span class="toc-number">1.8.1.</span> <span class="toc-text">补充两个小知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现"><span class="toc-number">1.8.2.</span> <span class="toc-text">具体实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库相关"><span class="toc-number">1.9.</span> <span class="toc-text">数据库相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建node-数据库，并设计对应图表"><span class="toc-number">1.9.1.</span> <span class="toc-text">创建node 数据库，并设计对应图表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql的连接"><span class="toc-number">1.9.2.</span> <span class="toc-text">mysql的连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#增"><span class="toc-number">1.9.3.</span> <span class="toc-text">增</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删"><span class="toc-number">1.9.4.</span> <span class="toc-text">删</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改"><span class="toc-number">1.9.5.</span> <span class="toc-text">改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查"><span class="toc-number">1.9.6.</span> <span class="toc-text">查</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#node"><span class="toc-number">1.</span> <span class="toc-text">node</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.1.</span> <span class="toc-text">概述 :</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于谷歌v8引擎（v8引擎自身就是c-写的）-："><span class="toc-number">1.1.1.</span> <span class="toc-text">关于谷歌v8引擎（v8引擎自身就是c++写的） ：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-常见命令"><span class="toc-number">1.2.</span> <span class="toc-text">npm 常见命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-模块"><span class="toc-number">1.3.</span> <span class="toc-text">HTTP 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#URL-模块"><span class="toc-number">1.4.</span> <span class="toc-text">URL 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fs模块"><span class="toc-number">1.5.</span> <span class="toc-text">fs模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fs-文件管理"><span class="toc-number">1.5.1.</span> <span class="toc-text">fs 文件管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建一个简单的web-服务器"><span class="toc-number">1.6.</span> <span class="toc-text">搭建一个简单的web 服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example-1-js"><span class="toc-number">1.6.1.</span> <span class="toc-text">example-1.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-2-js"><span class="toc-number">1.6.2.</span> <span class="toc-text">example-2.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-3-js"><span class="toc-number">1.6.3.</span> <span class="toc-text">example-3.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非阻塞I-O事件驱动"><span class="toc-number">1.7.</span> <span class="toc-text">非阻塞I/O事件驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于进程与线程的理解"><span class="toc-number">1.7.1.</span> <span class="toc-text">关于进程与线程的理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单线程的Node"><span class="toc-number">1.7.2.</span> <span class="toc-text">单线程的Node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非阻塞I-O"><span class="toc-number">1.7.3.</span> <span class="toc-text">非阻塞I/O</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#events-模块"><span class="toc-number">1.7.4.</span> <span class="toc-text">events 模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#get-与-post-请求"><span class="toc-number">1.8.</span> <span class="toc-text">get 与 post 请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#补充两个小知识点"><span class="toc-number">1.8.1.</span> <span class="toc-text">补充两个小知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现"><span class="toc-number">1.8.2.</span> <span class="toc-text">具体实现</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -546,19 +536,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">博客 个人博客 搭建过程 教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,7 +556,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,11 +564,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">ts</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ts</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,7 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">axios 异步请求 Promise特性 请求响应数据</a>
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,7 +584,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI3</a>
+                <a href="javascript:void(0)" class="js-tag color3">axios 异步请求 Promise特性 请求响应数据</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,15 +592,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,11 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,11 +624,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
+                <a href="javascript:void(0)" class="js-tag color3">微任务 宏任务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微任务 宏任务</a>
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,6 +641,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
               </li>
             
             <div class="clearfix"></div>
