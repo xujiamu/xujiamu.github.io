@@ -206,7 +206,7 @@ var _hmt = _hmt || [];
 </li>
 <li><p>例子：</p>
 </li>
-<li><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"&lt;%= getParameter("</span><span class="attr">keyword</span>")%&gt;</span>"&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">   您搜索的关键词是：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">getParmeter</span>("<span class="attr">keyword</span>") %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   例1:</span><br><span class="line">    //以下为恶意url</span><br><span class="line">http://xxx/search?keyword="&gt;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">  //当浏览器请求服务器，经服务器解析后，返回浏览器就会形成如下HTML</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>"&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  您搜索的关键词是："&gt;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    //浏览器无法辨别出 <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> 是恶意代码，会将其执行</span><br><span class="line">    //解决方法：定义escapeHTML()按照一定规则将字符串进行转义</span><br><span class="line">    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">escapeHTML</span>(<span class="attr">getParameter</span>("<span class="attr">keyword</span>")) %&gt;</span></span><br><span class="line">        </span><br><span class="line">    例2：</span><br><span class="line">    //新的恶意url</span><br><span class="line">   http://xxx/?redirect_to=javascript:alert('XSS')</span><br><span class="line">    //未受攻击前</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%= escapeHTML(getParameter("</span><span class="attr">redirect_to</span>")) %&gt;</span>"&gt;跳转...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    //受攻击后  一点击就会执行恶意代码</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:alert(&amp;#x27;XSS&amp;#x27;)"</span>&gt;</span>跳转...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   //解决方法：对于链接跳转，如 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"xxx"</span> 或 <span class="attr">location.href</span>=<span class="string">"xxx"</span>，要检验其内容，禁止以 <span class="attr">javascript:</span> 开头的链接，和其他非法的 <span class="attr">scheme</span>。</span></span><br></pre></td></tr></table></figure>
+<li><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"&lt;%= getParameter("</span><span class="attr">keyword</span>")%&gt;</span>"&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">   您搜索的关键词是：<span class="tag">&lt;<span class="name">%=</span> <span class="attr">getParmeter</span>("<span class="attr">keyword</span>") %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   例1:</span><br><span class="line">    //以下为恶意url</span><br><span class="line">http://xxx/search?keyword="&gt;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">  //当浏览器请求服务器，经服务器解析后，返回浏览器就会形成如下HTML</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>"&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  您搜索的关键词是："&gt;<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line">    //浏览器无法辨别出 <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript">alert(<span class="string">'XSS'</span>);</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> 是恶意代码，会将其执行</span><br><span class="line">    //解决方法：定义escapeHTML()按照一定规则将字符串进行转义</span><br><span class="line">    <span class="tag">&lt;<span class="name">%=</span> <span class="attr">escapeHTML</span>(<span class="attr">getParameter</span>("<span class="attr">keyword</span>")) %&gt;</span></span><br><span class="line">        </span><br><span class="line">    例2：</span><br><span class="line">    //新的恶意url</span><br><span class="line">   http://xxx/?redirect_to=javascript:alert('XSS')</span><br><span class="line">    //未受攻击前</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%= escapeHTML(getParameter("</span><span class="attr">redirect_to</span>")) %&gt;</span>"&gt;跳转...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    //受攻击后  一点击就会执行恶意代码</span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:alert(&amp;#x27;XSS&amp;#x27;)"</span>&gt;</span>跳转...<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   //解决方法：对于链接跳转，如 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"xxx"</span> 或 <span class="attr">location.href</span>=<span class="string">"xxx"</span>，要检验其内容，禁止以 <span class="attr">javascript:</span> 开头的链接，和其他非法的 <span class="attr">scheme</span>。</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>减少漏洞的原则：</p>
 <ul>
@@ -590,14 +590,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -606,11 +598,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,19 +630,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,7 +638,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,15 +650,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,15 +658,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,11 +678,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+                <a href="javascript:void(0)" class="js-tag color3">对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +686,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

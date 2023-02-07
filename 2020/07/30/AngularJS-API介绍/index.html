@@ -449,7 +449,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>4.</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--&lt;script src="angular.min.js"&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"angular.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"angular-sanitize.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span> <span class="attr">ng-init</span>=<span class="string">"data1=1; data2 = true"</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;data1 + data2&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-bind</span>=<span class="string">"data1 + data2"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>  <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可以看到，如果在div中使用两个模板&#123;&#123;&#125;&#125;能生成想要的结果，但是这种结果用ng-bind，不能展示出来--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;data1 + 1&#125;&#125;&#123;&#123;!data2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!--2false--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind</span>=<span class="string">"data1 + 1 + !data2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ng-bind-html： 该指令会编译html --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind</span>=<span class="string">"'&lt;h1&gt;' + data1 +  '&lt;/h1&gt;'"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!-- &lt;h1&gt;1&lt;/h1&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注意：该指令不能直接这样用，他需要通过控制器(controller)来使用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;div ng-bind-html="'&lt;h1&gt;' + data1 +  '&lt;/h1&gt;'"&gt;&lt;/div&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind-html</span>=<span class="string">"myHtml"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!--显示内容为h1 大小的undefined--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--ng-bind-template:  可以看到该指令可以直接接收模板，上文的两个模板在这里可以直接显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind-template</span>=<span class="string">"&#123;&#123;data1 + 1&#125;&#125;&#123;&#123;!data2&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!--2false--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 初始化一个angular模块 （这里引入了一个额外的模块ngSanitize ，该模块需要</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 引入angular-sanitize.js，才可以使用，引入该模块的目的是为了让ng-bind-html命令能够正常使用,如果</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 不引入该模块，直接调用 myHtml变量，会出现不安全html的报错）</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> app = angular.module(<span class="string">'myApp'</span>, [<span class="string">'ngSanitize'</span>])</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 添加控制器</span></span></span><br><span class="line"><span class="actionscript">    app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($scope)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 在控制器中定义变量 (注意： 控制器中不能获取到 ng-init中定义的变量)</span></span></span><br><span class="line"><span class="actionscript">      $scope.myHtml = <span class="string">'&lt;h1&gt;'</span> +$scope.data1 + <span class="string">'&lt;/h1&gt;'</span></span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--&lt;script src="angular.min.js"&gt;&lt;/script&gt;--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"angular.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"angular-sanitize.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span> <span class="attr">ng-init</span>=<span class="string">"data1=1; data2 = true"</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;data1 + data2&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-bind</span>=<span class="string">"data1 + data2"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>  <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可以看到，如果在div中使用两个模板&#123;&#123;&#125;&#125;能生成想要的结果，但是这种结果用ng-bind，不能展示出来--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;data1 + 1&#125;&#125;&#123;&#123;!data2&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!--2false--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind</span>=<span class="string">"data1 + 1 + !data2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!--2--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- ng-bind-html： 该指令会编译html --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind</span>=<span class="string">"'&lt;h1&gt;' + data1 +  '&lt;/h1&gt;'"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!-- &lt;h1&gt;1&lt;/h1&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--注意：该指令不能直接这样用，他需要通过控制器(controller)来使用--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;div ng-bind-html="'&lt;h1&gt;' + data1 +  '&lt;/h1&gt;'"&gt;&lt;/div&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind-html</span>=<span class="string">"myHtml"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!--显示内容为h1 大小的undefined--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--ng-bind-template:  可以看到该指令可以直接接收模板，上文的两个模板在这里可以直接显示--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind-template</span>=<span class="string">"&#123;&#123;data1 + 1&#125;&#125;&#123;&#123;!data2&#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  <span class="comment">&lt;!--2false--&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 初始化一个angular模块 （这里引入了一个额外的模块ngSanitize ，该模块需要</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 引入angular-sanitize.js，才可以使用，引入该模块的目的是为了让ng-bind-html命令能够正常使用,如果</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 不引入该模块，直接调用 myHtml变量，会出现不安全html的报错）</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> app = angular.module(<span class="string">'myApp'</span>, [<span class="string">'ngSanitize'</span>])</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 添加控制器</span></span></span><br><span class="line"><span class="javascript">    app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="comment">// 在控制器中定义变量 (注意： 控制器中不能获取到 ng-init中定义的变量)</span></span></span><br><span class="line"><span class="javascript">      $scope.myHtml = <span class="string">'&lt;h1&gt;'</span> +$scope.data1 + <span class="string">'&lt;/h1&gt;'</span></span></span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="概念说明"><a href="#概念说明" class="headerlink" title="概念说明"></a>概念说明</h2><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
 <li>模块定义了一个应用程序。</li>
@@ -457,18 +457,18 @@ var _hmt = _hmt || [];
 <li>模块是应用控制器的容器。</li>
 <li>控制器通常属于一个模块</li>
 </ul>
-<h4 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--定义模块名称--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="comment">// 创建模块 参数1是模块名称，参数2默认传空数组，数组元素可以是其他要加载的模块</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> app = angular.module(<span class="string">'test'</span>, [])</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--定义模块名称--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="comment">// 创建模块 参数1是模块名称，参数2默认传空数组，数组元素可以是其他要加载的模块</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = angular.module(<span class="string">'test'</span>, [])</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="自定义指定"><a href="#自定义指定" class="headerlink" title="自定义指定"></a>自定义指定</h3><ul>
 <li><code>angularJS</code>默认有许多内置指令，在引入了模块概念之后，我们可以创建自定义指令</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--注意： 因为html 不区分大小写，所以这里新建的指令，使用时不是直接用驼峰，而是连字符使用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"ngApp"</span> <span class="attr">my-directive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">const</span> app = angular.module(<span class="string">'ngApp'</span>, [])</span></span><br><span class="line"><span class="actionscript"><span class="comment">// 使用模块app 调用directive 方法 添加自定义指定 </span></span></span><br><span class="line"><span class="actionscript"><span class="comment">// 参数1 为指令名 参数2为回调函数定义指令的行为</span></span></span><br><span class="line"><span class="actionscript">app.directive(<span class="string">'myDirective'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">        template: <span class="string">'测试'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--注意： 因为html 不区分大小写，所以这里新建的指令，使用时不是直接用驼峰，而是连字符使用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"ngApp"</span> <span class="attr">my-directive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> app = angular.module(<span class="string">'ngApp'</span>, [])</span></span><br><span class="line"><span class="javascript"><span class="comment">// 使用模块app 调用directive 方法 添加自定义指定 </span></span></span><br><span class="line"><span class="javascript"><span class="comment">// 参数1 为指令名 参数2为回调函数定义指令的行为</span></span></span><br><span class="line"><span class="javascript">app.directive(<span class="string">'myDirective'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">        template: <span class="string">'测试'</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h3><ul>
 <li>在上文中，使用了<code>ng-init</code>定义了数据，而实际上我们可以使用AngularJS 控制器 <strong>控制</strong> AngularJS 应用程序的数据。</li>
 <li>scope(作用域)： 它代表着数据，对于mvvm架构 scope 就是第一个m（即model）,v（view 即视图），vm(view model代表着控制器 controller)</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--ng-controller 定义一个控制器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></span><br><span class="line">    &#123;&#123;firstname&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-repeat</span>=<span class="string">'x in name'</span>&gt;</span></span><br><span class="line">        &#123;&#123;x&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">const</span> app = angular.module(<span class="string">'myApp'</span>, [])</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 调用 myApp控制器</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 参数1 $scope 代表作用域为当前控制器所包含的html中的数据</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 参数2 $rootscope 作用在 ng-app 指令包含的所有 HTML 元素中，它可以在多个controller中使用</span></span></span><br><span class="line"><span class="actionscript">    app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span><span class="params">($scope, $rootscope)</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">        $scope.name = [<span class="string">'三'</span>,<span class="string">'四'</span>,<span class="string">'五'</span>]</span></span><br><span class="line"><span class="actionscript">        $rootscope.firstname = <span class="string">'张'</span></span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--ng-controller 定义一个控制器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"myApp"</span> <span class="attr">ng-controller</span>=<span class="string">"myCtrl"</span>&gt;</span></span><br><span class="line">    &#123;&#123;firstname&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-repeat</span>=<span class="string">'x in name'</span>&gt;</span></span><br><span class="line">        &#123;&#123;x&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> app = angular.module(<span class="string">'myApp'</span>, [])</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 调用 myApp控制器</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 参数1 $scope 代表作用域为当前控制器所包含的html中的数据</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 参数2 $rootscope 作用在 ng-app 指令包含的所有 HTML 元素中，它可以在多个controller中使用</span></span></span><br><span class="line"><span class="javascript">    app.controller(<span class="string">'myCtrl'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope, $rootscope</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        $scope.name = [<span class="string">'三'</span>,<span class="string">'四'</span>,<span class="string">'五'</span>]</span></span><br><span class="line"><span class="javascript">        $rootscope.firstname = <span class="string">'张'</span></span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><ul>
 <li>用于格式化数据,通常由一个管道字符<code>|</code>和一个具体的过滤器,添加到表达式中<ul>
@@ -735,14 +735,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -751,11 +743,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,19 +775,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,7 +783,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -799,15 +795,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -815,15 +803,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,11 +823,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+                <a href="javascript:void(0)" class="js-tag color3">对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -843,11 +831,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>

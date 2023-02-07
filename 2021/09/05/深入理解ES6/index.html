@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funcs = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 因为声明提升, 所以循环后 i === 10 ， 当执行函数时， 找到的i就是10</span></span><br><span class="line">    funcs.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">funcs.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">    item() <span class="comment">// 打印10个 10   </span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// es5解决方式 IIFE</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 通过IIFE，每次循环都将当前i的值保存在value中，value作为函数中的变量不会被覆盖</span></span><br><span class="line">    funcs.push((<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(value)</span><br><span class="line">    &#125;(value)))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// let 解决了该问题</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 相当于创建了10个变量，与每个console一一对应， 注意： 虽然可以用变量不提升的概念来理解这一现象，但实际上两者并没有必然关系；</span></span><br><span class="line">    <span class="comment">// 事实上，早期的let实现不包含这一行为，它是后来加入的。</span></span><br><span class="line">    funcs.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcs.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">    item() <span class="comment">// 打印 0 到 9</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// const</span></span><br><span class="line"><span class="comment">// 在for 循环中使用 const 会抛出错误</span></span><br><span class="line"><span class="comment">// 但是在 for..in 或 for...of则 使用 const 或者 let 均可</span></span><br><span class="line"><span class="keyword">var</span> funcs = [], object = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    <span class="comment">// 因为声明提升, 所以循环后 i === 10 ， 当执行函数时， 找到的i就是10</span></span><br><span class="line">    funcs.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(key)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">funcs.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">    item() <span class="comment">// a b c   </span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>示例2： </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line">    按钮1</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line">    按钮2</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line">    按钮3</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> btns = <span class="built_in">document</span>.getElemenstByTagName(<span class="string">'button'</span>)</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//这种写法每次点击都只会显示第三个 因为该事件绑定的是回调函数，回调函数在网页加载完毕后，外部触发才会执行，而var关键字，作用域不受&#123;&#125;影响，它在回调函数调用之前已经将i的值修改为3 所以结果都一样，</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//es5没有块级作用域 即&#123;&#125;这种作用域</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//他的过程相当于  &#123;var i=0 第一个回调（没被调用）&#125; &#123;i=1 第二个回调（没被调用） i=2 第三个回调(没被调用)&#125; i最后一次++  i=3,之后循环条件不在符合 不会绑定新事件 当用户触发点击事件时，点击事件会从外部找值 这时外部的i被修改为 3 所以点不同的按钮 显示的都一样</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;btns.length;i++) &#123;</span></span><br><span class="line"><span class="actionscript">        btns[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span>+i+<span class="string">'个按钮被点击了'</span>)</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="actionscript"><span class="comment">//闭包解决 闭包定义：当外部函数执行时，内部函数使用外部函数的变量，且这个变量被保存下来没有消失，这样产生了闭包</span></span></span><br><span class="line"><span class="actionscript"> <span class="comment">// 闭包的另一种解释方式：当函数可以记住并访问所在的词法作用域，即使该函数在当前词法作用域外执行，这时就产生了闭包</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//这种写法的闭包称为立即执行函数 IIFE</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 他的过程 var i &#123;i=0 第一个立即执行函数接收了变量i,立即执行内部代码，执行绑定事件操作,又因为绑定事件用到了i,i=0因此被保存在内存中，不会消失，由此闭包产生。&#125; &#123; i= 1  第二个立即执行函数接收了新的变量i，重复上述步骤，且因为函数有自己的作用域，这个函数的i会因为闭包的原因在执行完毕后保存在另一块内存中，即使上一个函数已经销毁,但他的i由于存的位置不同,也不会受这个函数的影响 &#125; &#123;i=2 重复上述步骤 &#125; i=3后循环条件不在符合 不会绑定新事件 且由于上述，i=3 也不会影响到其他绑定事件的i值</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//以上步骤执行完毕后，每个按钮的点击效果就不同了</span></span></span><br><span class="line">     </span><br><span class="line"><span class="actionscript">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;btns.length;i++) &#123;</span></span><br><span class="line"><span class="actionscript">        	<span class="function"><span class="keyword">function</span><span class="params">(i)</span></span>&#123;	btns[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">           		 <span class="built_in">console</span>.log(<span class="string">'第'</span>+i+<span class="number">1</span>+<span class="string">'个按钮被点击了'</span>)</span></span><br><span class="line">        		&#125;)</span><br><span class="line">             &#125;(i)</span><br><span class="line">   	&#125;</span><br><span class="line"> </span><br><span class="line"><span class="actionscript"><span class="comment">//    es6有块级作用域 即&#123;&#125;这种作用域</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//他相当与 </span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// &#123;let i=0 绑定函数&#125; &#123;let i=1 绑定函数&#125; &#123;let i=2 绑定函数&#125; 这里的每个i均不会受外部影响</span></span></span><br><span class="line"><span class="javascript">     <span class="keyword">for</span> (<span class="keyword">var</span> <span class="keyword">let</span>=<span class="number">0</span>;i&lt;btns.length;i++) &#123;</span></span><br><span class="line"><span class="actionscript">        btns[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span>i+<span class="number">1</span><span class="string">'个按钮被点击了'</span>)</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line">    按钮1</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line">    按钮2</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span></span><br><span class="line">    按钮3</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> btns = <span class="built_in">document</span>.getElemenstByTagName(<span class="string">'button'</span>)</span></span><br><span class="line"><span class="javascript">    <span class="comment">//这种写法每次点击都只会显示第三个 因为该事件绑定的是回调函数，回调函数在网页加载完毕后，外部触发才会执行，而var关键字，作用域不受&#123;&#125;影响，它在回调函数调用之前已经将i的值修改为3 所以结果都一样，</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//es5没有块级作用域 即&#123;&#125;这种作用域</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//他的过程相当于  &#123;var i=0 第一个回调（没被调用）&#125; &#123;i=1 第二个回调（没被调用） i=2 第三个回调(没被调用)&#125; i最后一次++  i=3,之后循环条件不在符合 不会绑定新事件 当用户触发点击事件时，点击事件会从外部找值 这时外部的i被修改为 3 所以点不同的按钮 显示的都一样</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;btns.length;i++) &#123;</span></span><br><span class="line"><span class="javascript">        btns[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span>+i+<span class="string">'个按钮被点击了'</span>)</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript"><span class="comment">//闭包解决 闭包定义：当外部函数执行时，内部函数使用外部函数的变量，且这个变量被保存下来没有消失，这样产生了闭包</span></span></span><br><span class="line"><span class="javascript"> <span class="comment">// 闭包的另一种解释方式：当函数可以记住并访问所在的词法作用域，即使该函数在当前词法作用域外执行，这时就产生了闭包</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//这种写法的闭包称为立即执行函数 IIFE</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 他的过程 var i &#123;i=0 第一个立即执行函数接收了变量i,立即执行内部代码，执行绑定事件操作,又因为绑定事件用到了i,i=0因此被保存在内存中，不会消失，由此闭包产生。&#125; &#123; i= 1  第二个立即执行函数接收了新的变量i，重复上述步骤，且因为函数有自己的作用域，这个函数的i会因为闭包的原因在执行完毕后保存在另一块内存中，即使上一个函数已经销毁,但他的i由于存的位置不同,也不会受这个函数的影响 &#125; &#123;i=2 重复上述步骤 &#125; i=3后循环条件不在符合 不会绑定新事件 且由于上述，i=3 也不会影响到其他绑定事件的i值</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//以上步骤执行完毕后，每个按钮的点击效果就不同了</span></span></span><br><span class="line">     </span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;btns.length;i++) &#123;</span></span><br><span class="line"><span class="javascript">        	<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;	btns[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">           		 <span class="built_in">console</span>.log(<span class="string">'第'</span>+i+<span class="number">1</span>+<span class="string">'个按钮被点击了'</span>)</span></span><br><span class="line">        		&#125;)</span><br><span class="line">             &#125;(i)</span><br><span class="line">   	&#125;</span><br><span class="line"> </span><br><span class="line"><span class="javascript"><span class="comment">//    es6有块级作用域 即&#123;&#125;这种作用域</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//他相当与 </span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#123;let i=0 绑定函数&#125; &#123;let i=1 绑定函数&#125; &#123;let i=2 绑定函数&#125; 这里的每个i均不会受外部影响</span></span></span><br><span class="line"><span class="javascript">     <span class="keyword">for</span> (<span class="keyword">var</span> <span class="keyword">let</span>=<span class="number">0</span>;i&lt;btns.length;i++) &#123;</span></span><br><span class="line"><span class="javascript">        btns[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="string">'第'</span>i+<span class="number">1</span><span class="string">'个按钮被点击了'</span>)</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="全局块作用域绑定"><a href="#全局块作用域绑定" class="headerlink" title="全局块作用域绑定"></a>全局块作用域绑定</h3><p>let和const与var的另外一个区别是它们在全局作用域中的行为。</p>
 <p>当var被用于全局作用域时，它会创建一个新的全局变量作为全局对象（浏览器环境中的window对象）的属性。这意味着用var很可能会无意中覆盖一个已经存在的全局属性，就像这样：</p>
@@ -2329,7 +2329,7 @@ var _hmt = _hmt || [];
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出 example.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> color = <span class="string">'red'</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">editColor</span>(<span class="params">newColor</span>) </span>&#123;</span><br><span class="line">    color = newColor</span><br><span class="line">    <span class="built_in">console</span>.log(color) <span class="comment">// 'blue'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span>  obj = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj.a) <span class="comment">// 1</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(obj.a) <span class="comment">// 2</span></span><br><span class="line">&#125;,<span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--test.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;color, editColor, obj&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(color); <span class="comment">// red</span></span></span><br><span class="line">    obj.a = 2</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(obj) <span class="comment">// &#123;a:2&#125;</span></span></span><br><span class="line"><span class="actionscript">    editColor(<span class="string">'blue'</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--test.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;color, editColor, obj&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(color); <span class="comment">// red</span></span></span><br><span class="line">    obj.a = 2</span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(obj) <span class="comment">// &#123;a:2&#125;</span></span></span><br><span class="line"><span class="javascript">    editColor(<span class="string">'blue'</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>上面代码的打印结果顺序为</li>
@@ -2448,7 +2448,7 @@ var _hmt = _hmt || [];
 <ul>
 <li>通过 type= module实现</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span> <span class="attr">src</span>=<span class="string">"module.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 此时可以使用模块语法</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 方式1 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span> <span class="attr">src</span>=<span class="string">"module.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 方式2 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 此时可以使用模块语法</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123;sum&#125; <span class="keyword">from</span> <span class="string">'./example.js'</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>默认情况下，当不填写 type 时，  type=”text/javascript”，会作为默认类型， 此时type修改为 module，若浏览器不支持模块， 那么script 中的代码都会被忽略，从而避免错误的发生，提供了良好的向后兼容性</p>
@@ -2830,14 +2830,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -2846,11 +2838,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Fetch</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">强制类型转换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2862,19 +2870,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue-router 路由 前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2882,7 +2878,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
+                <a href="javascript:void(0)" class="js-tag color4">VueCLI 脚手架 VueCLI2</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2894,15 +2890,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2910,15 +2898,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Vuex 状态管理工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">垃圾回收</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+                <a href="javascript:void(0)" class="js-tag color2">webpack 打包工具 模块化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2926,11 +2918,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+                <a href="javascript:void(0)" class="js-tag color3">对象</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2938,11 +2926,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浏览器</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">网络攻击</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
             
             <div class="clearfix"></div>
